@@ -6,7 +6,7 @@ int main()
     ///Lancement des différentes fonctions:
     read();
 
-    delete []
+    delete [] point_tab;
     delete [] face_tab;
 
     return 0;
