@@ -20,20 +20,20 @@ int main()
         std::cin>>name_fichier;
 
         std::ifstream fichier(name_fichier.c_str(), std::ios::in); ///Ouverture du fichier en lecture
-        if(fichier) ///Test pour savoir si le fichier est bien présent
+        if(fichier)                                                ///Test pour savoir si le fichier est bien présent
         {
             ONDA_VITAL = false;
-            fichier.seekg(4, fichier.beg); /// On se place au quatrième octet dans le fichier, ici après le "OFF"
+            fichier.seekg(4, fichier.beg);                         /// On se place au quatrième octet dans le fichier, ici après le "OFF"
 
             int temp;
-            fichier >> temp; ///Lit le nombre de points présents dans le fichier
+            fichier >> temp;                                        ///Lit le nombre de points présents dans le fichier
             //point_tab = new double[temp];
-            fichier >> temp; ///Lit le nombre de faces présentes dans le fichier
+            fichier >> temp;                                        ///Lit le nombre de faces présentes dans le fichier
             //face_tab = new double[temp];
 
-            fichier.seekg(3, fichier.cur); /// On vient se placer à la ligne évitant le '0'
+            fichier.seekg(3, fichier.cur);                          /// On vient se placer à la ligne évitant le '0'
 
-            fichier.close();
+            fichier.close();                                        ///Fermeture du fichier
         }
         else
             std::cerr<<"Impossible d'ouvrir le fichier "<<name_fichier<<" !"<<std::endl;
