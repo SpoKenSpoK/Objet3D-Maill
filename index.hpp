@@ -3,4 +3,7 @@
 
 #include <iostream>
 
+double read();
+
+
 #endif // INDEX_HPP

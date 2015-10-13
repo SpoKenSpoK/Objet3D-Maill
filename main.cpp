@@ -1,10 +1,13 @@
 #include "index.hpp"
 
-int main(){
+int main()
+{
+    ///Ecire IHM ici
+    ///Lancement des différentes fonctions:
+    read();
 
-c
+    delete []
+    delete [] face_tab;
 
-
-
-return 0;
+    return 0;
 }
