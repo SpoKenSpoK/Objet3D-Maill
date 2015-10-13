@@ -1,8 +1,9 @@
-#include <iostream>
-
-using namespace std;
+#include "index.hpp"
 
 int main(){
+
+c
+
 
 
 return 0;
