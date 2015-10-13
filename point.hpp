@@ -24,6 +24,7 @@ class Point{
     ///Calcul longueur entre les points
         double calc_length();
 
+
 };
 
 #endif // POINT_HPP
