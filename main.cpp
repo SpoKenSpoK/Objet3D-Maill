@@ -1,4 +1,7 @@
-#include "index.hpp"
+#include <iostream>
+
+#include "face.hpp"
+#include "point.hpp"
 
 int main()
 {

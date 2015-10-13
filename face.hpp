@@ -3,10 +3,14 @@
 
 class Face{
     private:
-        double pt1 pt3 pt3
-
+        long unsigned int summit_one
+        long unsigned int summit_two;
+        long unsigned int summit_three;
 
     public:
+        Face();
+        ~Face();
+        double calc_area();
 
 };
 
