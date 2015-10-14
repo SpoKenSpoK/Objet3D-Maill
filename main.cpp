@@ -32,34 +32,47 @@ int main()
             /// On se place au quatrième octet dans le fichier, ici après le "OFF"
             fichier.seekg(4, fichier.beg);
 
-            int temp;
+            int length_point;
+            int length_face;
             ///Lit le nombre de points présents dans le fichier
-            fichier >> temp;
-            tab_point = new Point[temp];
-            std::cout<<temp<<std::endl;
-
-            ///Lit le nombre de face présentes dans le fichier
-            fichier >> temp;
-            tab_face = new Face[temp];
-            std::cout<<temp<<std::endl;
+            fichier >> length_point >> length_face;
+            tab_point = new Point[length_point];
+            tab_face = new Face[length_face];
 
             /// On vient se placer à la ligne évitant le '0'
             fichier.seekg(3, fichier.cur);
 
             double _temp;
-            fichier >> _temp;
-            tab_point[0].setP_one(_temp);
+            for(int i=0; i<length_point; ++i){
+                fichier >> _temp;
+                tab_point[i].setP_one(_temp);
 
-            fichier >> _temp;
-            tab_point[0].setP_two(_temp);
+                fichier >> _temp;
+                tab_point[i].setP_two(_temp);
 
-            fichier >> _temp;
-            tab_point[0].setP_three(_temp);
+                fichier >> _temp;
+                tab_point[i].setP_three(_temp);
+            }
 
-            fichier >> _temp;
-            tab_point[1].setP_one(_temp);
+            ///Effectuer une séparation de la lecture des Faces / Points
+
+            for(int i=0; i<length_face; ++i){
+                fichier >> _temp;
+                tab_face[i].setS_one(_temp);
+
+                fichier >> _temp;
+                tab_face[i].setS_two(_temp);
+
+                fichier >> _temp;
+                tab_face[i].setS_three(_temp);
+            }
 
             ///DEBUG:
+            std::cout<<length_point<<std::endl;
+            std::cout<<length_face<<std::endl;
+
+
+
             std::cout<<tab_point[0].getP_one()<<std::endl;
             std::cout<<tab_point[0].getP_two()<<std::endl;
             std::cout<<tab_point[0].getP_three()<<std::endl;

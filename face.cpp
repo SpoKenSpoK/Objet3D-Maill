@@ -11,4 +11,6 @@ void Face::setS_one(const long unsigned& _one) { summit_one = _one; }
 void Face::setS_two(const long unsigned& _two) { summit_two = _two; }
 void Face::setS_three(const long unsigned& _three) { summit_three = _three; }
 
+double Face::calc_area() { return 0; } ///A faire
+
 

@@ -24,7 +24,7 @@ class Face{
         void setS_three(const long unsigned& );
 
     ///Calcul de l'aire du triangle en fonction des calculs de distance entre les points (classe Point)
-        double calc_area(); ///Formule de Héron
+        double calc_area(); ///Formule de Héront
 };
 
 #endif // FACE_HPP
