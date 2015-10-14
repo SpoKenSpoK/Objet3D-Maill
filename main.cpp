@@ -55,7 +55,7 @@ int main()
             }
 
             ///Effectuer une séparation de la lecture des Faces / Points
-
+            /*
             for(int i=0; i<length_face; ++i){
                 fichier >> _temp;
                 tab_face[i].setS_one(_temp);
@@ -65,7 +65,7 @@ int main()
 
                 fichier >> _temp;
                 tab_face[i].setS_three(_temp);
-            }
+            } */
 
             ///DEBUG:
             std::cout<<length_point<<std::endl;
