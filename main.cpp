@@ -42,6 +42,7 @@ int main()
             /// On vient se placer à la ligne évitant le '0'
             fichier.seekg(3, fichier.cur);
 
+            ///Lecture des coordonnées de chaque sommet
             double p_value;
             for(int i=0; i<length_point; ++i){
                 fichier >> p_value;
@@ -54,7 +55,7 @@ int main()
                 tab_point[i].setP_three(p_value);
             }
 
-            ///Effectuer une séparation de la lecture des Faces / Points
+            ///Lecture des emplacements des coordonnées
             int s_value;
             for(int i=0; i<length_face; ++i){
                 fichier >> s_value;
@@ -88,6 +89,8 @@ int main()
 
             ///On calcul pour chaque face les segments
             ///Racine carré de [ (xB - xA)² + (yB - yA)² + (zB - zA)² ]
+            double FULL_AREA;
+
             for(int i=0; i<length_face; ++i){
                 double temp = tab_point->calc_length( tab_point[tab_face[i].getS_one()-3].getP_one(), tab_point[tab_face[i].getS_two()-3].getP_one() );      /// Calcul de sqrt(xB - xA)²
                 double tamp = tab_point->calc_length( tab_point[tab_face[i].getS_one()-3].getP_two(), tab_point[tab_face[i].getS_two()-3].getP_two() );      /// Calcul de sqrt(yB - yA)²
@@ -103,8 +106,11 @@ int main()
                 tamp = tab_point->calc_length( tab_point[tab_face[i].getS_three()-3].getP_two(), tab_point[tab_face[i].getS_one()-3].getP_two() );      /// Calcul de sqrt(yA - yC)²
                 tomp = tab_point->calc_length( tab_point[tab_face[i].getS_three()-3].getP_three(), tab_point[tab_face[i].getS_one()].getP_three() );    /// Calcul de sqrt(zA - zC)²
                 tab_face[i].setSeg_three(temp+tamp+tomp);   ///Longueur CA
-            }
 
+                //tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());
+                FULL_AREA+=tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());
+            }
+            std::cout<<FULL_AREA<<std::endl;
             ///Fermeture du fichier
             fichier.close();
         }

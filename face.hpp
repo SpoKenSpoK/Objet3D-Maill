@@ -39,7 +39,7 @@ class Face{
         void setArea(const double&);
 
     ///Calcul de l'aire du triangle en fonction des calculs de distance entre les points (classe Point)
-        double calc_area(double&, double&, double&); ///Formule de Héront
+        double calc_area(double, double, double); ///Formule de Héront
 };
 
 #endif // FACE_HPP
