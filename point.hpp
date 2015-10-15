@@ -22,7 +22,7 @@ class Point{
         void setP_three(const double&);
 
     ///Calcul longueur entre les points
-        double calc_length();
+        double calc_length(double&, double&);
 };
 
 #endif // POINT_HPP

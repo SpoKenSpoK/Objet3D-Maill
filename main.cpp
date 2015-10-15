@@ -77,11 +77,21 @@ int main()
 
             std::cout<<"Ligne ou se situe les coordonnes du premier sommet de la premiere face: "<<tab_face[0].getS_one()<<std::endl;
             std::cout<<"Ligne ou se situe les coordonnes du dernier sommet de la derniere face: "<<tab_face[length_face-1].getS_three()<<std::endl;
+
+            std::cout<<"Coordonnes x, y et z du premier sommet de la face numéro 1 (0 dans le tableau): "
+            <<tab_point[tab_face[0].getS_one()].getP_one()<<" "
+            <<tab_point[tab_face[0].getS_two()].getP_one()<<" "
+            <<tab_point[tab_face[0].getS_three()].getP_one()<<std::endl;
             ///
 
             ///Appel des fonctions membres
 
-            for(int i=0; )
+            ///Pour chaque face, calculer son aire.
+            ///Pour ça:
+            /*for(int i=0; i<length_face; ++i){
+
+
+            }*/
 
 
 
