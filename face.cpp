@@ -1,7 +1,6 @@
 #include "face.hpp"
 
 ///Très certainement include math pour sqrt
-///Pour le permimètre on return pour le moment un double mais il s'agit d'une valeur de tab_point
 ///Créer trois autres membres qui sont les longueurs AB, BC et CA ?
 
 Face::Face() {}

@@ -81,6 +81,9 @@ int main()
 
             ///Appel des fonctions membres
 
+            for(int i=0; )
+
+
 
 
 
