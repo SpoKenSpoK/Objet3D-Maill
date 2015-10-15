@@ -110,7 +110,7 @@ int main()
                 //tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());
                 FULL_AREA+=tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());
             }
-            std::cout<<FULL_AREA<<std::endl;
+            std::cout<<"FULL_AREA : "<<FULL_AREA<<std::endl;
             ///Fermeture du fichier
             fichier.close();
         }
