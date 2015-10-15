@@ -87,25 +87,23 @@ int main()
             ///Appel des fonctions membres
 
             ///On calcul pour chaque face les segments
-            ///Racine carré de  [ (xB - xA)² + (yB - yA)² + (zB - zA) ]
+            ///Racine carré de [ (xB - xA)² + (yB - yA)² + (zB - zA)² ]
             for(int i=0; i<length_face; ++i){
                 double temp = tab_point->calc_length( tab_point[tab_face[i].getS_one()-3].getP_one(), tab_point[tab_face[i].getS_two()-3].getP_one() );      /// Calcul de sqrt(xB - xA)²
                 double tamp = tab_point->calc_length( tab_point[tab_face[i].getS_one()-3].getP_two(), tab_point[tab_face[i].getS_two()-3].getP_two() );      /// Calcul de sqrt(yB - yA)²
                 double tomp = tab_point->calc_length( tab_point[tab_face[i].getS_one()-3].getP_three(), tab_point[tab_face[i].getS_two()].getP_three() );    /// Calcul de sqrt(zB - zA)²
-                tab_face[i].setSeg_one(temp+tamp+tomp);
+                tab_face[i].setSeg_one(temp+tamp+tomp);     ///Longueur AB
 
                 temp = tab_point->calc_length( tab_point[tab_face[i].getS_two()-3].getP_one(), tab_point[tab_face[i].getS_three()-3].getP_one() );      /// Calcul de sqrt(xC - xB)²
                 tamp = tab_point->calc_length( tab_point[tab_face[i].getS_two()-3].getP_two(), tab_point[tab_face[i].getS_three()-3].getP_two() );      /// Calcul de sqrt(yC - yB)²
                 tomp = tab_point->calc_length( tab_point[tab_face[i].getS_two()-3].getP_three(), tab_point[tab_face[i].getS_three()].getP_three() );    /// Calcul de sqrt(zC - zB)²
-                tab_face[i].setSeg_two(temp+tamp+tomp);
+                tab_face[i].setSeg_two(temp+tamp+tomp);     ///Longueur BC
 
                 temp = tab_point->calc_length( tab_point[tab_face[i].getS_three()-3].getP_one(), tab_point[tab_face[i].getS_one()-3].getP_one() );      /// Calcul de sqrt(xA - xC)²
                 tamp = tab_point->calc_length( tab_point[tab_face[i].getS_three()-3].getP_two(), tab_point[tab_face[i].getS_one()-3].getP_two() );      /// Calcul de sqrt(yA - yC)²
                 tomp = tab_point->calc_length( tab_point[tab_face[i].getS_three()-3].getP_three(), tab_point[tab_face[i].getS_one()].getP_three() );    /// Calcul de sqrt(zA - zC)²
-                tab_face[i].setSeg_three(temp+tamp+tomp);
+                tab_face[i].setSeg_three(temp+tamp+tomp);   ///Longueur CA
             }
-
-            std::cout<<tab_face[0].getSeg_one()<<std::endl;
 
             ///Fermeture du fichier
             fichier.close();
