@@ -79,9 +79,9 @@ int main()
             std::cout<<"Ligne ou se situe les coordonnes du dernier sommet de la derniere face: "<<tab_face[length_face-1].getS_three()<<std::endl;
 
             std::cout<<"Coordonnes x, y et z du premier sommet de la face numéro 1 (0 dans le tableau): "
-            <<tab_point[tab_face[0].getS_one()].getP_one()<<" "
-            <<tab_point[tab_face[0].getS_two()].getP_one()<<" "
-            <<tab_point[tab_face[0].getS_three()].getP_one()<<std::endl;
+            <<"Emplacement sommet1 face1: "<<tab_face[0].getS_one()<<" "<<tab_point[tab_face[0].getS_one()-3].getP_one()<<" "
+            <<tab_point[tab_face[0].getS_one()-3].getP_two()<<" "
+            <<tab_point[tab_face[0].getS_one()-3].getP_three()<<std::endl;
             ///
 
             ///Appel des fonctions membres
@@ -92,6 +92,7 @@ int main()
 
 
             }*/
+            tab_point->calc_length(tab_point[tab_face[0].getS_one(), tab_face[0].getS_two());
 
 
 
