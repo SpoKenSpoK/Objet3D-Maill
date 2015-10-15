@@ -79,10 +79,6 @@ int main()
             std::cout<<"Ligne ou se situe les coordonnes du dernier sommet de la derniere face: "<<tab_face[length_face-1].getS_three()<<std::endl;
             ///
 
-
-
-
-
             ///Appel des fonctions membres
 
 
