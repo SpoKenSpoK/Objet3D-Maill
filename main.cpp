@@ -42,41 +42,41 @@ int main()
             /// On vient se placer à la ligne évitant le '0'
             fichier.seekg(3, fichier.cur);
 
-            double _temp;
+            double p_value;
             for(int i=0; i<length_point; ++i){
-                fichier >> _temp;
-                tab_point[i].setP_one(_temp);
+                fichier >> p_value;
+                tab_point[i].setP_one(p_value);
 
-                fichier >> _temp;
-                tab_point[i].setP_two(_temp);
+                fichier >> p_value;
+                tab_point[i].setP_two(p_value);
 
-                fichier >> _temp;
-                tab_point[i].setP_three(_temp);
+                fichier >> p_value;
+                tab_point[i].setP_three(p_value);
             }
 
             ///Effectuer une séparation de la lecture des Faces / Points
-            /*
+            int s_value;
             for(int i=0; i<length_face; ++i){
-                fichier >> _temp;
-                tab_face[i].setS_one(_temp);
+                fichier >> s_value;
+                fichier >> s_value;
+                tab_face[i].setS_one(s_value);
 
-                fichier >> _temp;
-                tab_face[i].setS_two(_temp);
+                fichier >> s_value;
+                tab_face[i].setS_two(s_value);
 
-                fichier >> _temp;
-                tab_face[i].setS_three(_temp);
-            } */
+                fichier >> s_value;
+                tab_face[i].setS_three(s_value);
+            }
 
             ///DEBUG:
-            std::cout<<length_point<<std::endl;
-            std::cout<<length_face<<std::endl;
+            std::cout<<"Nombre de points: "<<length_point<<std::endl;
+            std::cout<<"Nombre de face: "<<length_face<<std::endl;
 
+            std::cout<<"Coordonne x du premier point(sommet): "<<tab_point[0].getP_one()<<std::endl;
+            std::cout<<"Coordonne z du dernier point(sommet): "<<tab_point[length_point-1].getP_three()<<std::endl;
 
-
-            std::cout<<tab_point[0].getP_one()<<std::endl;
-            std::cout<<tab_point[0].getP_two()<<std::endl;
-            std::cout<<tab_point[0].getP_three()<<std::endl;
-            std::cout<<tab_point[1].getP_one()<<std::endl;
+            std::cout<<"Ligne ou se situe les coordonnes du premier sommet de la premiere face: "<<tab_face[0].getS_one()<<std::endl;
+            std::cout<<"Ligne ou se situe les coordonnes du dernier sommet de la derniere face: "<<tab_face[length_face-1].getS_three()<<std::endl;
             ///
 
 
