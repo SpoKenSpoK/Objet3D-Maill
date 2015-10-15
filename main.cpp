@@ -9,6 +9,9 @@
 #include "face.hpp"
 #include "point.hpp"
 
+
+/// NE MARCHE PAS AVEC SPHERE6.OFF par exemple, lecture de double pour les coordonnées ne marche pas quand on tombe sur un int
+
 int main()
 {
     ///Création des instances.
@@ -68,7 +71,7 @@ int main()
                 fichier >> s_value;
                 tab_face[i].setS_three(s_value);
             }
-
+            /*
             ///DEBUG:
             std::cout<<"Nombre de points: "<<length_point<<std::endl;
             std::cout<<"Nombre de face: "<<length_face<<std::endl;
@@ -83,7 +86,7 @@ int main()
             <<tab_point[tab_face[0].getS_one()-3].getP_one()<<" "
             <<tab_point[tab_face[0].getS_one()-3].getP_two()<<" "
             <<tab_point[tab_face[0].getS_one()-3].getP_three()<<std::endl;
-            ///
+            ///*/
 
             ///Appel des fonctions membres
 

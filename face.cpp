@@ -29,8 +29,7 @@ void Face::setArea(const double& _area) { area = _area; }
 
 ///Utilisation de la formule d'Héron :
 double Face::calc_area(double AB, double BC, double CA){
-    double temp = (AB + BC + CA);
-    this->setPerimeter(temp);
+    this->setPerimeter( AB + BC + CA);
     this->setArea( sqrt(this->getPerimeter()*(this->getPerimeter()-AB)*(this->getPerimeter()-BC)*(this->getPerimeter()-CA)) );
     return this->getArea();
 }
