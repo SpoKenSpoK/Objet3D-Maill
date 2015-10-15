@@ -16,12 +16,8 @@ void Point::setP_two(const double& _two) { point_two = _two; }
 void Point::setP_three(const double& _three) { point_three = _three; }
 
 ///Methodes
-double Point::calc_length(double&, double&){ ///Calcul d'une longueur d'un segment d'une face suivant les coordonnées de deux sommets
-///Racine carré de  [ (xB - xA)² + (yB - yA)² + (zB - zA) ]
-
-
-    return sqrt( )
-}
+///Calcul d'une longueur d'un segment d'une face suivant les coordonnées de deux sommets
+double Point::calc_length(double A, double B){ return sqrt(pow((B - A), 2)); }
 
 
 
