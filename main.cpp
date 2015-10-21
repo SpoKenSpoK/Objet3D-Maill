@@ -5,15 +5,20 @@
 
 #include <iostream>
 #include <fstream>
+#include <time.h>
 #include "mesh.hpp"
 #include "face.hpp"
 #include "point.hpp"
 
+/// ... Include un time quelque chose pour avoir le temps d'exécution de l'exe ///
 
-/// NE MARCHE PAS AVEC SPHERE6.OFF par exemple, lecture de double pour les coordonnées ne marche pas quand on tombe sur un int
+///Ne fonctionne pas avec le sphere6.off par exemple "Erreur: core dumped" => erreur de pointeur certainement
 
 int main()
 {
+    ///Gérer le temps
+
+
     ///Création des instances.
     Face* tab_face;
     Point* tab_point;
@@ -47,6 +52,7 @@ int main()
 
             ///Lecture des coordonnées de chaque sommet
             double p_value;
+
             for(int i=0; i<length_point; ++i){
                 fichier >> p_value;
                 tab_point[i].setP_one(p_value);
@@ -71,7 +77,7 @@ int main()
                 fichier >> s_value;
                 tab_face[i].setS_three(s_value);
             }
-            /*
+
             ///DEBUG:
             std::cout<<"Nombre de points: "<<length_point<<std::endl;
             std::cout<<"Nombre de face: "<<length_face<<std::endl;
@@ -83,10 +89,10 @@ int main()
             std::cout<<"Ligne ou se situe les coordonnes du dernier sommet de la derniere face: "<<tab_face[length_face-1].getS_three()<<std::endl;
 
             std::cout<<"Coordonnes x, y et z du premier sommet de la face numéro 1 (0 dans le tableau): "
-            <<tab_point[tab_face[0].getS_one()-3].getP_one()<<" "
-            <<tab_point[tab_face[0].getS_one()-3].getP_two()<<" "
-            <<tab_point[tab_face[0].getS_one()-3].getP_three()<<std::endl;
-            ///*/
+            <<tab_point[tab_face[0].getS_one()].getP_one()<<" "
+            <<tab_point[tab_face[0].getS_one()].getP_two()<<" "
+            <<tab_point[tab_face[0].getS_one()].getP_three()<<std::endl;
+            ///
 
             ///Appel des fonctions membres
 
@@ -95,25 +101,24 @@ int main()
             double FULL_AREA;
 
             for(int i=0; i<length_face; ++i){
-                double temp = tab_point->calc_length( tab_point[tab_face[i].getS_one()-3].getP_one(), tab_point[tab_face[i].getS_two()-3].getP_one() );      /// Calcul de sqrt(xB - xA)²
-                double tamp = tab_point->calc_length( tab_point[tab_face[i].getS_one()-3].getP_two(), tab_point[tab_face[i].getS_two()-3].getP_two() );      /// Calcul de sqrt(yB - yA)²
-                double tomp = tab_point->calc_length( tab_point[tab_face[i].getS_one()-3].getP_three(), tab_point[tab_face[i].getS_two()].getP_three() );    /// Calcul de sqrt(zB - zA)²
+                double temp = tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_one(), tab_point[tab_face[i].getS_two()].getP_one() );      /// Calcul de sqrt(xB - xA)²
+                double tamp = tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_two(), tab_point[tab_face[i].getS_two()].getP_two() );      /// Calcul de sqrt(yB - yA)²
+                double tomp = tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_three(), tab_point[tab_face[i].getS_two()].getP_three() );    /// Calcul de sqrt(zB - zA)²
                 tab_face[i].setSeg_one(temp+tamp+tomp);     ///Longueur AB
 
-                temp = tab_point->calc_length( tab_point[tab_face[i].getS_two()-3].getP_one(), tab_point[tab_face[i].getS_three()-3].getP_one() );      /// Calcul de sqrt(xC - xB)²
-                tamp = tab_point->calc_length( tab_point[tab_face[i].getS_two()-3].getP_two(), tab_point[tab_face[i].getS_three()-3].getP_two() );      /// Calcul de sqrt(yC - yB)²
-                tomp = tab_point->calc_length( tab_point[tab_face[i].getS_two()-3].getP_three(), tab_point[tab_face[i].getS_three()].getP_three() );    /// Calcul de sqrt(zC - zB)²
+                temp = tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_one(), tab_point[tab_face[i].getS_three()].getP_one() );      /// Calcul de sqrt(xC - xB)²
+                tamp = tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_two(), tab_point[tab_face[i].getS_three()].getP_two() );      /// Calcul de sqrt(yC - yB)²
+                tomp = tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_three(), tab_point[tab_face[i].getS_three()].getP_three() );    /// Calcul de sqrt(zC - zB)²
                 tab_face[i].setSeg_two(temp+tamp+tomp);     ///Longueur BC
 
-                temp = tab_point->calc_length( tab_point[tab_face[i].getS_three()-3].getP_one(), tab_point[tab_face[i].getS_one()-3].getP_one() );      /// Calcul de sqrt(xA - xC)²
-                tamp = tab_point->calc_length( tab_point[tab_face[i].getS_three()-3].getP_two(), tab_point[tab_face[i].getS_one()-3].getP_two() );      /// Calcul de sqrt(yA - yC)²
-                tomp = tab_point->calc_length( tab_point[tab_face[i].getS_three()-3].getP_three(), tab_point[tab_face[i].getS_one()].getP_three() );    /// Calcul de sqrt(zA - zC)²
+                temp = tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_one(), tab_point[tab_face[i].getS_one()].getP_one() );      /// Calcul de sqrt(xA - xC)²
+                tamp = tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_two(), tab_point[tab_face[i].getS_one()].getP_two() );      /// Calcul de sqrt(yA - yC)²
+                tomp = tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_three(), tab_point[tab_face[i].getS_one()].getP_three() );    /// Calcul de sqrt(zA - zC)²
                 tab_face[i].setSeg_three(temp+tamp+tomp);   ///Longueur CA
 
-                //tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());
                 FULL_AREA+=tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());
             }
-            std::cout<<"FULL_AREA : "<<FULL_AREA<<std::endl;
+            std::cout<<"Aire totale de la forme : "<<FULL_AREA<<std::endl;
             ///Fermeture du fichier
             fichier.close();
         }
@@ -125,6 +130,8 @@ int main()
     ///Suppression des tableaux de Faces et de Points
     delete [] tab_face;
     delete [] tab_point;
+
+    std::cout << "Temps d'execution : " << (double)clock()/CLOCKS_PER_SEC << " s";
 
     return 0;
 }
