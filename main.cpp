@@ -16,9 +16,6 @@
 
 int main()
 {
-    ///Gérer le temps
-
-
     ///Création des instances.
     Face* tab_face;
     Point* tab_point;
@@ -131,7 +128,9 @@ int main()
     delete [] tab_face;
     delete [] tab_point;
 
-    std::cout << "Temps d'execution : " << (double)clock()/CLOCKS_PER_SEC << " s";
+    std::cout << "Temps d'execution : " << (double)clock()/CLOCKS_PER_SEC << " s"; ///Récupération du temps d'éxecution,
+                                                                                    ///le temps de la saisie du nom du fichier jusqu'à la pression de la touche
+                                                                                    ///"Entrée" n'est ici pas décompté
 
     return 0;
 }
