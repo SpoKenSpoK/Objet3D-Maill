@@ -75,7 +75,7 @@ int main()
 
             ///Fermeture du fichier
             fichier.close();
-
+            /*
             ///DEBUG:
             std::cout<<"Nombre de points: "<<point_count<<std::endl;
             std::cout<<"Nombre de face: "<<face_count<<std::endl;
@@ -91,6 +91,7 @@ int main()
             <<tab_point[tab_face[0].getS_one()].getP_two()<<" "
             <<tab_point[tab_face[0].getS_one()].getP_three()<<std::endl;
             ///
+            */
 
             ///Appel des fonctions membres
 
@@ -127,9 +128,9 @@ int main()
     delete [] tab_face;
     delete [] tab_point;
 
-    std::cout << "Temps d'execution : " << (double)clock()/CLOCKS_PER_SEC << " s"; ///Récupération du temps d'éxecution,
-                                                                                    ///le temps de la saisie du nom du fichier jusqu'à la pression de la touche
-                                                                                    ///"Entrée" n'est ici pas décompté
+    ///Récupération du temps d'éxecution
+    std::cout << "Temps d'execution : " << (double)clock()/CLOCKS_PER_SEC << " s";
+    ///le temps de la saisie du nom du fichier jusqu'à la pression de la touche "Entrée" n'est ici pas décompté
 
     return 0;
 }
