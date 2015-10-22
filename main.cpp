@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
+#include <math.h>
 #include "mesh.hpp"
 #include "face.hpp"
 #include "point.hpp"
@@ -97,21 +98,21 @@ int main()
             ///Racine carré de [ (xB - xA)² + (yB - yA)² + (zB - zA)² ]
             double FULL_AREA;
 
-            for(int i=0; i<length_face; ++i){
-                tab_face[i].setSeg_one( tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_one(), tab_point[tab_face[i].getS_two()].getP_one() )      /// Calcul de sqrt(xB - xA)²
+            for(int i=0; i<face_count; ++i){
+                tab_face[i].setSeg_one( sqrt( tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_one(), tab_point[tab_face[i].getS_two()].getP_one() )      /// Calcul de sqrt(xB - xA)²
                                     +   tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_two(), tab_point[tab_face[i].getS_two()].getP_two() )     /// Calcul de sqrt(yB - yA)²
                                     +   tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_three(), tab_point[tab_face[i].getS_two()].getP_three() )  /// Calcul de sqrt(zB - zA)²
-                );  ///Longueur AB
+                ));  ///Longueur AB
 
-                tab_face[i].setSeg_two( tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_one(), tab_point[tab_face[i].getS_three()].getP_one() )     /// Calcul de sqrt(xC - xB)²
-                                    +   tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_two(), tab_point[tab_face[i].getS_three()].getP_two() )     /// Calcul de sqrt(yC - yB)²
-                                    +   tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_three(), tab_point[tab_face[i].getS_three()].getP_three() )    /// Calcul de sqrt(zC - zB)²²
-                );  ///Longueur BC
+                tab_face[i].setSeg_two( sqrt( tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_one(), tab_point[tab_face[i].getS_three()].getP_one() )     /// Calcul de (xC - xB)²
+                                    +   tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_two(), tab_point[tab_face[i].getS_three()].getP_two() )     /// Calcul de (yC - yB)²
+                                    +   tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_three(), tab_point[tab_face[i].getS_three()].getP_three() )    /// Calcul de (zC - zB)²²
+                ) );  ///Longueur BC
 
-                tab_face[i].setSeg_three(   tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_one(), tab_point[tab_face[i].getS_one()].getP_one() )   /// Calcul de sqrt(xA - xC)²
+                tab_face[i].setSeg_three(  sqrt( tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_one(), tab_point[tab_face[i].getS_one()].getP_one() )   /// Calcul de sqrt(xA - xC)²
                                         +   tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_two(), tab_point[tab_face[i].getS_one()].getP_two() )   /// Calcul de sqrt(yA - yC)²
                                         +   tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_three(), tab_point[tab_face[i].getS_one()].getP_three() )  /// Calcul de sqrt(zA - zC)²
-                );  ///Longueur CA
+                ));  ///Longueur CA
 
                 FULL_AREA+=tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());                   /// Calcul de Aire(ABC)
             }
