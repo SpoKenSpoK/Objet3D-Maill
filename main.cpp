@@ -21,7 +21,7 @@ int main()
     Point* tab_point;
 
     std::string name_fichier;
-    bool ONDA_VITAL = true;
+    bool is_here = false;
 
     do{
         std::cout<<"Entrez le nom du fichier .off a tester: "<<std::endl;
@@ -33,7 +33,7 @@ int main()
         ///Test pour savoir si le fichier est bien présent
         if(fichier)
         {
-            ONDA_VITAL = false;
+            is_here = true;
             /// On se place au quatrième octet dans le fichier, ici après le "OFF"
             fichier.seekg(4, fichier.beg);
 
@@ -74,6 +74,9 @@ int main()
                 fichier >> s_value;
                 tab_face[i].setS_three(s_value);
             }
+
+            ///Fermeture du fichier
+            fichier.close();
 
             ///DEBUG:
             std::cout<<"Nombre de points: "<<length_point<<std::endl;
@@ -116,13 +119,11 @@ int main()
                 FULL_AREA+=tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());
             }
             std::cout<<"Aire totale de la forme : "<<FULL_AREA<<std::endl;
-            ///Fermeture du fichier
-            fichier.close();
         }
         else
             std::cerr<<"Impossible d'ouvrir le fichier "<<name_fichier<<" !"<<std::endl;
 
-    }while(ONDA_VITAL);
+    }while(!is_here);
 
     ///Suppression des tableaux de Faces et de Points
     delete [] tab_face;
