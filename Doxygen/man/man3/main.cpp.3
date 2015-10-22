@@ -1,0 +1,91 @@
+.TH "main.cpp" 3 "Thu Oct 22 2015" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+main.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'mesh\&.hpp'\fP
+.br
+\fC#include 'face\&.hpp'\fP
+.br
+\fC#include 'point\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main ()"
+Création des pointeurs pour les tableaux\&.
+.PP
+sers a effectuer le while tant que le fichier n'est pas renseigné
+.PP
+Ouverture du fichier en lecture
+.PP
+Test pour savoir si le fichier est bien présent
+.PP
+On se place au quatrième octet dans le fichier (en partant du début), ici après le 'OFF'
+.PP
+Lit le nombre de points présents dans le fichier
+.PP
+On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
+.PP
+Lecture des coordonnées de chaque sommet
+.PP
+Lecture des emplacements des coordonnées
+.PP
+Fermeture du fichier
+.PP
+Appel des fonctions membres
+.PP
+On calcul pour chaque face les segments Racine carré de [ (xB - xA)² + (yB - yA)² + (zB - zA)² ]
+.PP
+Calcul de (xB - xA)²
+.PP
+Calcul de (yB - yA)²
+.PP
+Calcul de (zB - zA)²
+.PP
+Longueur AB
+.PP
+Calcul de (xC - xB)²
+.PP
+Calcul de (yC - yB)²
+.PP
+Calcul de (zC - zB)²²
+.PP
+Longueur BC
+.PP
+Calcul de (xA - xC)²
+.PP
+Calcul de (yA - yC)²
+.PP
+Calcul de (zA - zC)²
+.PP
+Longueur CA
+.PP
+Calcul de Aire(ABC)
+.PP
+Suppression des tableaux de Faces et de Points
+.PP
+Récupération du temps d'éxecution
+.PP
+le temps de la saisie du nom du fichier jusqu'à la pression de la touche 'Entrée' n'est ici pas décompté 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.
