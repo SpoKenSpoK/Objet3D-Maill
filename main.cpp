@@ -34,7 +34,7 @@ int main()
         if(fichier)
         {
             is_here = true;
-            /// On se place au quatrième octet dans le fichier, ici après le "OFF"
+            /// On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
             fichier.seekg(4, fichier.beg);
 
             int length_point;
@@ -44,7 +44,7 @@ int main()
             tab_point = new Point[length_point];
             tab_face = new Face[length_face];
 
-            /// On vient se placer à la ligne évitant le '0'
+            /// On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
             fichier.seekg(3, fichier.cur);
 
             ///Lecture des coordonnées de chaque sommet
@@ -116,7 +116,7 @@ int main()
                 tomp = tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_three(), tab_point[tab_face[i].getS_one()].getP_three() );    /// Calcul de sqrt(zA - zC)²
                 tab_face[i].setSeg_three(temp+tamp+tomp);   ///Longueur CA
 
-                FULL_AREA+=tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());
+                FULL_AREA+=tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());                   /// Calcul de Aire(ABC)
             }
             std::cout<<"Aire totale de la forme : "<<FULL_AREA<<std::endl;
         }
