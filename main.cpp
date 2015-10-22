@@ -12,12 +12,12 @@
 
 int main()
 {
-    ///Création des instances.
+    ///Création des pointeurs pour les tableaux.
     Face* tab_face;
     Point* tab_point;
 
     std::string name_fichier;
-    bool is_here = false;
+    bool is_here = false; /// sers a effectuer le while tant que le fichier n'est pas renseigné
 
     do{
         std::cout<<"Entrez le nom du fichier .off a tester: "<<std::endl;
@@ -30,15 +30,16 @@ int main()
         if(fichier)
         {
             is_here = true;
+
             /// On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
             fichier.seekg(4, fichier.beg);
 
-            int length_point;
-            int length_face;
             ///Lit le nombre de points présents dans le fichier
-            fichier >> length_point >> length_face;
-            tab_point = new Point[length_point];
-            tab_face = new Face[length_face];
+            int point_count;
+            int face_count;
+            fichier >> point_count >> face_count;
+            tab_point = new Point[point_count];
+            tab_face = new Face[face_count];
 
             /// On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
             fichier.seekg(3, fichier.cur);
@@ -46,7 +47,7 @@ int main()
             ///Lecture des coordonnées de chaque sommet
             double p_value;
 
-            for(int i=0; i<length_point; ++i){
+            for(int i=0; i<point_count; ++i){
                 fichier >> p_value;
                 tab_point[i].setP_one(p_value);
 
@@ -59,7 +60,7 @@ int main()
 
             ///Lecture des emplacements des coordonnées
             int s_value;
-            for(int i=0; i<length_face; ++i){
+            for(int i=0; i<face_count; ++i){
                 fichier >> s_value;
                 fichier >> s_value;
                 tab_face[i].setS_one(s_value);
@@ -75,14 +76,14 @@ int main()
             fichier.close();
 
             ///DEBUG:
-            std::cout<<"Nombre de points: "<<length_point<<std::endl;
-            std::cout<<"Nombre de face: "<<length_face<<std::endl;
+            std::cout<<"Nombre de points: "<<point_count<<std::endl;
+            std::cout<<"Nombre de face: "<<face_count<<std::endl;
 
             std::cout<<"Coordonne x du premier point(sommet): "<<tab_point[0].getP_one()<<std::endl;
-            std::cout<<"Coordonne z du dernier point(sommet): "<<tab_point[length_point-1].getP_three()<<std::endl;
+            std::cout<<"Coordonne z du dernier point(sommet): "<<tab_point[point_count-1].getP_three()<<std::endl;
 
             std::cout<<"Ligne ou se situe les coordonnes du premier sommet de la premiere face: "<<tab_face[0].getS_one()<<std::endl;
-            std::cout<<"Ligne ou se situe les coordonnes du dernier sommet de la derniere face: "<<tab_face[length_face-1].getS_three()<<std::endl;
+            std::cout<<"Ligne ou se situe les coordonnes du dernier sommet de la derniere face: "<<tab_face[face_count-1].getS_three()<<std::endl;
 
             std::cout<<"Coordonnes x, y et z du premier sommet de la face numéro 1 (0 dans le tableau): "
             <<tab_point[tab_face[0].getS_one()].getP_one()<<" "
