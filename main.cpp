@@ -1,7 +1,7 @@
-/*  Projet de Système: "Calcul de surface d'un objet 3D maillé" *
-*   IUT d'Arles - Département Informatique - Année 2015/2016    *
-*   Réalisé par Guillaume BOEHM & Thibault HECKEL               *
-*               - Programmation séquentielle -                 */
+/**  Projet de Système: "Calcul de surface d'un objet 3D maillé" *
+*   IUT d'Arles - Département Informatique - Année 2015/2016     *
+*   Réalisé par Guillaume BOEHM & Thibault HECKEL                *
+*               - Programmation séquentielle -                  */
 
 #include <iostream>
 #include <fstream>
@@ -14,11 +14,11 @@
 int main()
 {
     ///Création des pointeurs pour les tableaux.
-    Face* tab_face;
+    Face* tab_face; /**< Création d'un tableau de face*/
     Point* tab_point;
 
     std::string name_fichier;
-    bool is_here = false; /// sers a effectuer le while tant que le fichier n'est pas renseigné
+    bool is_here = false; /// sert a effectuer le while tant que le fichier n'est pas renseigné
 
     do{
         std::cout<<"Entrez le nom du fichier .off a tester: "<<std::endl;
@@ -36,11 +36,13 @@ int main()
             fichier.seekg(4, fichier.beg);
 
             ///Lit le nombre de points présents dans le fichier
-            int point_count;
-            int face_count;
+            long unsigned point_count, face_count;
             fichier >> point_count >> face_count;
-            tab_point = new Point[point_count];
-            tab_face = new Face[face_count];
+
+            Mesh mesh(point_count, face_count);
+
+            tab_point = new Point[mesh.getNumberof_p()];
+            tab_face = new Face[mesh.getNumberof_f()];
 
             /// On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
             fichier.seekg(3, fichier.cur);
@@ -48,7 +50,7 @@ int main()
             ///Lecture des coordonnées de chaque sommet
             double p_value;
 
-            for(int i=0; i<point_count; ++i){
+            for(unsigned int i=0; i<mesh.getNumberof_p(); ++i){
                 fichier >> p_value;
                 tab_point[i].setP_one(p_value);
 
@@ -61,7 +63,7 @@ int main()
 
             ///Lecture des emplacements des coordonnées
             int s_value;
-            for(int i=0; i<face_count; ++i){
+            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                 fichier >> s_value;
                 fichier >> s_value;
                 tab_face[i].setS_one(s_value);
@@ -75,23 +77,6 @@ int main()
 
             ///Fermeture du fichier
             fichier.close();
-            /*
-            ///DEBUG:
-            std::cout<<"Nombre de points: "<<point_count<<std::endl;
-            std::cout<<"Nombre de face: "<<face_count<<std::endl;
-
-            std::cout<<"Coordonne x du premier point(sommet): "<<tab_point[0].getP_one()<<std::endl;
-            std::cout<<"Coordonne z du dernier point(sommet): "<<tab_point[point_count-1].getP_three()<<std::endl;
-
-            std::cout<<"Ligne ou se situe les coordonnes du premier sommet de la premiere face: "<<tab_face[0].getS_one()<<std::endl;
-            std::cout<<"Ligne ou se situe les coordonnes du dernier sommet de la derniere face: "<<tab_face[face_count-1].getS_three()<<std::endl;
-
-            std::cout<<"Coordonnes x, y et z du premier sommet de la face numéro 1 (0 dans le tableau): "
-            <<tab_point[tab_face[0].getS_one()].getP_one()<<" "
-            <<tab_point[tab_face[0].getS_one()].getP_two()<<" "
-            <<tab_point[tab_face[0].getS_one()].getP_three()<<std::endl;
-            ///
-            */
 
             ///Appel des fonctions membres
 
@@ -99,7 +84,7 @@ int main()
             ///Racine carré de [ (xB - xA)² + (yB - yA)² + (zB - zA)² ]
             double FULL_AREA;
 
-            for(int i=0; i<face_count; ++i){
+            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                 tab_face[i].setSeg_one( sqrt(   tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_one(), tab_point[tab_face[i].getS_two()].getP_one() )      /// Calcul de (xB - xA)²
                                             +   tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_two(), tab_point[tab_face[i].getS_two()].getP_two() )     /// Calcul de (yB - yA)²
                                             +   tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_three(), tab_point[tab_face[i].getS_two()].getP_three() )  /// Calcul de (zB - zA)²

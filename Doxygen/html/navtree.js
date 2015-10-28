@@ -1,21 +1,17 @@
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
-    [ "Objet3D-Maill-", "md__r_e_a_d_m_e.html", null ],
+  [ "Calcul de l'air d'un objet 3D Maillé", "index.html", [
+    [ "Objet3D-Maill-", "md__home_spoken__documents__system__objet3_d__r_e_a_d_m_e.html", null ],
     [ "Classes", null, [
-      [ "Class List", "annotated.html", "annotated" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+      [ "Liste des classes", "annotated.html", "annotated" ],
+      [ "Index des classes", "classes.html", null ],
+      [ "Membres de classe", "functions.html", [
+        [ "Tout", "functions.html", null ],
+        [ "Fonctions", "functions_func.html", null ]
       ] ]
     ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
-      ] ]
+    [ "Fichiers", null, [
+      [ "Liste des fichiers", "files.html", "files" ]
     ] ]
   ] ]
 ];
@@ -25,8 +21,8 @@ var NAVTREEINDEX =
 "annotated.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
+var SYNCOFFMSG = 'cliquez pour activer la synchronisation du panel';
 var SYNCONMSG = 'click to disable panel synchronisation';
 var SYNCOFFMSG = 'click to enable panel synchronisation';
 var navTreeSubIndices = new Array();
