@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Calcul de l&#39;air d&#39;un objet 3D Maillé:  Fichier source de /home/spoken/Documents/System/Objet3D/face.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Calcul de l&#39;air d&#39;un objet 3D Maillé
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('face_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">face.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="face_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="face_8hpp.html">face.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_face.html#afdb634bc2d5287ba0d62e46b57e9dc2e">    9</a></span>&#160;<a class="code" href="class_face.html#afdb634bc2d5287ba0d62e46b57e9dc2e">Face::Face</a>() {}</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_face.html#a182c8c9ba652d46b01fdf6816cd65590">   10</a></span>&#160;<a class="code" href="class_face.html#a182c8c9ba652d46b01fdf6816cd65590">Face::~Face</a>() {}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_face.html#a6a71144fe15d6edfab4cec3560bdb2aa">   13</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <a class="code" href="class_face.html#a6a71144fe15d6edfab4cec3560bdb2aa">Face::getS_one</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> summit_one; }</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_face.html#a5b35ec67e75df789092301fab06a951b">   14</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <a class="code" href="class_face.html#a5b35ec67e75df789092301fab06a951b">Face::getS_two</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> summit_two; }</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_face.html#adddc2b56135f76b623a4ffa9b7c0953f">   15</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <a class="code" href="class_face.html#adddc2b56135f76b623a4ffa9b7c0953f">Face::getS_three</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> summit_three; }</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_face.html#a906d16f2f1c9adbe881ae46ee7f3e3e9">   17</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_face.html#a906d16f2f1c9adbe881ae46ee7f3e3e9">Face::getSeg_one</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> segment_one; }</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_face.html#a50a58b3b43a78239defee57e7202968e">   18</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_face.html#a50a58b3b43a78239defee57e7202968e">Face::getSeg_two</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> segment_two; }</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_face.html#a19bb64415987240d90a1ec86d2432f05">   19</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_face.html#a19bb64415987240d90a1ec86d2432f05">Face::getSeg_three</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> segment_three; }</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">   21</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">Face::getPerimeter</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> perimeter; }</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_face.html#a58beb8ce1b9f8154379db998a02ffa3d">   23</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_face.html#a58beb8ce1b9f8154379db998a02ffa3d">Face::getArea</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> area; }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_face.html#acb89a29860fd07bb415a52ec9a2fe695">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_face.html#acb89a29860fd07bb415a52ec9a2fe695">Face::setS_one</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>&amp; _one) { summit_one = _one; }</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_face.html#a8cd35d467fbfc7d88f415884221b38d4">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_face.html#a8cd35d467fbfc7d88f415884221b38d4">Face::setS_two</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>&amp; _two) { summit_two = _two; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_face.html#ac362a97171117e0ab8f7b0b1506569c2">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_face.html#ac362a97171117e0ab8f7b0b1506569c2">Face::setS_three</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>&amp; _three) { summit_three = _three; }</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_face.html#a6c888b3f4933cc7c9b5ab80c50be90c9">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_face.html#a6c888b3f4933cc7c9b5ab80c50be90c9">Face::setSeg_one</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; s_one) { segment_one = s_one; }</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_face.html#a92f7231d63697ec23256996bd0616914">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_face.html#a92f7231d63697ec23256996bd0616914">Face::setSeg_two</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; s_two) { segment_two = s_two; }</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_face.html#abf8ca26e677a7586dfad0f98354d6036">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_face.html#abf8ca26e677a7586dfad0f98354d6036">Face::setSeg_three</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; s_three) { segment_three = s_three; }</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_face.html#a2267f8f5421c51567e3ca480fb82f136">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_face.html#a2267f8f5421c51567e3ca480fb82f136">Face::setPerimeter</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; _perimeter) { perimeter = _perimeter; }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_face.html#a4755a95a7ae6cbc85c423cb6ce5b28df">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_face.html#a4755a95a7ae6cbc85c423cb6ce5b28df">Face::setArea</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; _area) { area = _area; }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_face.html#a8cf54d48850c799b9a86b7bcf9942c19">   39</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_face.html#a8cf54d48850c799b9a86b7bcf9942c19">Face::calc_area</a>(<span class="keywordtype">double</span> AB, <span class="keywordtype">double</span> BC, <span class="keywordtype">double</span> CA){ </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    this-&gt;<a class="code" href="class_face.html#a2267f8f5421c51567e3ca480fb82f136">setPerimeter</a>(( AB + BC + CA )/2);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> sqrt(this-&gt;<a class="code" href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">getPerimeter</a>()*(this-&gt;<a class="code" href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">getPerimeter</a>()-AB)*(this-&gt;<a class="code" href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">getPerimeter</a>()-BC)*(this-&gt;<a class="code" href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">getPerimeter</a>()-CA));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="ttc" id="class_face_html_a4755a95a7ae6cbc85c423cb6ce5b28df"><div class="ttname"><a href="class_face.html#a4755a95a7ae6cbc85c423cb6ce5b28df">Face::setArea</a></div><div class="ttdeci">void setArea(const double &amp;)</div><div class="ttdoc">Setteur aire. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00036">face.cpp:36</a></div></div>
+<div class="ttc" id="class_face_html_acb89a29860fd07bb415a52ec9a2fe695"><div class="ttname"><a href="class_face.html#acb89a29860fd07bb415a52ec9a2fe695">Face::setS_one</a></div><div class="ttdeci">void setS_one(const long unsigned &amp;)</div><div class="ttdoc">Setteur sommets. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00026">face.cpp:26</a></div></div>
+<div class="ttc" id="class_face_html_afdb634bc2d5287ba0d62e46b57e9dc2e"><div class="ttname"><a href="class_face.html#afdb634bc2d5287ba0d62e46b57e9dc2e">Face::Face</a></div><div class="ttdeci">Face()</div><div class="ttdoc">Constructeur &amp; Destructeur. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00009">face.cpp:9</a></div></div>
+<div class="ttc" id="face_8hpp_html"><div class="ttname"><a href="face_8hpp.html">face.hpp</a></div></div>
+<div class="ttc" id="class_face_html_a50a58b3b43a78239defee57e7202968e"><div class="ttname"><a href="class_face.html#a50a58b3b43a78239defee57e7202968e">Face::getSeg_two</a></div><div class="ttdeci">double getSeg_two() const </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00018">face.cpp:18</a></div></div>
+<div class="ttc" id="class_face_html_a92f7231d63697ec23256996bd0616914"><div class="ttname"><a href="class_face.html#a92f7231d63697ec23256996bd0616914">Face::setSeg_two</a></div><div class="ttdeci">void setSeg_two(const double &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00031">face.cpp:31</a></div></div>
+<div class="ttc" id="class_face_html_a906d16f2f1c9adbe881ae46ee7f3e3e9"><div class="ttname"><a href="class_face.html#a906d16f2f1c9adbe881ae46ee7f3e3e9">Face::getSeg_one</a></div><div class="ttdeci">double getSeg_one() const </div><div class="ttdoc">Getters segments. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00017">face.cpp:17</a></div></div>
+<div class="ttc" id="class_face_html_a58beb8ce1b9f8154379db998a02ffa3d"><div class="ttname"><a href="class_face.html#a58beb8ce1b9f8154379db998a02ffa3d">Face::getArea</a></div><div class="ttdeci">double getArea() const </div><div class="ttdoc">Getters aire. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00023">face.cpp:23</a></div></div>
+<div class="ttc" id="class_face_html_ac362a97171117e0ab8f7b0b1506569c2"><div class="ttname"><a href="class_face.html#ac362a97171117e0ab8f7b0b1506569c2">Face::setS_three</a></div><div class="ttdeci">void setS_three(const long unsigned &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00028">face.cpp:28</a></div></div>
+<div class="ttc" id="class_face_html_a8cf54d48850c799b9a86b7bcf9942c19"><div class="ttname"><a href="class_face.html#a8cf54d48850c799b9a86b7bcf9942c19">Face::calc_area</a></div><div class="ttdeci">double calc_area(double, double, double)</div><div class="ttdoc">Calcul de l&#39;aire du triangle en fonction des calculs de distance entre les points (classe Point) ...</div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00039">face.cpp:39</a></div></div>
+<div class="ttc" id="class_face_html_acd3e36c17c14b6617d92b0b9ecb2b6fc"><div class="ttname"><a href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">Face::getPerimeter</a></div><div class="ttdeci">double getPerimeter() const </div><div class="ttdoc">Getters perimetre. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00021">face.cpp:21</a></div></div>
+<div class="ttc" id="class_face_html_adddc2b56135f76b623a4ffa9b7c0953f"><div class="ttname"><a href="class_face.html#adddc2b56135f76b623a4ffa9b7c0953f">Face::getS_three</a></div><div class="ttdeci">long unsigned getS_three() const </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00015">face.cpp:15</a></div></div>
+<div class="ttc" id="class_face_html_abf8ca26e677a7586dfad0f98354d6036"><div class="ttname"><a href="class_face.html#abf8ca26e677a7586dfad0f98354d6036">Face::setSeg_three</a></div><div class="ttdeci">void setSeg_three(const double &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00032">face.cpp:32</a></div></div>
+<div class="ttc" id="class_face_html_a6c888b3f4933cc7c9b5ab80c50be90c9"><div class="ttname"><a href="class_face.html#a6c888b3f4933cc7c9b5ab80c50be90c9">Face::setSeg_one</a></div><div class="ttdeci">void setSeg_one(const double &amp;)</div><div class="ttdoc">Setteur segments. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00030">face.cpp:30</a></div></div>
+<div class="ttc" id="class_face_html_a182c8c9ba652d46b01fdf6816cd65590"><div class="ttname"><a href="class_face.html#a182c8c9ba652d46b01fdf6816cd65590">Face::~Face</a></div><div class="ttdeci">~Face()</div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00010">face.cpp:10</a></div></div>
+<div class="ttc" id="class_face_html_a8cd35d467fbfc7d88f415884221b38d4"><div class="ttname"><a href="class_face.html#a8cd35d467fbfc7d88f415884221b38d4">Face::setS_two</a></div><div class="ttdeci">void setS_two(const long unsigned &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00027">face.cpp:27</a></div></div>
+<div class="ttc" id="class_face_html_a2267f8f5421c51567e3ca480fb82f136"><div class="ttname"><a href="class_face.html#a2267f8f5421c51567e3ca480fb82f136">Face::setPerimeter</a></div><div class="ttdeci">void setPerimeter(const double &amp;)</div><div class="ttdoc">Setteur perimetre. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00034">face.cpp:34</a></div></div>
+<div class="ttc" id="class_face_html_a19bb64415987240d90a1ec86d2432f05"><div class="ttname"><a href="class_face.html#a19bb64415987240d90a1ec86d2432f05">Face::getSeg_three</a></div><div class="ttdeci">double getSeg_three() const </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00019">face.cpp:19</a></div></div>
+<div class="ttc" id="class_face_html_a5b35ec67e75df789092301fab06a951b"><div class="ttname"><a href="class_face.html#a5b35ec67e75df789092301fab06a951b">Face::getS_two</a></div><div class="ttdeci">long unsigned getS_two() const </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00014">face.cpp:14</a></div></div>
+<div class="ttc" id="class_face_html_a6a71144fe15d6edfab4cec3560bdb2aa"><div class="ttname"><a href="class_face.html#a6a71144fe15d6edfab4cec3560bdb2aa">Face::getS_one</a></div><div class="ttdeci">long unsigned getS_one() const </div><div class="ttdoc">Getter &amp; Setter. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00013">face.cpp:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_14964cf464c5923c8b65fd6c109e9613.html">System</a></li><li class="navelem"><a class="el" href="dir_d504f2360395835c3e499be94580043d.html">Objet3D</a></li><li class="navelem"><a class="el" href="face_8cpp.html">face.cpp</a></li>
+    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:28:21 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

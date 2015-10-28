@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('class_mesh.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -135,6 +135,8 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_mesh.html">Mesh</a> représente l'objet maillé 3D. Ce dernier contient un certain nombre de points ainsi que de faces </p>
+
+<p>Définition à la ligne <a class="el" href="mesh_8hpp_source.html#l00006">6</a> du fichier <a class="el" href="mesh_8hpp_source.html">mesh.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="ad747dad3a49288d7d452b804be0f6fb5"></a>
 <div class="memitem">
@@ -163,6 +165,8 @@ Fonctions membres publiques</h2></td></tr>
 <p>Constructeur. </p>
 <p>Constructeur prennant en paramètre le nombre de points et de faces présents dans l'objet maillé. </p>
 
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00004">4</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5efe4da1a4c0971cfb037bd70304c303"></a>
@@ -180,6 +184,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Destructeur. </p>
 <p>Destructeur de l'objet <a class="el" href="class_mesh.html">Mesh</a> </p>
+
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00008">8</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
 </div>
 </div>
@@ -200,6 +206,8 @@ Fonctions membres publiques</h2></td></tr>
 <p>Getter du nombre de face. </p>
 <p>Retourne la valeur de l'attribut "numberof_face" qui est un entier long </p>
 
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00014">14</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a60382f3b0a69d639003c5ea28c352459"></a>
@@ -217,6 +225,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Getter du nombre de point. </p>
 <p>Retourne la valeur de l'attribut "numberof_point" qui est un entier long </p>
+
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00011">11</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
 </div>
 </div>
@@ -237,6 +247,8 @@ Fonctions membres publiques</h2></td></tr>
 <p>Setter du nombre de face. </p>
 <p>Modifie la valeur de l'attribut "numberof_face" en passant en paramètre un entier long constant par référence </p>
 
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9be8784f047b1364f14f2a21726fd082"></a>
@@ -256,11 +268,13 @@ Fonctions membres publiques</h2></td></tr>
 <p>Setter du nombre de point. </p>
 <p>Modifie la valeur de l'attribut "numberof_point" en passant en paramètre un entier long constant par référence </p>
 
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00012">12</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>/home/spoken/Documents/System/Objet3D/<a class="el" href="mesh_8hpp_source.html">mesh.hpp</a></li>
-<li>/home/spoken/Documents/System/Objet3D/mesh.cpp</li>
+<li>/home/spoken/Documents/System/Objet3D/<a class="el" href="mesh_8cpp_source.html">mesh.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -268,7 +282,7 @@ Fonctions membres publiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_mesh.html">Mesh</a></li>
-    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:24:43 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:28:21 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

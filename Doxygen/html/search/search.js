@@ -7,18 +7,20 @@
 
 var indexSectionsWithContent =
 {
-  0: "cfgmops~",
+  0: "cfgmoprs~",
   1: "fmp",
-  2: "cfgmps~",
-  3: "o"
+  2: "fmpr",
+  3: "cfgmps~",
+  4: "o"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions",
-  3: "pages"
+  2: "files",
+  3: "functions",
+  4: "pages"
 };
 
 function convertToId(search)

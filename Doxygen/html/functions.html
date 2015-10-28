@@ -78,6 +78,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="functions_func.html"><span>Fonctions</span></a></li>
     </ul>
   </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_f"><span>f</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li class="current"><a href="#index_~"><span>~</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -98,7 +109,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,16 +119,26 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </div>
 
 <div class="contents">
-<div class="textblock">Liste de tous les membres de classe documentés avec des liens vers la documentation de classe de chaque membre :</div><ul>
+<div class="textblock">Liste de tous les membres de classe avec des liens vers les classes auxquelles ils appartiennent :</div>
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>calc_area()
 : <a class="el" href="class_face.html#a8cf54d48850c799b9a86b7bcf9942c19">Face</a>
 </li>
 <li>calc_length()
 : <a class="el" href="class_point.html#a5cb059b4e16aca7ca375076971d90521">Point</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>Face()
 : <a class="el" href="class_face.html#afdb634bc2d5287ba0d62e46b57e9dc2e">Face</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>getArea()
 : <a class="el" href="class_face.html#a58beb8ce1b9f8154379db998a02ffa3d">Face</a>
 </li>
@@ -130,21 +151,51 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getP_one()
 : <a class="el" href="class_point.html#a211f8dee098122a2f1c326ba42652ee2">Point</a>
 </li>
+<li>getP_three()
+: <a class="el" href="class_point.html#adf0f89d9beca24315b45d96786896a56">Point</a>
+</li>
+<li>getP_two()
+: <a class="el" href="class_point.html#afd9ee8dca2913903fd6a1a95d743afaa">Point</a>
+</li>
 <li>getPerimeter()
 : <a class="el" href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">Face</a>
 </li>
 <li>getS_one()
 : <a class="el" href="class_face.html#a6a71144fe15d6edfab4cec3560bdb2aa">Face</a>
 </li>
+<li>getS_three()
+: <a class="el" href="class_face.html#adddc2b56135f76b623a4ffa9b7c0953f">Face</a>
+</li>
+<li>getS_two()
+: <a class="el" href="class_face.html#a5b35ec67e75df789092301fab06a951b">Face</a>
+</li>
 <li>getSeg_one()
 : <a class="el" href="class_face.html#a906d16f2f1c9adbe881ae46ee7f3e3e9">Face</a>
 </li>
+<li>getSeg_three()
+: <a class="el" href="class_face.html#a19bb64415987240d90a1ec86d2432f05">Face</a>
+</li>
+<li>getSeg_two()
+: <a class="el" href="class_face.html#a50a58b3b43a78239defee57e7202968e">Face</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>Mesh()
 : <a class="el" href="class_mesh.html#ad747dad3a49288d7d452b804be0f6fb5">Mesh</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>Point()
 : <a class="el" href="class_point.html#ad92f2337b839a94ce97dcdb439b4325a">Point</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>setArea()
 : <a class="el" href="class_face.html#a4755a95a7ae6cbc85c423cb6ce5b28df">Face</a>
 </li>
@@ -154,17 +205,48 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>setNumberof_p()
 : <a class="el" href="class_mesh.html#a9be8784f047b1364f14f2a21726fd082">Mesh</a>
 </li>
+<li>setP_one()
+: <a class="el" href="class_point.html#aea96dfedc04450f20928929fc1357ba6">Point</a>
+</li>
+<li>setP_three()
+: <a class="el" href="class_point.html#aa46638c8c613fa6192272d4a4168f503">Point</a>
+</li>
+<li>setP_two()
+: <a class="el" href="class_point.html#a282784b2c6669e5270b9ec447f6e9dc1">Point</a>
+</li>
 <li>setPerimeter()
 : <a class="el" href="class_face.html#a2267f8f5421c51567e3ca480fb82f136">Face</a>
 </li>
 <li>setS_one()
 : <a class="el" href="class_face.html#acb89a29860fd07bb415a52ec9a2fe695">Face</a>
 </li>
+<li>setS_three()
+: <a class="el" href="class_face.html#ac362a97171117e0ab8f7b0b1506569c2">Face</a>
+</li>
+<li>setS_two()
+: <a class="el" href="class_face.html#a8cd35d467fbfc7d88f415884221b38d4">Face</a>
+</li>
 <li>setSeg_one()
 : <a class="el" href="class_face.html#a6c888b3f4933cc7c9b5ab80c50be90c9">Face</a>
 </li>
+<li>setSeg_three()
+: <a class="el" href="class_face.html#abf8ca26e677a7586dfad0f98354d6036">Face</a>
+</li>
+<li>setSeg_two()
+: <a class="el" href="class_face.html#a92f7231d63697ec23256996bd0616914">Face</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_~"></a>- ~ -</h3><ul>
+<li>~Face()
+: <a class="el" href="class_face.html#a182c8c9ba652d46b01fdf6816cd65590">Face</a>
+</li>
 <li>~Mesh()
 : <a class="el" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh</a>
+</li>
+<li>~Point()
+: <a class="el" href="class_point.html#a395fa04b4ec126b66fc053f829a30cc1">Point</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -172,7 +254,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:24:43 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:28:21 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
