@@ -20,6 +20,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -91,7 +97,7 @@ $(document).ready(function(){initNavTree('mesh_8hpp_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,43 +114,45 @@ $(document).ready(function(){initNavTree('mesh_8hpp_source.html','');});
 <a href="mesh_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MESH_HPP</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MESH_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_mesh.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh.html">Mesh</a>{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numberof_point;   </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numberof_face;    </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_mesh.html#ad747dad3a49288d7d452b804be0f6fb5">Mesh</a>(<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>, <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_mesh.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh.html">Mesh</a>{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_mesh.html#a26a55fa0390c41fda68fb97bf89b06be">    9</a></span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#a26a55fa0390c41fda68fb97bf89b06be">numberof_point</a>;   </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_mesh.html#a82d6983d05490dd70b4daef4e9434d3b">   10</a></span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#a82d6983d05490dd70b4daef4e9434d3b">numberof_face</a>;    </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_mesh.html#af80c0ce0e47b3686348519345cd6f81c">Mesh</a>(<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> p, <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> f);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <a class="code" href="class_mesh.html#a60382f3b0a69d639003c5ea28c352459">getNumberof_p</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a9be8784f047b1364f14f2a21726fd082">setNumberof_p</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>&amp;);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <a class="code" href="class_mesh.html#a6d39761b9be2bf04be1b242da25a8dce">getNumberof_f</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <a class="code" href="class_mesh.html#a60382f3b0a69d639003c5ea28c352459">getNumberof_p</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <a class="code" href="class_mesh.html#a6d39761b9be2bf04be1b242da25a8dce">getNumberof_f</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a33338e9861e4dbca2c2479ef5394f433">setNumberof_f</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>&amp;);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a04995a209c370f68ec8fd87378030d5f">setNumberof_p</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>&amp; p);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif // MESH_HPP</span></div>
-<div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00006">mesh.hpp:6</a></div></div>
-<div class="ttc" id="class_mesh_html_a6d39761b9be2bf04be1b242da25a8dce"><div class="ttname"><a href="class_mesh.html#a6d39761b9be2bf04be1b242da25a8dce">Mesh::getNumberof_f</a></div><div class="ttdeci">long unsigned getNumberof_f() const </div><div class="ttdoc">Getter du nombre de face. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00014">mesh.cpp:14</a></div></div>
-<div class="ttc" id="class_mesh_html_a9be8784f047b1364f14f2a21726fd082"><div class="ttname"><a href="class_mesh.html#a9be8784f047b1364f14f2a21726fd082">Mesh::setNumberof_p</a></div><div class="ttdeci">void setNumberof_p(const long unsigned &amp;)</div><div class="ttdoc">Setter du nombre de point. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00012">mesh.cpp:12</a></div></div>
-<div class="ttc" id="class_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00008">mesh.cpp:8</a></div></div>
-<div class="ttc" id="class_mesh_html_a60382f3b0a69d639003c5ea28c352459"><div class="ttname"><a href="class_mesh.html#a60382f3b0a69d639003c5ea28c352459">Mesh::getNumberof_p</a></div><div class="ttdeci">long unsigned getNumberof_p() const </div><div class="ttdoc">Getter du nombre de point. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00011">mesh.cpp:11</a></div></div>
-<div class="ttc" id="class_mesh_html_ad747dad3a49288d7d452b804be0f6fb5"><div class="ttname"><a href="class_mesh.html#ad747dad3a49288d7d452b804be0f6fb5">Mesh::Mesh</a></div><div class="ttdeci">Mesh(long unsigned, long unsigned)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00004">mesh.cpp:4</a></div></div>
-<div class="ttc" id="class_mesh_html_a33338e9861e4dbca2c2479ef5394f433"><div class="ttname"><a href="class_mesh.html#a33338e9861e4dbca2c2479ef5394f433">Mesh::setNumberof_f</a></div><div class="ttdeci">void setNumberof_f(const long unsigned &amp;)</div><div class="ttdoc">Setter du nombre de face. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00015">mesh.cpp:15</a></div></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a1369e0b173511258592fcb60cd15982b">setNumberof_f</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>&amp; f);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif // MESH_HPP</span></div>
+<div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00007">mesh.hpp:7</a></div></div>
+<div class="ttc" id="class_mesh_html_a6d39761b9be2bf04be1b242da25a8dce"><div class="ttname"><a href="class_mesh.html#a6d39761b9be2bf04be1b242da25a8dce">Mesh::getNumberof_f</a></div><div class="ttdeci">long unsigned getNumberof_f() const </div><div class="ttdoc">Accesseur du nombre de faces. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00013">mesh.cpp:13</a></div></div>
+<div class="ttc" id="class_mesh_html_af80c0ce0e47b3686348519345cd6f81c"><div class="ttname"><a href="class_mesh.html#af80c0ce0e47b3686348519345cd6f81c">Mesh::Mesh</a></div><div class="ttdeci">Mesh(long unsigned p, long unsigned f)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00004">mesh.cpp:4</a></div></div>
+<div class="ttc" id="class_mesh_html_a82d6983d05490dd70b4daef4e9434d3b"><div class="ttname"><a href="class_mesh.html#a82d6983d05490dd70b4daef4e9434d3b">Mesh::numberof_face</a></div><div class="ttdeci">long unsigned int numberof_face</div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00010">mesh.hpp:10</a></div></div>
+<div class="ttc" id="class_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00009">mesh.cpp:9</a></div></div>
+<div class="ttc" id="class_mesh_html_a60382f3b0a69d639003c5ea28c352459"><div class="ttname"><a href="class_mesh.html#a60382f3b0a69d639003c5ea28c352459">Mesh::getNumberof_p</a></div><div class="ttdeci">long unsigned getNumberof_p() const </div><div class="ttdoc">Accesseur du nombre de points. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00012">mesh.cpp:12</a></div></div>
+<div class="ttc" id="class_mesh_html_a1369e0b173511258592fcb60cd15982b"><div class="ttname"><a href="class_mesh.html#a1369e0b173511258592fcb60cd15982b">Mesh::setNumberof_f</a></div><div class="ttdeci">void setNumberof_f(const long unsigned &amp;f)</div><div class="ttdoc">Mutateur du nombre de faces. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00017">mesh.cpp:17</a></div></div>
+<div class="ttc" id="class_mesh_html_a26a55fa0390c41fda68fb97bf89b06be"><div class="ttname"><a href="class_mesh.html#a26a55fa0390c41fda68fb97bf89b06be">Mesh::numberof_point</a></div><div class="ttdeci">long unsigned int numberof_point</div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00009">mesh.hpp:9</a></div></div>
+<div class="ttc" id="class_mesh_html_a04995a209c370f68ec8fd87378030d5f"><div class="ttname"><a href="class_mesh.html#a04995a209c370f68ec8fd87378030d5f">Mesh::setNumberof_p</a></div><div class="ttdeci">void setNumberof_p(const long unsigned &amp;p)</div><div class="ttdoc">Mutateur du nombre de points. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00016">mesh.cpp:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_14964cf464c5923c8b65fd6c109e9613.html">System</a></li><li class="navelem"><a class="el" href="dir_d504f2360395835c3e499be94580043d.html">Objet3D</a></li><li class="navelem"><a class="el" href="mesh_8hpp.html">mesh.hpp</a></li>
-    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:28:21 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mercredi 28 Octobre 2015 16:21:19 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

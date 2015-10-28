@@ -20,6 +20,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -92,7 +98,7 @@ $(document).ready(function(){initNavTree('class_mesh.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,6 +110,7 @@ $(document).ready(function(){initNavTree('class_mesh.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
 <a href="class_mesh-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe Mesh</div>  </div>
@@ -114,31 +121,38 @@ $(document).ready(function(){initNavTree('class_mesh.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ad747dad3a49288d7d452b804be0f6fb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#ad747dad3a49288d7d452b804be0f6fb5">Mesh</a> (long unsigned, long unsigned)</td></tr>
-<tr class="memdesc:ad747dad3a49288d7d452b804be0f6fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#ad747dad3a49288d7d452b804be0f6fb5">Plus de détails...</a><br/></td></tr>
-<tr class="separator:ad747dad3a49288d7d452b804be0f6fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80c0ce0e47b3686348519345cd6f81c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#af80c0ce0e47b3686348519345cd6f81c">Mesh</a> (long unsigned p, long unsigned f)</td></tr>
+<tr class="memdesc:af80c0ce0e47b3686348519345cd6f81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#af80c0ce0e47b3686348519345cd6f81c">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af80c0ce0e47b3686348519345cd6f81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5efe4da1a4c0971cfb037bd70304c303"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a> ()</td></tr>
 <tr class="memdesc:a5efe4da1a4c0971cfb037bd70304c303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a5efe4da1a4c0971cfb037bd70304c303">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a5efe4da1a4c0971cfb037bd70304c303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60382f3b0a69d639003c5ea28c352459"><td class="memItemLeft" align="right" valign="top">long unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a60382f3b0a69d639003c5ea28c352459">getNumberof_p</a> () const </td></tr>
-<tr class="memdesc:a60382f3b0a69d639003c5ea28c352459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter du nombre de point.  <a href="#a60382f3b0a69d639003c5ea28c352459">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a60382f3b0a69d639003c5ea28c352459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du nombre de points.  <a href="#a60382f3b0a69d639003c5ea28c352459">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a60382f3b0a69d639003c5ea28c352459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9be8784f047b1364f14f2a21726fd082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a9be8784f047b1364f14f2a21726fd082">setNumberof_p</a> (const long unsigned &amp;)</td></tr>
-<tr class="memdesc:a9be8784f047b1364f14f2a21726fd082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter du nombre de point.  <a href="#a9be8784f047b1364f14f2a21726fd082">Plus de détails...</a><br/></td></tr>
-<tr class="separator:a9be8784f047b1364f14f2a21726fd082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d39761b9be2bf04be1b242da25a8dce"><td class="memItemLeft" align="right" valign="top">long unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a6d39761b9be2bf04be1b242da25a8dce">getNumberof_f</a> () const </td></tr>
-<tr class="memdesc:a6d39761b9be2bf04be1b242da25a8dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter du nombre de face.  <a href="#a6d39761b9be2bf04be1b242da25a8dce">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a6d39761b9be2bf04be1b242da25a8dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du nombre de faces.  <a href="#a6d39761b9be2bf04be1b242da25a8dce">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a6d39761b9be2bf04be1b242da25a8dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33338e9861e4dbca2c2479ef5394f433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a33338e9861e4dbca2c2479ef5394f433">setNumberof_f</a> (const long unsigned &amp;)</td></tr>
-<tr class="memdesc:a33338e9861e4dbca2c2479ef5394f433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter du nombre de face.  <a href="#a33338e9861e4dbca2c2479ef5394f433">Plus de détails...</a><br/></td></tr>
-<tr class="separator:a33338e9861e4dbca2c2479ef5394f433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04995a209c370f68ec8fd87378030d5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a04995a209c370f68ec8fd87378030d5f">setNumberof_p</a> (const long unsigned &amp;p)</td></tr>
+<tr class="memdesc:a04995a209c370f68ec8fd87378030d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du nombre de points.  <a href="#a04995a209c370f68ec8fd87378030d5f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a04995a209c370f68ec8fd87378030d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1369e0b173511258592fcb60cd15982b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a1369e0b173511258592fcb60cd15982b">setNumberof_f</a> (const long unsigned &amp;f)</td></tr>
+<tr class="memdesc:a1369e0b173511258592fcb60cd15982b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du nombre de faces.  <a href="#a1369e0b173511258592fcb60cd15982b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a1369e0b173511258592fcb60cd15982b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a26a55fa0390c41fda68fb97bf89b06be"><td class="memItemLeft" align="right" valign="top">long unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a26a55fa0390c41fda68fb97bf89b06be">numberof_point</a></td></tr>
+<tr class="separator:a26a55fa0390c41fda68fb97bf89b06be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d6983d05490dd70b4daef4e9434d3b"><td class="memItemLeft" align="right" valign="top">long unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a82d6983d05490dd70b4daef4e9434d3b">numberof_face</a></td></tr>
+<tr class="separator:a82d6983d05490dd70b4daef4e9434d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_mesh.html">Mesh</a> représente l'objet maillé 3D. Ce dernier contient un certain nombre de points ainsi que de faces </p>
 
-<p>Définition à la ligne <a class="el" href="mesh_8hpp_source.html#l00006">6</a> du fichier <a class="el" href="mesh_8hpp_source.html">mesh.hpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="mesh_8hpp_source.html#l00007">7</a> du fichier <a class="el" href="mesh_8hpp_source.html">mesh.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a class="anchor" id="ad747dad3a49288d7d452b804be0f6fb5"></a>
+<a class="anchor" id="af80c0ce0e47b3686348519345cd6f81c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -146,13 +160,13 @@ Fonctions membres publiques</h2></td></tr>
           <td class="memname">Mesh::Mesh </td>
           <td>(</td>
           <td class="paramtype">long unsigned&#160;</td>
-          <td class="paramname"><em>point</em>, </td>
+          <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">long unsigned&#160;</td>
-          <td class="paramname"><em>face</em>&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -163,7 +177,14 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructeur. </p>
-<p>Constructeur prennant en paramètre le nombre de points et de faces présents dans l'objet maillé. </p>
+<p>Constructeur prennant en paramètre le nombre de <a class="el" href="class_point.html">Point</a> et de <a class="el" href="class_face.html">Face</a> présents dans l'objet maillé </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>un entier positif long </td></tr>
+    <tr><td class="paramname">f</td><td>un entier positif long </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00004">4</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
@@ -183,9 +204,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructeur. </p>
-<p>Destructeur de l'objet <a class="el" href="class_mesh.html">Mesh</a> </p>
 
-<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00008">8</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00009">9</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
 </div>
 </div>
@@ -203,10 +223,11 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter du nombre de face. </p>
-<p>Retourne la valeur de l'attribut "numberof_face" qui est un entier long </p>
+<p>Accesseur du nombre de faces. </p>
+<p>Retourne la valeur du nombre de faces </p>
+<dl class="section return"><dt>Renvoie</dt><dd>numberof_face un entier positif long </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00014">14</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00013">13</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
 </div>
 </div>
@@ -223,14 +244,15 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter du nombre de point. </p>
-<p>Retourne la valeur de l'attribut "numberof_point" qui est un entier long </p>
+<p>Accesseur du nombre de points. </p>
+<p>Retourne la valeur du nombres de points </p>
+<dl class="section return"><dt>Renvoie</dt><dd>numberof_point un entier positif long </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00011">11</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00012">12</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a33338e9861e4dbca2c2479ef5394f433"></a>
+<a class="anchor" id="a1369e0b173511258592fcb60cd15982b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -238,20 +260,26 @@ Fonctions membres publiques</h2></td></tr>
           <td class="memname">void Mesh::setNumberof_f </td>
           <td>(</td>
           <td class="paramtype">const long unsigned &amp;&#160;</td>
-          <td class="paramname"><em>face</em></td><td>)</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Setter du nombre de face. </p>
-<p>Modifie la valeur de l'attribut "numberof_face" en passant en paramètre un entier long constant par référence </p>
+<p>Mutateur du nombre de faces. </p>
+<p>Modifie la valeur du nombre de faces </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>un entier long constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00017">17</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9be8784f047b1364f14f2a21726fd082"></a>
+<a class="anchor" id="a04995a209c370f68ec8fd87378030d5f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -259,16 +287,69 @@ Fonctions membres publiques</h2></td></tr>
           <td class="memname">void Mesh::setNumberof_p </td>
           <td>(</td>
           <td class="paramtype">const long unsigned &amp;&#160;</td>
-          <td class="paramname"><em>point</em></td><td>)</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Setter du nombre de point. </p>
-<p>Modifie la valeur de l'attribut "numberof_point" en passant en paramètre un entier long constant par référence </p>
+<p>Mutateur du nombre de points. </p>
+<p>Modifie la valeur du nombre de points </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>un entier long constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00012">12</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00016">16</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a82d6983d05490dd70b4daef4e9434d3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long unsigned int Mesh::numberof_face</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Nombre total de faces dans l'objet maillé </p>
+
+<p>Définition à la ligne <a class="el" href="mesh_8hpp_source.html#l00010">10</a> du fichier <a class="el" href="mesh_8hpp_source.html">mesh.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26a55fa0390c41fda68fb97bf89b06be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long unsigned int Mesh::numberof_point</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Nombre total de points dans l'objet maillé </p>
+
+<p>Définition à la ligne <a class="el" href="mesh_8hpp_source.html#l00009">9</a> du fichier <a class="el" href="mesh_8hpp_source.html">mesh.hpp</a>.</p>
 
 </div>
 </div>
@@ -282,7 +363,7 @@ Fonctions membres publiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_mesh.html">Mesh</a></li>
-    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:28:21 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mercredi 28 Octobre 2015 16:21:19 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -8,5 +8,8 @@ var class_point =
     [ "getP_two", "class_point.html#afd9ee8dca2913903fd6a1a95d743afaa", null ],
     [ "setP_one", "class_point.html#aea96dfedc04450f20928929fc1357ba6", null ],
     [ "setP_three", "class_point.html#aa46638c8c613fa6192272d4a4168f503", null ],
-    [ "setP_two", "class_point.html#a282784b2c6669e5270b9ec447f6e9dc1", null ]
+    [ "setP_two", "class_point.html#a282784b2c6669e5270b9ec447f6e9dc1", null ],
+    [ "point_one", "class_point.html#a030522c3949dc71bc4c1f39eb1b0c77e", null ],
+    [ "point_three", "class_point.html#af7cb3c4c0c0f52218ac9ce180df003da", null ],
+    [ "point_two", "class_point.html#a7eece7f7413a741137cf32bb763f3987", null ]
 ];

@@ -8,41 +8,55 @@
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_mesh_ad747dad3a49288d7d452b804be0f6fb5}{Mesh} (long unsigned, long unsigned)
+\hyperlink{class_mesh_af80c0ce0e47b3686348519345cd6f81c}{Mesh} (long unsigned p, long unsigned f)
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{$\sim$\-Mesh} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 long unsigned \hyperlink{class_mesh_a60382f3b0a69d639003c5ea28c352459}{get\-Numberof\-\_\-p} () const 
-\begin{DoxyCompactList}\small\item\em Getter du nombre de point. \end{DoxyCompactList}\item 
-void \hyperlink{class_mesh_a9be8784f047b1364f14f2a21726fd082}{set\-Numberof\-\_\-p} (const long unsigned \&)
-\begin{DoxyCompactList}\small\item\em Setter du nombre de point. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du nombre de points. \end{DoxyCompactList}\item 
 long unsigned \hyperlink{class_mesh_a6d39761b9be2bf04be1b242da25a8dce}{get\-Numberof\-\_\-f} () const 
-\begin{DoxyCompactList}\small\item\em Getter du nombre de face. \end{DoxyCompactList}\item 
-void \hyperlink{class_mesh_a33338e9861e4dbca2c2479ef5394f433}{set\-Numberof\-\_\-f} (const long unsigned \&)
-\begin{DoxyCompactList}\small\item\em Setter du nombre de face. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Accesseur du nombre de faces. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a04995a209c370f68ec8fd87378030d5f}{set\-Numberof\-\_\-p} (const long unsigned \&p)
+\begin{DoxyCompactList}\small\item\em Mutateur du nombre de points. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a1369e0b173511258592fcb60cd15982b}{set\-Numberof\-\_\-f} (const long unsigned \&f)
+\begin{DoxyCompactList}\small\item\em Mutateur du nombre de faces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+long unsigned int \hyperlink{class_mesh_a26a55fa0390c41fda68fb97bf89b06be}{numberof\-\_\-point}
+\item 
+long unsigned int \hyperlink{class_mesh_a82d6983d05490dd70b4daef4e9434d3b}{numberof\-\_\-face}
+\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
 La classe \hyperlink{class_mesh}{Mesh} représente l'objet maillé 3\-D. Ce dernier contient un certain nombre de points ainsi que de faces 
 
-Définition à la ligne 6 du fichier mesh.\-hpp.
+Définition à la ligne 7 du fichier mesh.\-hpp.
 
 
 
 \subsection{Documentation des constructeurs et destructeur}
-\hypertarget{class_mesh_ad747dad3a49288d7d452b804be0f6fb5}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\hypertarget{class_mesh_af80c0ce0e47b3686348519345cd6f81c}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
 \index{Mesh@{Mesh}!Mesh@{Mesh}}
 \subsubsection[{Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\-::\-Mesh (
 \begin{DoxyParamCaption}
-\item[{long unsigned}]{point, }
-\item[{long unsigned}]{face}
+\item[{long unsigned}]{p, }
+\item[{long unsigned}]{f}
 \end{DoxyParamCaption}
-)}}\label{class_mesh_ad747dad3a49288d7d452b804be0f6fb5}
+)}}\label{class_mesh_af80c0ce0e47b3686348519345cd6f81c}
 
 
 Constructeur. 
 
-Constructeur prennant en paramètre le nombre de points et de faces présents dans l'objet maillé. 
+Constructeur prennant en paramètre le nombre de \hyperlink{class_point}{Point} et de \hyperlink{class_face}{Face} présents dans l'objet maillé 
+\begin{DoxyParams}{Paramètres}
+{\em p} & un entier positif long \\
+\hline
+{\em f} & un entier positif long \\
+\hline
+\end{DoxyParams}
+
 
 Définition à la ligne 4 du fichier mesh.\-cpp.
 
@@ -57,9 +71,9 @@ Définition à la ligne 4 du fichier mesh.\-cpp.
 
 Destructeur. 
 
-Destructeur de l'objet \hyperlink{class_mesh}{Mesh} 
 
-Définition à la ligne 8 du fichier mesh.\-cpp.
+
+Définition à la ligne 9 du fichier mesh.\-cpp.
 
 
 
@@ -73,11 +87,14 @@ Définition à la ligne 8 du fichier mesh.\-cpp.
 ) const}}\label{class_mesh_a6d39761b9be2bf04be1b242da25a8dce}
 
 
-Getter du nombre de face. 
+Accesseur du nombre de faces. 
 
-Retourne la valeur de l'attribut \char`\"{}numberof\-\_\-face\char`\"{} qui est un entier long 
+Retourne la valeur du nombre de faces \begin{DoxyReturn}{Renvoie}
+numberof\-\_\-face un entier positif long 
+\end{DoxyReturn}
 
-Définition à la ligne 14 du fichier mesh.\-cpp.
+
+Définition à la ligne 13 du fichier mesh.\-cpp.
 
 \hypertarget{class_mesh_a60382f3b0a69d639003c5ea28c352459}{\index{Mesh@{Mesh}!get\-Numberof\-\_\-p@{get\-Numberof\-\_\-p}}
 \index{get\-Numberof\-\_\-p@{get\-Numberof\-\_\-p}!Mesh@{Mesh}}
@@ -88,41 +105,71 @@ Définition à la ligne 14 du fichier mesh.\-cpp.
 ) const}}\label{class_mesh_a60382f3b0a69d639003c5ea28c352459}
 
 
-Getter du nombre de point. 
+Accesseur du nombre de points. 
 
-Retourne la valeur de l'attribut \char`\"{}numberof\-\_\-point\char`\"{} qui est un entier long 
+Retourne la valeur du nombres de points \begin{DoxyReturn}{Renvoie}
+numberof\-\_\-point un entier positif long 
+\end{DoxyReturn}
 
-Définition à la ligne 11 du fichier mesh.\-cpp.
 
-\hypertarget{class_mesh_a33338e9861e4dbca2c2479ef5394f433}{\index{Mesh@{Mesh}!set\-Numberof\-\_\-f@{set\-Numberof\-\_\-f}}
+Définition à la ligne 12 du fichier mesh.\-cpp.
+
+\hypertarget{class_mesh_a1369e0b173511258592fcb60cd15982b}{\index{Mesh@{Mesh}!set\-Numberof\-\_\-f@{set\-Numberof\-\_\-f}}
 \index{set\-Numberof\-\_\-f@{set\-Numberof\-\_\-f}!Mesh@{Mesh}}
 \subsubsection[{set\-Numberof\-\_\-f}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\-::set\-Numberof\-\_\-f (
 \begin{DoxyParamCaption}
-\item[{const long unsigned \&}]{face}
+\item[{const long unsigned \&}]{f}
 \end{DoxyParamCaption}
-)}}\label{class_mesh_a33338e9861e4dbca2c2479ef5394f433}
+)}}\label{class_mesh_a1369e0b173511258592fcb60cd15982b}
 
 
-Setter du nombre de face. 
+Mutateur du nombre de faces. 
 
-Modifie la valeur de l'attribut \char`\"{}numberof\-\_\-face\char`\"{} en passant en paramètre un entier long constant par référence 
+Modifie la valeur du nombre de faces 
+\begin{DoxyParams}{Paramètres}
+{\em f} & un entier long constant passé par référence \\
+\hline
+\end{DoxyParams}
 
-Définition à la ligne 15 du fichier mesh.\-cpp.
 
-\hypertarget{class_mesh_a9be8784f047b1364f14f2a21726fd082}{\index{Mesh@{Mesh}!set\-Numberof\-\_\-p@{set\-Numberof\-\_\-p}}
+Définition à la ligne 17 du fichier mesh.\-cpp.
+
+\hypertarget{class_mesh_a04995a209c370f68ec8fd87378030d5f}{\index{Mesh@{Mesh}!set\-Numberof\-\_\-p@{set\-Numberof\-\_\-p}}
 \index{set\-Numberof\-\_\-p@{set\-Numberof\-\_\-p}!Mesh@{Mesh}}
 \subsubsection[{set\-Numberof\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\-::set\-Numberof\-\_\-p (
 \begin{DoxyParamCaption}
-\item[{const long unsigned \&}]{point}
+\item[{const long unsigned \&}]{p}
 \end{DoxyParamCaption}
-)}}\label{class_mesh_a9be8784f047b1364f14f2a21726fd082}
+)}}\label{class_mesh_a04995a209c370f68ec8fd87378030d5f}
 
 
-Setter du nombre de point. 
+Mutateur du nombre de points. 
 
-Modifie la valeur de l'attribut \char`\"{}numberof\-\_\-point\char`\"{} en passant en paramètre un entier long constant par référence 
+Modifie la valeur du nombre de points 
+\begin{DoxyParams}{Paramètres}
+{\em p} & un entier long constant passé par référence \\
+\hline
+\end{DoxyParams}
 
-Définition à la ligne 12 du fichier mesh.\-cpp.
+
+Définition à la ligne 16 du fichier mesh.\-cpp.
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_mesh_a82d6983d05490dd70b4daef4e9434d3b}{\index{Mesh@{Mesh}!numberof\-\_\-face@{numberof\-\_\-face}}
+\index{numberof\-\_\-face@{numberof\-\_\-face}!Mesh@{Mesh}}
+\subsubsection[{numberof\-\_\-face}]{\setlength{\rightskip}{0pt plus 5cm}long unsigned int Mesh\-::numberof\-\_\-face\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a82d6983d05490dd70b4daef4e9434d3b}
+Nombre total de faces dans l'objet maillé 
+
+Définition à la ligne 10 du fichier mesh.\-hpp.
+
+\hypertarget{class_mesh_a26a55fa0390c41fda68fb97bf89b06be}{\index{Mesh@{Mesh}!numberof\-\_\-point@{numberof\-\_\-point}}
+\index{numberof\-\_\-point@{numberof\-\_\-point}!Mesh@{Mesh}}
+\subsubsection[{numberof\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}long unsigned int Mesh\-::numberof\-\_\-point\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a26a55fa0390c41fda68fb97bf89b06be}
+Nombre total de points dans l'objet maillé 
+
+Définition à la ligne 9 du fichier mesh.\-hpp.
 
 
 

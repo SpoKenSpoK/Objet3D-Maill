@@ -9,49 +9,71 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_face_afdb634bc2d5287ba0d62e46b57e9dc2e}{Face} ()
-\begin{DoxyCompactList}\small\item\em Constructeur \& Destructeur. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_face_a182c8c9ba652d46b01fdf6816cd65590}{$\sim$\-Face} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 long unsigned \hyperlink{class_face_a6a71144fe15d6edfab4cec3560bdb2aa}{get\-S\-\_\-one} () const 
-\begin{DoxyCompactList}\small\item\em Getter \& Setter. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du sommet 1. \end{DoxyCompactList}\item 
 long unsigned \hyperlink{class_face_a5b35ec67e75df789092301fab06a951b}{get\-S\-\_\-two} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du sommet 2. \end{DoxyCompactList}\item 
 long unsigned \hyperlink{class_face_adddc2b56135f76b623a4ffa9b7c0953f}{get\-S\-\_\-three} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du sommet 3. \end{DoxyCompactList}\item 
 double \hyperlink{class_face_a906d16f2f1c9adbe881ae46ee7f3e3e9}{get\-Seg\-\_\-one} () const 
-\begin{DoxyCompactList}\small\item\em Getters segments. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du segment 1. \end{DoxyCompactList}\item 
 double \hyperlink{class_face_a50a58b3b43a78239defee57e7202968e}{get\-Seg\-\_\-two} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du segment 2. \end{DoxyCompactList}\item 
 double \hyperlink{class_face_a19bb64415987240d90a1ec86d2432f05}{get\-Seg\-\_\-three} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du segment 3. \end{DoxyCompactList}\item 
 double \hyperlink{class_face_acd3e36c17c14b6617d92b0b9ecb2b6fc}{get\-Perimeter} () const 
-\begin{DoxyCompactList}\small\item\em Getters perimetre. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du périmètre. \end{DoxyCompactList}\item 
 double \hyperlink{class_face_a58beb8ce1b9f8154379db998a02ffa3d}{get\-Area} () const 
-\begin{DoxyCompactList}\small\item\em Getters aire. \end{DoxyCompactList}\item 
-void \hyperlink{class_face_acb89a29860fd07bb415a52ec9a2fe695}{set\-S\-\_\-one} (const long unsigned \&)
-\begin{DoxyCompactList}\small\item\em Setteur sommets. \end{DoxyCompactList}\item 
-void \hyperlink{class_face_a8cd35d467fbfc7d88f415884221b38d4}{set\-S\-\_\-two} (const long unsigned \&)
+\begin{DoxyCompactList}\small\item\em Accesseur de l'aire. \end{DoxyCompactList}\item 
+void \hyperlink{class_face_a7cf9a6444c016facc8af680307dc32f8}{set\-S\-\_\-one} (const long unsigned \&one)
+\begin{DoxyCompactList}\small\item\em Mutateur du sommet 1. \end{DoxyCompactList}\item 
+void \hyperlink{class_face_a57a8fa516fc695417ac9c4a051ee1d00}{set\-S\-\_\-two} (const long unsigned \&two)
+\begin{DoxyCompactList}\small\item\em Mutateur du sommet 2. \end{DoxyCompactList}\item 
+void \hyperlink{class_face_a5002bd6378f4d9ca38ae1aaf9e64bc03}{set\-S\-\_\-three} (const long unsigned \&three)
+\begin{DoxyCompactList}\small\item\em Mutateur du sommet 3. \end{DoxyCompactList}\item 
+void \hyperlink{class_face_a467b326e9be6b5aac350c9b87a5ab14c}{set\-Seg\-\_\-one} (const double \&o)
+\begin{DoxyCompactList}\small\item\em Mutateur du segment 1. \end{DoxyCompactList}\item 
+void \hyperlink{class_face_a1eebfcfb41d87470d675ab8fb106585e}{set\-Seg\-\_\-two} (const double \&t)
+\begin{DoxyCompactList}\small\item\em Mutateur du segment 2. \end{DoxyCompactList}\item 
+void \hyperlink{class_face_acc1fc08e71b974483dc876adb43da487}{set\-Seg\-\_\-three} (const double \&th)
+\begin{DoxyCompactList}\small\item\em Mutateur du segment 3. \end{DoxyCompactList}\item 
+void \hyperlink{class_face_af2be08b9e991f22d85aa39901a353a53}{set\-Perimeter} (const double \&p)
+\begin{DoxyCompactList}\small\item\em Mutateur du périmètre. \end{DoxyCompactList}\item 
+void \hyperlink{class_face_a6ee83e39c97a515c49f076d55a14b8bd}{set\-Area} (const double \&a)
+\begin{DoxyCompactList}\small\item\em Mutateur de l'aire. \end{DoxyCompactList}\item 
+double \hyperlink{class_face_a0d460b44871e8f720de067063734aede}{calc\-\_\-area} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Calcul de l'aire du Triangle(\-Face) via la Forume d'Héron. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_face_ac362a97171117e0ab8f7b0b1506569c2}{set\-S\-\_\-three} (const long unsigned \&)
+long unsigned int \hyperlink{class_face_acaf2b92e18061912a39faabc94a8f4b6}{summit\-\_\-one}
 \item 
-void \hyperlink{class_face_a6c888b3f4933cc7c9b5ab80c50be90c9}{set\-Seg\-\_\-one} (const double \&)
-\begin{DoxyCompactList}\small\item\em Setteur segments. \end{DoxyCompactList}\item 
-void \hyperlink{class_face_a92f7231d63697ec23256996bd0616914}{set\-Seg\-\_\-two} (const double \&)
+long unsigned int \hyperlink{class_face_aa46034f67b74525862dda3452dab6f89}{summit\-\_\-two}
 \item 
-void \hyperlink{class_face_abf8ca26e677a7586dfad0f98354d6036}{set\-Seg\-\_\-three} (const double \&)
+long unsigned int \hyperlink{class_face_ad10219db49c55f03d38533424bfa1c0c}{summit\-\_\-three}
 \item 
-void \hyperlink{class_face_a2267f8f5421c51567e3ca480fb82f136}{set\-Perimeter} (const double \&)
-\begin{DoxyCompactList}\small\item\em Setteur perimetre. \end{DoxyCompactList}\item 
-void \hyperlink{class_face_a4755a95a7ae6cbc85c423cb6ce5b28df}{set\-Area} (const double \&)
-\begin{DoxyCompactList}\small\item\em Setteur aire. \end{DoxyCompactList}\item 
-double \hyperlink{class_face_a8cf54d48850c799b9a86b7bcf9942c19}{calc\-\_\-area} (double, double, double)
-\begin{DoxyCompactList}\small\item\em Calcul de l'aire du triangle en fonction des calculs de distance entre les points (classe \hyperlink{class_point}{Point}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+double \hyperlink{class_face_ae4053947c53549d2fd5cf43aa9c712f4}{segment\-\_\-one}
+\item 
+double \hyperlink{class_face_ae79107e53090d0a7efb5070ea093a70e}{segment\-\_\-two}
+\item 
+double \hyperlink{class_face_a777ca579978d8d20c6e8a5e64a6999cc}{segment\-\_\-three}
+\item 
+double \hyperlink{class_face_a9b759ee3c90c67bc7af3969546f568f9}{perimeter}
+\item 
+double \hyperlink{class_face_ae63fcd017fcd355e212a2510209db17c}{area}
+\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
+Une face compose un objet 3\-D, où plutôt un objet 3\-D est composé d'une multitude de faces. Celle-\/ci peut-\/être décomposée en trois sommets, ainsi que trois segments (il s'agit ici de faces triangulaires). Par suite de calcul(via les coordonnées de chaques sommets dans l'espace -\/ x, y, z -\/ soit 3$\ast$3 = 9 coordonnées pour chaque face) on obtient la longueur des segments composant la face et donc son périmètre. Nous pouvons alors effectuer le calcul d' {\bfseries Héron} pour trouver l'aire d'une face triangulaire. \par
+ \par
+Choix des types pour les attributs \-: \par
+Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type {\bfseries double}. Sachant qu'il peut y avoir beaucoup de coordonnées nous préférons partir sur un type {\bfseries unsigned} {\bfseries long} {\bfseries int} pour la valeur des sommets. 
 
-
-Définition à la ligne 6 du fichier face.\-hpp.
+Définition à la ligne 15 du fichier face.\-hpp.
 
 
 
@@ -65,11 +87,11 @@ Définition à la ligne 6 du fichier face.\-hpp.
 )}}\label{class_face_afdb634bc2d5287ba0d62e46b57e9dc2e}
 
 
-Constructeur \& Destructeur. 
+Constructeur. 
 
-Très certainement include math pour sqrt Créer trois autres membres qui sont les longueurs A\-B, B\-C et C\-A ? 
 
-Définition à la ligne 9 du fichier face.\-cpp.
+
+Définition à la ligne 6 du fichier face.\-cpp.
 
 \hypertarget{class_face_a182c8c9ba652d46b01fdf6816cd65590}{\index{Face@{Face}!$\sim$\-Face@{$\sim$\-Face}}
 \index{$\sim$\-Face@{$\sim$\-Face}!Face@{Face}}
@@ -80,27 +102,48 @@ Définition à la ligne 9 du fichier face.\-cpp.
 )}}\label{class_face_a182c8c9ba652d46b01fdf6816cd65590}
 
 
-Définition à la ligne 10 du fichier face.\-cpp.
+Destructeur. 
+
+
+
+Définition à la ligne 7 du fichier face.\-cpp.
 
 
 
 \subsection{Documentation des fonctions membres}
-\hypertarget{class_face_a8cf54d48850c799b9a86b7bcf9942c19}{\index{Face@{Face}!calc\-\_\-area@{calc\-\_\-area}}
+\hypertarget{class_face_a0d460b44871e8f720de067063734aede}{\index{Face@{Face}!calc\-\_\-area@{calc\-\_\-area}}
 \index{calc\-\_\-area@{calc\-\_\-area}!Face@{Face}}
 \subsubsection[{calc\-\_\-area}]{\setlength{\rightskip}{0pt plus 5cm}double Face\-::calc\-\_\-area (
 \begin{DoxyParamCaption}
-\item[{double}]{A\-B, }
-\item[{double}]{B\-C, }
-\item[{double}]{C\-A}
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double}]{c}
 \end{DoxyParamCaption}
-)}}\label{class_face_a8cf54d48850c799b9a86b7bcf9942c19}
+)}}\label{class_face_a0d460b44871e8f720de067063734aede}
 
 
-Calcul de l'aire du triangle en fonction des calculs de distance entre les points (classe \hyperlink{class_point}{Point}) 
+Calcul de l'aire du Triangle(\-Face) via la Forume d'Héron. 
 
-Utilisation de la formule d'Héron \-: A\-B étant le segment composé du point A et du point B 
+{\bfseries Forume} {\bfseries d'} {\bfseries Héron} \-: \par
+ En géométrie euclidienne, la formule de Héron, du nom de Héron d'Alexandrie, permet de calculer l'aire d'un triangle quelconque en ne connaissant que les longueurs des trois côtés du triangle \-: \par
+ Soit trois côtés \-: $ a$ , $ b$ et $ c$ \par
+ On a donc \-: $\sqrt{(p-a)+(p-b)+(p-c)}$ Avec $ p$ = $ 1/2 *(a+b+c)$
 
-Définition à la ligne 39 du fichier face.\-cpp.
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & un réel double \\
+\hline
+{\em b} & un réel double \\
+\hline
+{\em c} & un réel double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un réel double valant l'aire de la \hyperlink{class_face}{Face} 
+\end{DoxyReturn}
+
+
+Définition à la ligne 36 du fichier face.\-cpp.
 
 \hypertarget{class_face_a58beb8ce1b9f8154379db998a02ffa3d}{\index{Face@{Face}!get\-Area@{get\-Area}}
 \index{get\-Area@{get\-Area}!Face@{Face}}
@@ -111,11 +154,14 @@ Définition à la ligne 39 du fichier face.\-cpp.
 ) const}}\label{class_face_a58beb8ce1b9f8154379db998a02ffa3d}
 
 
-Getters aire. 
+Accesseur de l'aire. 
+
+Retourne la valeur de l'aire \begin{DoxyReturn}{Renvoie}
+area un double réel 
+\end{DoxyReturn}
 
 
-
-Définition à la ligne 23 du fichier face.\-cpp.
+Définition à la ligne 20 du fichier face.\-cpp.
 
 \hypertarget{class_face_acd3e36c17c14b6617d92b0b9ecb2b6fc}{\index{Face@{Face}!get\-Perimeter@{get\-Perimeter}}
 \index{get\-Perimeter@{get\-Perimeter}!Face@{Face}}
@@ -126,11 +172,14 @@ Définition à la ligne 23 du fichier face.\-cpp.
 ) const}}\label{class_face_acd3e36c17c14b6617d92b0b9ecb2b6fc}
 
 
-Getters perimetre. 
+Accesseur du périmètre. 
+
+Retourne la valeur du périmètre \begin{DoxyReturn}{Renvoie}
+perimeter un réel double 
+\end{DoxyReturn}
 
 
-
-Définition à la ligne 21 du fichier face.\-cpp.
+Définition à la ligne 18 du fichier face.\-cpp.
 
 \hypertarget{class_face_a6a71144fe15d6edfab4cec3560bdb2aa}{\index{Face@{Face}!get\-S\-\_\-one@{get\-S\-\_\-one}}
 \index{get\-S\-\_\-one@{get\-S\-\_\-one}!Face@{Face}}
@@ -141,11 +190,14 @@ Définition à la ligne 21 du fichier face.\-cpp.
 ) const}}\label{class_face_a6a71144fe15d6edfab4cec3560bdb2aa}
 
 
-Getter \& Setter. 
+Accesseur du sommet 1. 
 
-Getters sommets. 
+Retourne la valeur du sommet 1 \begin{DoxyReturn}{Renvoie}
+summit\-\_\-one un entier positif long 
+\end{DoxyReturn}
 
-Définition à la ligne 13 du fichier face.\-cpp.
+
+Définition à la ligne 10 du fichier face.\-cpp.
 
 \hypertarget{class_face_adddc2b56135f76b623a4ffa9b7c0953f}{\index{Face@{Face}!get\-S\-\_\-three@{get\-S\-\_\-three}}
 \index{get\-S\-\_\-three@{get\-S\-\_\-three}!Face@{Face}}
@@ -156,7 +208,14 @@ Définition à la ligne 13 du fichier face.\-cpp.
 ) const}}\label{class_face_adddc2b56135f76b623a4ffa9b7c0953f}
 
 
-Définition à la ligne 15 du fichier face.\-cpp.
+Accesseur du sommet 3. 
+
+Retourne la valeur du sommet 3 \begin{DoxyReturn}{Renvoie}
+summit\-\_\-three un entier positif long 
+\end{DoxyReturn}
+
+
+Définition à la ligne 12 du fichier face.\-cpp.
 
 \hypertarget{class_face_a5b35ec67e75df789092301fab06a951b}{\index{Face@{Face}!get\-S\-\_\-two@{get\-S\-\_\-two}}
 \index{get\-S\-\_\-two@{get\-S\-\_\-two}!Face@{Face}}
@@ -167,7 +226,14 @@ Définition à la ligne 15 du fichier face.\-cpp.
 ) const}}\label{class_face_a5b35ec67e75df789092301fab06a951b}
 
 
-Définition à la ligne 14 du fichier face.\-cpp.
+Accesseur du sommet 2. 
+
+Retourne la valeur du sommet 2 \begin{DoxyReturn}{Renvoie}
+summit\-\_\-two un entier positif long 
+\end{DoxyReturn}
+
+
+Définition à la ligne 11 du fichier face.\-cpp.
 
 \hypertarget{class_face_a906d16f2f1c9adbe881ae46ee7f3e3e9}{\index{Face@{Face}!get\-Seg\-\_\-one@{get\-Seg\-\_\-one}}
 \index{get\-Seg\-\_\-one@{get\-Seg\-\_\-one}!Face@{Face}}
@@ -178,11 +244,14 @@ Définition à la ligne 14 du fichier face.\-cpp.
 ) const}}\label{class_face_a906d16f2f1c9adbe881ae46ee7f3e3e9}
 
 
-Getters segments. 
+Accesseur du segment 1. 
+
+Retourne la valeur du segment 1 \begin{DoxyReturn}{Renvoie}
+segment\-\_\-one un réel double 
+\end{DoxyReturn}
 
 
-
-Définition à la ligne 17 du fichier face.\-cpp.
+Définition à la ligne 14 du fichier face.\-cpp.
 
 \hypertarget{class_face_a19bb64415987240d90a1ec86d2432f05}{\index{Face@{Face}!get\-Seg\-\_\-three@{get\-Seg\-\_\-three}}
 \index{get\-Seg\-\_\-three@{get\-Seg\-\_\-three}!Face@{Face}}
@@ -193,7 +262,14 @@ Définition à la ligne 17 du fichier face.\-cpp.
 ) const}}\label{class_face_a19bb64415987240d90a1ec86d2432f05}
 
 
-Définition à la ligne 19 du fichier face.\-cpp.
+Accesseur du segment 3. 
+
+Retourne la valeur du segment 3 \begin{DoxyReturn}{Renvoie}
+segment\-\_\-three un réel double 
+\end{DoxyReturn}
+
+
+Définition à la ligne 16 du fichier face.\-cpp.
 
 \hypertarget{class_face_a50a58b3b43a78239defee57e7202968e}{\index{Face@{Face}!get\-Seg\-\_\-two@{get\-Seg\-\_\-two}}
 \index{get\-Seg\-\_\-two@{get\-Seg\-\_\-two}!Face@{Face}}
@@ -204,111 +280,233 @@ Définition à la ligne 19 du fichier face.\-cpp.
 ) const}}\label{class_face_a50a58b3b43a78239defee57e7202968e}
 
 
-Définition à la ligne 18 du fichier face.\-cpp.
+Accesseur du segment 2. 
 
-\hypertarget{class_face_a4755a95a7ae6cbc85c423cb6ce5b28df}{\index{Face@{Face}!set\-Area@{set\-Area}}
+Retourne la valeur du segment 2 \begin{DoxyReturn}{Renvoie}
+segment\-\_\-two un réel double 
+\end{DoxyReturn}
+
+
+Définition à la ligne 15 du fichier face.\-cpp.
+
+\hypertarget{class_face_a6ee83e39c97a515c49f076d55a14b8bd}{\index{Face@{Face}!set\-Area@{set\-Area}}
 \index{set\-Area@{set\-Area}!Face@{Face}}
 \subsubsection[{set\-Area}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-Area (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{\-\_\-area}
+\item[{const double \&}]{a}
 \end{DoxyParamCaption}
-)}}\label{class_face_a4755a95a7ae6cbc85c423cb6ce5b28df}
+)}}\label{class_face_a6ee83e39c97a515c49f076d55a14b8bd}
 
 
-Setteur aire. 
+Mutateur de l'aire. 
+
+Modifie la valeur de l'aire 
+\begin{DoxyParams}{Paramètres}
+{\em a} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
 
 
+Définition à la ligne 33 du fichier face.\-cpp.
 
-Définition à la ligne 36 du fichier face.\-cpp.
-
-\hypertarget{class_face_a2267f8f5421c51567e3ca480fb82f136}{\index{Face@{Face}!set\-Perimeter@{set\-Perimeter}}
+\hypertarget{class_face_af2be08b9e991f22d85aa39901a353a53}{\index{Face@{Face}!set\-Perimeter@{set\-Perimeter}}
 \index{set\-Perimeter@{set\-Perimeter}!Face@{Face}}
 \subsubsection[{set\-Perimeter}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-Perimeter (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{\-\_\-perimeter}
+\item[{const double \&}]{p}
 \end{DoxyParamCaption}
-)}}\label{class_face_a2267f8f5421c51567e3ca480fb82f136}
+)}}\label{class_face_af2be08b9e991f22d85aa39901a353a53}
 
 
-Setteur perimetre. 
+Mutateur du périmètre. 
+
+Modifie la valeur du périmètre 
+\begin{DoxyParams}{Paramètres}
+{\em p} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
 
 
+Définition à la ligne 31 du fichier face.\-cpp.
 
-Définition à la ligne 34 du fichier face.\-cpp.
-
-\hypertarget{class_face_acb89a29860fd07bb415a52ec9a2fe695}{\index{Face@{Face}!set\-S\-\_\-one@{set\-S\-\_\-one}}
+\hypertarget{class_face_a7cf9a6444c016facc8af680307dc32f8}{\index{Face@{Face}!set\-S\-\_\-one@{set\-S\-\_\-one}}
 \index{set\-S\-\_\-one@{set\-S\-\_\-one}!Face@{Face}}
 \subsubsection[{set\-S\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-S\-\_\-one (
 \begin{DoxyParamCaption}
-\item[{const long unsigned \&}]{\-\_\-one}
+\item[{const long unsigned \&}]{one}
 \end{DoxyParamCaption}
-)}}\label{class_face_acb89a29860fd07bb415a52ec9a2fe695}
+)}}\label{class_face_a7cf9a6444c016facc8af680307dc32f8}
 
 
-Setteur sommets. 
+Mutateur du sommet 1. 
+
+Modifie la valeur du sommet 1 
+\begin{DoxyParams}{Paramètres}
+{\em one} & un entier positif long constant passé par référence \\
+\hline
+\end{DoxyParams}
 
 
+Définition à la ligne 23 du fichier face.\-cpp.
 
-Définition à la ligne 26 du fichier face.\-cpp.
-
-\hypertarget{class_face_ac362a97171117e0ab8f7b0b1506569c2}{\index{Face@{Face}!set\-S\-\_\-three@{set\-S\-\_\-three}}
+\hypertarget{class_face_a5002bd6378f4d9ca38ae1aaf9e64bc03}{\index{Face@{Face}!set\-S\-\_\-three@{set\-S\-\_\-three}}
 \index{set\-S\-\_\-three@{set\-S\-\_\-three}!Face@{Face}}
 \subsubsection[{set\-S\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-S\-\_\-three (
 \begin{DoxyParamCaption}
-\item[{const long unsigned \&}]{\-\_\-three}
+\item[{const long unsigned \&}]{three}
 \end{DoxyParamCaption}
-)}}\label{class_face_ac362a97171117e0ab8f7b0b1506569c2}
+)}}\label{class_face_a5002bd6378f4d9ca38ae1aaf9e64bc03}
 
 
-Définition à la ligne 28 du fichier face.\-cpp.
+Mutateur du sommet 3. 
 
-\hypertarget{class_face_a8cd35d467fbfc7d88f415884221b38d4}{\index{Face@{Face}!set\-S\-\_\-two@{set\-S\-\_\-two}}
+Modifie la valeur du sommet 3 
+\begin{DoxyParams}{Paramètres}
+{\em three} & un entier positif long constant passé par référence \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 25 du fichier face.\-cpp.
+
+\hypertarget{class_face_a57a8fa516fc695417ac9c4a051ee1d00}{\index{Face@{Face}!set\-S\-\_\-two@{set\-S\-\_\-two}}
 \index{set\-S\-\_\-two@{set\-S\-\_\-two}!Face@{Face}}
 \subsubsection[{set\-S\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-S\-\_\-two (
 \begin{DoxyParamCaption}
-\item[{const long unsigned \&}]{\-\_\-two}
+\item[{const long unsigned \&}]{two}
 \end{DoxyParamCaption}
-)}}\label{class_face_a8cd35d467fbfc7d88f415884221b38d4}
+)}}\label{class_face_a57a8fa516fc695417ac9c4a051ee1d00}
+
+
+Mutateur du sommet 2. 
+
+Modifie la valeur du sommet 2 
+\begin{DoxyParams}{Paramètres}
+{\em two} & un entier positif long constant passé par référence \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 24 du fichier face.\-cpp.
+
+\hypertarget{class_face_a467b326e9be6b5aac350c9b87a5ab14c}{\index{Face@{Face}!set\-Seg\-\_\-one@{set\-Seg\-\_\-one}}
+\index{set\-Seg\-\_\-one@{set\-Seg\-\_\-one}!Face@{Face}}
+\subsubsection[{set\-Seg\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-Seg\-\_\-one (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{o}
+\end{DoxyParamCaption}
+)}}\label{class_face_a467b326e9be6b5aac350c9b87a5ab14c}
+
+
+Mutateur du segment 1. 
+
+Modifie la valeur du segment 1 
+\begin{DoxyParams}{Paramètres}
+{\em o} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
 
 
 Définition à la ligne 27 du fichier face.\-cpp.
 
-\hypertarget{class_face_a6c888b3f4933cc7c9b5ab80c50be90c9}{\index{Face@{Face}!set\-Seg\-\_\-one@{set\-Seg\-\_\-one}}
-\index{set\-Seg\-\_\-one@{set\-Seg\-\_\-one}!Face@{Face}}
-\subsubsection[{set\-Seg\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-Seg\-\_\-one (
-\begin{DoxyParamCaption}
-\item[{const double \&}]{s\-\_\-one}
-\end{DoxyParamCaption}
-)}}\label{class_face_a6c888b3f4933cc7c9b5ab80c50be90c9}
-
-
-Setteur segments. 
-
-
-
-Définition à la ligne 30 du fichier face.\-cpp.
-
-\hypertarget{class_face_abf8ca26e677a7586dfad0f98354d6036}{\index{Face@{Face}!set\-Seg\-\_\-three@{set\-Seg\-\_\-three}}
+\hypertarget{class_face_acc1fc08e71b974483dc876adb43da487}{\index{Face@{Face}!set\-Seg\-\_\-three@{set\-Seg\-\_\-three}}
 \index{set\-Seg\-\_\-three@{set\-Seg\-\_\-three}!Face@{Face}}
 \subsubsection[{set\-Seg\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-Seg\-\_\-three (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{s\-\_\-three}
+\item[{const double \&}]{th}
 \end{DoxyParamCaption}
-)}}\label{class_face_abf8ca26e677a7586dfad0f98354d6036}
+)}}\label{class_face_acc1fc08e71b974483dc876adb43da487}
 
 
-Définition à la ligne 32 du fichier face.\-cpp.
+Mutateur du segment 3. 
 
-\hypertarget{class_face_a92f7231d63697ec23256996bd0616914}{\index{Face@{Face}!set\-Seg\-\_\-two@{set\-Seg\-\_\-two}}
+Modifie la valeur du segment 3 
+\begin{DoxyParams}{Paramètres}
+{\em th} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 29 du fichier face.\-cpp.
+
+\hypertarget{class_face_a1eebfcfb41d87470d675ab8fb106585e}{\index{Face@{Face}!set\-Seg\-\_\-two@{set\-Seg\-\_\-two}}
 \index{set\-Seg\-\_\-two@{set\-Seg\-\_\-two}!Face@{Face}}
 \subsubsection[{set\-Seg\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}void Face\-::set\-Seg\-\_\-two (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{s\-\_\-two}
+\item[{const double \&}]{t}
 \end{DoxyParamCaption}
-)}}\label{class_face_a92f7231d63697ec23256996bd0616914}
+)}}\label{class_face_a1eebfcfb41d87470d675ab8fb106585e}
 
 
-Définition à la ligne 31 du fichier face.\-cpp.
+Mutateur du segment 2. 
+
+Modifie la valeur du segment 2 
+\begin{DoxyParams}{Paramètres}
+{\em t} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 28 du fichier face.\-cpp.
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_face_ae63fcd017fcd355e212a2510209db17c}{\index{Face@{Face}!area@{area}}
+\index{area@{area}!Face@{Face}}
+\subsubsection[{area}]{\setlength{\rightskip}{0pt plus 5cm}double Face\-::area\hspace{0.3cm}{\ttfamily [private]}}}\label{class_face_ae63fcd017fcd355e212a2510209db17c}
+Aire de la \hyperlink{class_face}{Face} 
+
+Définition à la ligne 24 du fichier face.\-hpp.
+
+\hypertarget{class_face_a9b759ee3c90c67bc7af3969546f568f9}{\index{Face@{Face}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!Face@{Face}}
+\subsubsection[{perimeter}]{\setlength{\rightskip}{0pt plus 5cm}double Face\-::perimeter\hspace{0.3cm}{\ttfamily [private]}}}\label{class_face_a9b759ee3c90c67bc7af3969546f568f9}
+Périmètre de la \hyperlink{class_face}{Face} 
+
+Définition à la ligne 23 du fichier face.\-hpp.
+
+\hypertarget{class_face_ae4053947c53549d2fd5cf43aa9c712f4}{\index{Face@{Face}!segment\-\_\-one@{segment\-\_\-one}}
+\index{segment\-\_\-one@{segment\-\_\-one}!Face@{Face}}
+\subsubsection[{segment\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}double Face\-::segment\-\_\-one\hspace{0.3cm}{\ttfamily [private]}}}\label{class_face_ae4053947c53549d2fd5cf43aa9c712f4}
+Longueur du segment entre le premier et le second sommets de la \hyperlink{class_face}{Face} 
+
+Définition à la ligne 20 du fichier face.\-hpp.
+
+\hypertarget{class_face_a777ca579978d8d20c6e8a5e64a6999cc}{\index{Face@{Face}!segment\-\_\-three@{segment\-\_\-three}}
+\index{segment\-\_\-three@{segment\-\_\-three}!Face@{Face}}
+\subsubsection[{segment\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}double Face\-::segment\-\_\-three\hspace{0.3cm}{\ttfamily [private]}}}\label{class_face_a777ca579978d8d20c6e8a5e64a6999cc}
+Longueur du segment entre le troisième et le premier sommets de la \hyperlink{class_face}{Face} 
+
+Définition à la ligne 22 du fichier face.\-hpp.
+
+\hypertarget{class_face_ae79107e53090d0a7efb5070ea093a70e}{\index{Face@{Face}!segment\-\_\-two@{segment\-\_\-two}}
+\index{segment\-\_\-two@{segment\-\_\-two}!Face@{Face}}
+\subsubsection[{segment\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}double Face\-::segment\-\_\-two\hspace{0.3cm}{\ttfamily [private]}}}\label{class_face_ae79107e53090d0a7efb5070ea093a70e}
+Longueur du segment entre le second et le troisième sommets de la \hyperlink{class_face}{Face} 
+
+Définition à la ligne 21 du fichier face.\-hpp.
+
+\hypertarget{class_face_acaf2b92e18061912a39faabc94a8f4b6}{\index{Face@{Face}!summit\-\_\-one@{summit\-\_\-one}}
+\index{summit\-\_\-one@{summit\-\_\-one}!Face@{Face}}
+\subsubsection[{summit\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}long unsigned int Face\-::summit\-\_\-one\hspace{0.3cm}{\ttfamily [private]}}}\label{class_face_acaf2b92e18061912a39faabc94a8f4b6}
+Place (ligne du fichier .O\-F\-F) où se situe les coordonnées du premier sommet de la \hyperlink{class_face}{Face} 
+
+Définition à la ligne 17 du fichier face.\-hpp.
+
+\hypertarget{class_face_ad10219db49c55f03d38533424bfa1c0c}{\index{Face@{Face}!summit\-\_\-three@{summit\-\_\-three}}
+\index{summit\-\_\-three@{summit\-\_\-three}!Face@{Face}}
+\subsubsection[{summit\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}long unsigned int Face\-::summit\-\_\-three\hspace{0.3cm}{\ttfamily [private]}}}\label{class_face_ad10219db49c55f03d38533424bfa1c0c}
+Place (ligne du fichier .O\-F\-F) où se situe les coordonnées du troisième sommet de la \hyperlink{class_face}{Face} 
+
+Définition à la ligne 19 du fichier face.\-hpp.
+
+\hypertarget{class_face_aa46034f67b74525862dda3452dab6f89}{\index{Face@{Face}!summit\-\_\-two@{summit\-\_\-two}}
+\index{summit\-\_\-two@{summit\-\_\-two}!Face@{Face}}
+\subsubsection[{summit\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}long unsigned int Face\-::summit\-\_\-two\hspace{0.3cm}{\ttfamily [private]}}}\label{class_face_aa46034f67b74525862dda3452dab6f89}
+Place (ligne du fichier .O\-F\-F) où se situe les coordonnées du second sommet de la \hyperlink{class_face}{Face} 
+
+Définition à la ligne 18 du fichier face.\-hpp.
 
 
 

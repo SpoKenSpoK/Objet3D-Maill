@@ -20,6 +20,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -92,7 +98,7 @@ $(document).ready(function(){initNavTree('class_point.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,6 +110,7 @@ $(document).ready(function(){initNavTree('class_point.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
 <a href="class_point-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe Point</div>  </div>
@@ -135,6 +142,15 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a5cb059b4e16aca7ca375076971d90521"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a5cb059b4e16aca7ca375076971d90521">calc_length</a> (double, double)</td></tr>
 <tr class="memdesc:a5cb059b4e16aca7ca375076971d90521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcul longueur entre les points.  <a href="#a5cb059b4e16aca7ca375076971d90521">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a5cb059b4e16aca7ca375076971d90521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a030522c3949dc71bc4c1f39eb1b0c77e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a030522c3949dc71bc4c1f39eb1b0c77e">point_one</a></td></tr>
+<tr class="separator:a030522c3949dc71bc4c1f39eb1b0c77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eece7f7413a741137cf32bb763f3987"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a7eece7f7413a741137cf32bb763f3987">point_two</a></td></tr>
+<tr class="separator:a7eece7f7413a741137cf32bb763f3987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7cb3c4c0c0f52218ac9ce180df003da"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#af7cb3c4c0c0f52218ac9ce180df003da">point_three</a></td></tr>
+<tr class="separator:af7cb3c4c0c0f52218ac9ce180df003da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
@@ -317,6 +333,73 @@ Fonctions membres publiques</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a030522c3949dc71bc4c1f39eb1b0c77e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Point::point_one</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00006">6</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7cb3c4c0c0f52218ac9ce180df003da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Point::point_three</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00008">8</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7eece7f7413a741137cf32bb763f3987"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Point::point_two</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00007">7</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>/home/spoken/Documents/System/Objet3D/<a class="el" href="point_8hpp_source.html">point.hpp</a></li>
 <li>/home/spoken/Documents/System/Objet3D/<a class="el" href="point_8cpp_source.html">point.cpp</a></li>
@@ -327,7 +410,7 @@ Fonctions membres publiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_point.html">Point</a></li>
-    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:28:21 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mercredi 28 Octobre 2015 16:21:19 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

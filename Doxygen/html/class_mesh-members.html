@@ -20,6 +20,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -92,7 +98,7 @@ $(document).ready(function(){initNavTree('class_mesh.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,16 +117,18 @@ $(document).ready(function(){initNavTree('class_mesh.html','');});
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_mesh.html#a6d39761b9be2bf04be1b242da25a8dce">getNumberof_f</a>() const </td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_mesh.html#a60382f3b0a69d639003c5ea28c352459">getNumberof_p</a>() const </td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_mesh.html#ad747dad3a49288d7d452b804be0f6fb5">Mesh</a>(long unsigned, long unsigned)</td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_mesh.html#a33338e9861e4dbca2c2479ef5394f433">setNumberof_f</a>(const long unsigned &amp;)</td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_mesh.html#a9be8784f047b1364f14f2a21726fd082">setNumberof_p</a>(const long unsigned &amp;)</td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_mesh.html#af80c0ce0e47b3686348519345cd6f81c">Mesh</a>(long unsigned p, long unsigned f)</td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_mesh.html#a82d6983d05490dd70b4daef4e9434d3b">numberof_face</a></td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_mesh.html#a26a55fa0390c41fda68fb97bf89b06be">numberof_point</a></td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_mesh.html#a1369e0b173511258592fcb60cd15982b">setNumberof_f</a>(const long unsigned &amp;f)</td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_mesh.html#a04995a209c370f68ec8fd87378030d5f">setNumberof_p</a>(const long unsigned &amp;p)</td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>()</td><td class="entry"><a class="el" href="class_mesh.html">Mesh</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:28:21 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mercredi 28 Octobre 2015 16:21:19 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

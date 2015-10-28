@@ -5,7 +5,6 @@ var dir_d504f2360395835c3e499be94580043d =
       [ "Face", "class_face.html", "class_face" ]
     ] ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
-    [ "main_thread.cpp", "main__thread_8cpp.html", "main__thread_8cpp" ],
     [ "mesh.cpp", "mesh_8cpp.html", null ],
     [ "mesh.hpp", "mesh_8hpp.html", [
       [ "Mesh", "class_mesh.html", "class_mesh" ]

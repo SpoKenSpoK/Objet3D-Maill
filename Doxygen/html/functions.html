@@ -20,6 +20,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -76,14 +82,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li class="current"><a href="functions.html"><span>Tout</span></a></li>
       <li><a href="functions_func.html"><span>Fonctions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li class="current"><a href="#index_~"><span>~</span></a></li>
@@ -109,7 +118,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,9 +130,16 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <div class="contents">
 <div class="textblock">Liste de tous les membres de classe avec des liens vers les classes auxquelles ils appartiennent :</div>
 
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>area
+: <a class="el" href="class_face.html#ae63fcd017fcd355e212a2510209db17c">Face</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>calc_area()
-: <a class="el" href="class_face.html#a8cf54d48850c799b9a86b7bcf9942c19">Face</a>
+: <a class="el" href="class_face.html#a0d460b44871e8f720de067063734aede">Face</a>
 </li>
 <li>calc_length()
 : <a class="el" href="class_point.html#a5cb059b4e16aca7ca375076971d90521">Point</a>
@@ -183,27 +199,58 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>Mesh()
-: <a class="el" href="class_mesh.html#ad747dad3a49288d7d452b804be0f6fb5">Mesh</a>
+: <a class="el" href="class_mesh.html#af80c0ce0e47b3686348519345cd6f81c">Mesh</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>numberof_face
+: <a class="el" href="class_mesh.html#a82d6983d05490dd70b4daef4e9434d3b">Mesh</a>
+</li>
+<li>numberof_point
+: <a class="el" href="class_mesh.html#a26a55fa0390c41fda68fb97bf89b06be">Mesh</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>perimeter
+: <a class="el" href="class_face.html#a9b759ee3c90c67bc7af3969546f568f9">Face</a>
+</li>
 <li>Point()
 : <a class="el" href="class_point.html#ad92f2337b839a94ce97dcdb439b4325a">Point</a>
+</li>
+<li>point_one
+: <a class="el" href="class_point.html#a030522c3949dc71bc4c1f39eb1b0c77e">Point</a>
+</li>
+<li>point_three
+: <a class="el" href="class_point.html#af7cb3c4c0c0f52218ac9ce180df003da">Point</a>
+</li>
+<li>point_two
+: <a class="el" href="class_point.html#a7eece7f7413a741137cf32bb763f3987">Point</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>segment_one
+: <a class="el" href="class_face.html#ae4053947c53549d2fd5cf43aa9c712f4">Face</a>
+</li>
+<li>segment_three
+: <a class="el" href="class_face.html#a777ca579978d8d20c6e8a5e64a6999cc">Face</a>
+</li>
+<li>segment_two
+: <a class="el" href="class_face.html#ae79107e53090d0a7efb5070ea093a70e">Face</a>
+</li>
 <li>setArea()
-: <a class="el" href="class_face.html#a4755a95a7ae6cbc85c423cb6ce5b28df">Face</a>
+: <a class="el" href="class_face.html#a6ee83e39c97a515c49f076d55a14b8bd">Face</a>
 </li>
 <li>setNumberof_f()
-: <a class="el" href="class_mesh.html#a33338e9861e4dbca2c2479ef5394f433">Mesh</a>
+: <a class="el" href="class_mesh.html#a1369e0b173511258592fcb60cd15982b">Mesh</a>
 </li>
 <li>setNumberof_p()
-: <a class="el" href="class_mesh.html#a9be8784f047b1364f14f2a21726fd082">Mesh</a>
+: <a class="el" href="class_mesh.html#a04995a209c370f68ec8fd87378030d5f">Mesh</a>
 </li>
 <li>setP_one()
 : <a class="el" href="class_point.html#aea96dfedc04450f20928929fc1357ba6">Point</a>
@@ -215,25 +262,34 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_point.html#a282784b2c6669e5270b9ec447f6e9dc1">Point</a>
 </li>
 <li>setPerimeter()
-: <a class="el" href="class_face.html#a2267f8f5421c51567e3ca480fb82f136">Face</a>
+: <a class="el" href="class_face.html#af2be08b9e991f22d85aa39901a353a53">Face</a>
 </li>
 <li>setS_one()
-: <a class="el" href="class_face.html#acb89a29860fd07bb415a52ec9a2fe695">Face</a>
+: <a class="el" href="class_face.html#a7cf9a6444c016facc8af680307dc32f8">Face</a>
 </li>
 <li>setS_three()
-: <a class="el" href="class_face.html#ac362a97171117e0ab8f7b0b1506569c2">Face</a>
+: <a class="el" href="class_face.html#a5002bd6378f4d9ca38ae1aaf9e64bc03">Face</a>
 </li>
 <li>setS_two()
-: <a class="el" href="class_face.html#a8cd35d467fbfc7d88f415884221b38d4">Face</a>
+: <a class="el" href="class_face.html#a57a8fa516fc695417ac9c4a051ee1d00">Face</a>
 </li>
 <li>setSeg_one()
-: <a class="el" href="class_face.html#a6c888b3f4933cc7c9b5ab80c50be90c9">Face</a>
+: <a class="el" href="class_face.html#a467b326e9be6b5aac350c9b87a5ab14c">Face</a>
 </li>
 <li>setSeg_three()
-: <a class="el" href="class_face.html#abf8ca26e677a7586dfad0f98354d6036">Face</a>
+: <a class="el" href="class_face.html#acc1fc08e71b974483dc876adb43da487">Face</a>
 </li>
 <li>setSeg_two()
-: <a class="el" href="class_face.html#a92f7231d63697ec23256996bd0616914">Face</a>
+: <a class="el" href="class_face.html#a1eebfcfb41d87470d675ab8fb106585e">Face</a>
+</li>
+<li>summit_one
+: <a class="el" href="class_face.html#acaf2b92e18061912a39faabc94a8f4b6">Face</a>
+</li>
+<li>summit_three
+: <a class="el" href="class_face.html#ad10219db49c55f03d38533424bfa1c0c">Face</a>
+</li>
+<li>summit_two
+: <a class="el" href="class_face.html#aa46034f67b74525862dda3452dab6f89">Face</a>
 </li>
 </ul>
 
@@ -254,7 +310,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Mercredi 28 Octobre 2015 14:28:21 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mercredi 28 Octobre 2015 16:21:19 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
