@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['segment_5fone',['segment_one',['../class_face.html#ae4053947c53549d2fd5cf43aa9c712f4',1,'Face']]],
+  ['segment_5fthree',['segment_three',['../class_face.html#a777ca579978d8d20c6e8a5e64a6999cc',1,'Face']]],
+  ['segment_5ftwo',['segment_two',['../class_face.html#ae79107e53090d0a7efb5070ea093a70e',1,'Face']]],
   ['setarea',['setArea',['../class_face.html#a6ee83e39c97a515c49f076d55a14b8bd',1,'Face']]],
   ['setnumberof_5ff',['setNumberof_f',['../class_mesh.html#a1369e0b173511258592fcb60cd15982b',1,'Mesh']]],
   ['setnumberof_5fp',['setNumberof_p',['../class_mesh.html#a04995a209c370f68ec8fd87378030d5f',1,'Mesh']]],
@@ -12,5 +15,8 @@ var searchData=
   ['sets_5ftwo',['setS_two',['../class_face.html#a57a8fa516fc695417ac9c4a051ee1d00',1,'Face']]],
   ['setseg_5fone',['setSeg_one',['../class_face.html#a467b326e9be6b5aac350c9b87a5ab14c',1,'Face']]],
   ['setseg_5fthree',['setSeg_three',['../class_face.html#acc1fc08e71b974483dc876adb43da487',1,'Face']]],
-  ['setseg_5ftwo',['setSeg_two',['../class_face.html#a1eebfcfb41d87470d675ab8fb106585e',1,'Face']]]
+  ['setseg_5ftwo',['setSeg_two',['../class_face.html#a1eebfcfb41d87470d675ab8fb106585e',1,'Face']]],
+  ['summit_5fone',['summit_one',['../class_face.html#acaf2b92e18061912a39faabc94a8f4b6',1,'Face']]],
+  ['summit_5fthree',['summit_three',['../class_face.html#ad10219db49c55f03d38533424bfa1c0c',1,'Face']]],
+  ['summit_5ftwo',['summit_two',['../class_face.html#aa46034f67b74525862dda3452dab6f89',1,'Face']]]
 ];

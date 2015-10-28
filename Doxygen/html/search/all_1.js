@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['face',['Face',['../class_face.html',1,'Face'],['../class_face.html#afdb634bc2d5287ba0d62e46b57e9dc2e',1,'Face::Face()']]],
-  ['face_2ecpp',['face.cpp',['../face_8cpp.html',1,'']]],
-  ['face_2ehpp',['face.hpp',['../face_8hpp.html',1,'']]]
+  ['calc_5farea',['calc_area',['../class_face.html#a0d460b44871e8f720de067063734aede',1,'Face']]],
+  ['calc_5flength',['calc_length',['../class_point.html#a5cb059b4e16aca7ca375076971d90521',1,'Point']]]
 ];
