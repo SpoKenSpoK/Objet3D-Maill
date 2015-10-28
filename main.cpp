@@ -1,3 +1,7 @@
+/**
+@file main.cpp
+*/
+
 /**  Projet de Système: "Calcul de surface d'un objet 3D maillé" *
 *   IUT d'Arles - Département Informatique - Année 2015/2016     *
 *   Réalisé par Guillaume BOEHM & Thibault HECKEL                *
