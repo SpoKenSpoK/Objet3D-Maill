@@ -68,10 +68,10 @@ double \hyperlink{class_face_ae63fcd017fcd355e212a2510209db17c}{area}
 
 
 \subsection{Description détaillée}
-Une face compose un objet 3\-D, où plutôt un objet 3\-D est composé d'une multitude de faces. Celle-\/ci peut-\/être décomposée en trois sommets, ainsi que trois segments (il s'agit ici de faces triangulaires). Par suite de calcul(via les coordonnées de chaques sommets dans l'espace -\/ x, y, z -\/ soit 3$\ast$3 = 9 coordonnées pour chaque face) on obtient la longueur des segments composant la face et donc son périmètre. Nous pouvons alors effectuer le calcul d' {\bfseries Héron} pour trouver l'aire d'une face triangulaire. \par
+La classe \hyperlink{class_face}{Face} vient ici représenter les faces qui compose un objet 3\-D. Celle-\/ci peut-\/être décomposée en trois sommets, ainsi que trois segments (il s'agit ici de faces triangulaires). Par suite de calcul(via les coordonnées de chaques sommets dans l'espace -\/ x, y, z -\/ soit 3$\ast$3 = 9 coordonnées pour chaque face) on obtient la longueur des segments composant la face et donc son périmètre. Nous pouvons alors effectuer le calcul d' {\bfseries Héron} pour trouver l'aire d'une face triangulaire. \par
  \par
 Choix des types pour les attributs \-: \par
-Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type {\bfseries double}. Sachant qu'il peut y avoir beaucoup de coordonnées nous préférons partir sur un type {\bfseries unsigned} {\bfseries long} {\bfseries int} pour la valeur des sommets. 
+Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type {\bfseries double}. Sachant qu'il peut y avoir beaucoup de coordonnées nous préférons partir sur un type {\bfseries unsigned} {\bfseries long} {\bfseries int} pour la valeur des attributs sommets. 
 
 Définition à la ligne 15 du fichier face.\-hpp.
 
@@ -157,7 +157,7 @@ Définition à la ligne 36 du fichier face.\-cpp.
 Accesseur de l'aire. 
 
 Retourne la valeur de l'aire \begin{DoxyReturn}{Renvoie}
-area un double réel 
+area un réel double 
 \end{DoxyReturn}
 
 
@@ -512,5 +512,5 @@ Définition à la ligne 18 du fichier face.\-hpp.
 
 La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
 \item 
-/home/spoken/\-Documents/\-System/\-Objet3\-D/\hyperlink{face_8hpp}{face.\-hpp}\item 
-/home/spoken/\-Documents/\-System/\-Objet3\-D/\hyperlink{face_8cpp}{face.\-cpp}\end{DoxyCompactItemize}
+\hyperlink{face_8hpp}{face.\-hpp}\item 
+\hyperlink{face_8cpp}{face.\-cpp}\end{DoxyCompactItemize}

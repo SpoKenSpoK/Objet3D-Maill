@@ -2,7 +2,8 @@
 #define MESH_HPP
 
 /** La classe Mesh représente l'objet maillé 3D.
-    Ce dernier contient un certain nombre de points ainsi que de faces */
+    Ce dernier contient un certain nombre de points ainsi que de faces. \n
+    Nous utilisons donc ici les types \b long \b unsigned \b int pour les attributs. */
 
 class Mesh{
     private:
@@ -27,11 +28,11 @@ class Mesh{
         long unsigned getNumberof_f() const;
 
     /// Mutateur du nombre de points
-    /** Modifie la valeur du nombre de points \param p un entier long constant passé par référence */
+    /** Modifie la valeur du nombre de points \param p un entier positif long constant passé par référence */
         void setNumberof_p(const long unsigned& p);
 
     /// Mutateur du nombre de faces
-    /** Modifie la valeur du nombre de faces \param f un entier long constant passé par référence */
+    /** Modifie la valeur du nombre de faces \param f un entier positif long constant passé par référence */
         void setNumberof_f(const long unsigned& f);
 };
 

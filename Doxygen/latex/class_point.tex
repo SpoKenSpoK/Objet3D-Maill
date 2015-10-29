@@ -9,23 +9,23 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point} ()
-\begin{DoxyCompactList}\small\item\em Constructeur \& Desctructeur. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_point_a395fa04b4ec126b66fc053f829a30cc1}{$\sim$\-Point} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 double \hyperlink{class_point_a211f8dee098122a2f1c326ba42652ee2}{get\-P\-\_\-one} () const 
-\begin{DoxyCompactList}\small\item\em Getters \& Setters. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du point 1. \end{DoxyCompactList}\item 
 double \hyperlink{class_point_afd9ee8dca2913903fd6a1a95d743afaa}{get\-P\-\_\-two} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du point 2. \end{DoxyCompactList}\item 
 double \hyperlink{class_point_adf0f89d9beca24315b45d96786896a56}{get\-P\-\_\-three} () const 
-\item 
-void \hyperlink{class_point_aea96dfedc04450f20928929fc1357ba6}{set\-P\-\_\-one} (const double \&)
-\item 
-void \hyperlink{class_point_a282784b2c6669e5270b9ec447f6e9dc1}{set\-P\-\_\-two} (const double \&)
-\item 
-void \hyperlink{class_point_aa46638c8c613fa6192272d4a4168f503}{set\-P\-\_\-three} (const double \&)
-\item 
-double \hyperlink{class_point_a5cb059b4e16aca7ca375076971d90521}{calc\-\_\-length} (double, double)
-\begin{DoxyCompactList}\small\item\em Calcul longueur entre les points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Accesseur du point 3. \end{DoxyCompactList}\item 
+void \hyperlink{class_point_ac79f8c3f0fb8b9dea4f5b8a8e0315779}{set\-P\-\_\-one} (const double \&o)
+\begin{DoxyCompactList}\small\item\em Mutateur du point 1. \end{DoxyCompactList}\item 
+void \hyperlink{class_point_a3b70e89e253f5339392990ae29313ae8}{set\-P\-\_\-two} (const double \&t)
+\begin{DoxyCompactList}\small\item\em Mutateur du point 2. \end{DoxyCompactList}\item 
+void \hyperlink{class_point_a097d97049b319bb131b51f990a52aa94}{set\-P\-\_\-three} (const double \&th)
+\begin{DoxyCompactList}\small\item\em Mutateur du point 3. \end{DoxyCompactList}\item 
+double \hyperlink{class_point_a1caba2edf0ae2ddef66114b029b99008}{calc\-\_\-length} (double x1, double x2)
+\begin{DoxyCompactList}\small\item\em Calcul de longueur entre deux coordonnées. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,9 +38,14 @@ double \hyperlink{class_point_af7cb3c4c0c0f52218ac9ce180df003da}{point\-\_\-thre
 
 
 \subsection{Description détaillée}
+La classe \hyperlink{class_point}{Point} représente les points ou sommets(composés de coordonnées) des triangles \hyperlink{class_face}{Face} composant l'objet \hyperlink{class_mesh}{Mesh}. Chaque sommet du triangle a donc trois points dans l'espace(coordonnées). \par
+Il s'agit donc ici de récupérer les coordonnées se trouvant dans le fichier .O\-F\-F . Ces coordonnées sont alors placées respectueusement dans les attributs point\-\_\-one, point\-\_\-two, point\-\_\-three de type {\bfseries double} \par
+Par la suite il nous sera donc possible d'aller chercher une coordonnée suivant la ligne de lecture qui nous sera indiquée (cf. \hyperlink{main_8cpp}{main.\-cpp} \& explication de \hyperlink{class_face}{Face}). \par
+Une méthode de calcul est aussi présente, celle-\/ci récupère la différence entre deux coordonnées $(x2-x1)^2$. \par
+Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dans l'espace (en y ajoutant la racine carré). Soit \-: \par
+ $\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}$ (cf. \hyperlink{main_8cpp}{main.\-cpp}) 
 
-
-Définition à la ligne 4 du fichier point.\-hpp.
+Définition à la ligne 12 du fichier point.\-hpp.
 
 
 
@@ -54,9 +59,9 @@ Définition à la ligne 4 du fichier point.\-hpp.
 )}}\label{class_point_ad92f2337b839a94ce97dcdb439b4325a}
 
 
-Constructeur \& Desctructeur. 
+Constructeur. 
 
-Constructeur \& Destructeur. 
+
 
 Définition à la ligne 6 du fichier point.\-cpp.
 
@@ -69,24 +74,38 @@ Définition à la ligne 6 du fichier point.\-cpp.
 )}}\label{class_point_a395fa04b4ec126b66fc053f829a30cc1}
 
 
+Destructeur. 
+
+
+
 Définition à la ligne 7 du fichier point.\-cpp.
 
 
 
 \subsection{Documentation des fonctions membres}
-\hypertarget{class_point_a5cb059b4e16aca7ca375076971d90521}{\index{Point@{Point}!calc\-\_\-length@{calc\-\_\-length}}
+\hypertarget{class_point_a1caba2edf0ae2ddef66114b029b99008}{\index{Point@{Point}!calc\-\_\-length@{calc\-\_\-length}}
 \index{calc\-\_\-length@{calc\-\_\-length}!Point@{Point}}
 \subsubsection[{calc\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::calc\-\_\-length (
 \begin{DoxyParamCaption}
-\item[{double}]{A, }
-\item[{double}]{B}
+\item[{double}]{x1, }
+\item[{double}]{x2}
 \end{DoxyParamCaption}
-)}}\label{class_point_a5cb059b4e16aca7ca375076971d90521}
+)}}\label{class_point_a1caba2edf0ae2ddef66114b029b99008}
 
 
-Calcul longueur entre les points. 
+Calcul de longueur entre deux coordonnées. 
 
-Methodes Calcul d'une longueur d'un segment d'une face suivant les coordonnées de deux sommets 
+$(x2-x1)^2$ 
+\begin{DoxyParams}{Paramètres}
+{\em x1} & un réel double \\
+\hline
+{\em x2} & un réel double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la différence entre les deux coordonnées entrées en paramètres, soit un réel double 
+\end{DoxyReturn}
+
 
 Définition à la ligne 20 du fichier point.\-cpp.
 
@@ -99,9 +118,12 @@ Définition à la ligne 20 du fichier point.\-cpp.
 ) const}}\label{class_point_a211f8dee098122a2f1c326ba42652ee2}
 
 
-Getters \& Setters. 
+Accesseur du point 1. 
 
-Getter \& Setter. 
+Retourne la coordonnée du premier point \begin{DoxyReturn}{Renvoie}
+point\-\_\-one un réel double 
+\end{DoxyReturn}
+
 
 Définition à la ligne 10 du fichier point.\-cpp.
 
@@ -112,6 +134,13 @@ Définition à la ligne 10 du fichier point.\-cpp.
 {}
 \end{DoxyParamCaption}
 ) const}}\label{class_point_adf0f89d9beca24315b45d96786896a56}
+
+
+Accesseur du point 3. 
+
+Retourne la coordonnée du troisième point \begin{DoxyReturn}{Renvoie}
+point\-\_\-three un réel double 
+\end{DoxyReturn}
 
 
 Définition à la ligne 12 du fichier point.\-cpp.
@@ -125,37 +154,71 @@ Définition à la ligne 12 du fichier point.\-cpp.
 ) const}}\label{class_point_afd9ee8dca2913903fd6a1a95d743afaa}
 
 
+Accesseur du point 2. 
+
+Retourne la coordonnée du deuxième point \begin{DoxyReturn}{Renvoie}
+point\-\_\-two un réel double 
+\end{DoxyReturn}
+
+
 Définition à la ligne 11 du fichier point.\-cpp.
 
-\hypertarget{class_point_aea96dfedc04450f20928929fc1357ba6}{\index{Point@{Point}!set\-P\-\_\-one@{set\-P\-\_\-one}}
+\hypertarget{class_point_ac79f8c3f0fb8b9dea4f5b8a8e0315779}{\index{Point@{Point}!set\-P\-\_\-one@{set\-P\-\_\-one}}
 \index{set\-P\-\_\-one@{set\-P\-\_\-one}!Point@{Point}}
 \subsubsection[{set\-P\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-::set\-P\-\_\-one (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{\-\_\-one}
+\item[{const double \&}]{o}
 \end{DoxyParamCaption}
-)}}\label{class_point_aea96dfedc04450f20928929fc1357ba6}
+)}}\label{class_point_ac79f8c3f0fb8b9dea4f5b8a8e0315779}
+
+
+Mutateur du point 1. 
+
+Modifie la coordonnée du premier point 
+\begin{DoxyParams}{Paramètres}
+{\em o} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
 
 
 Définition à la ligne 14 du fichier point.\-cpp.
 
-\hypertarget{class_point_aa46638c8c613fa6192272d4a4168f503}{\index{Point@{Point}!set\-P\-\_\-three@{set\-P\-\_\-three}}
+\hypertarget{class_point_a097d97049b319bb131b51f990a52aa94}{\index{Point@{Point}!set\-P\-\_\-three@{set\-P\-\_\-three}}
 \index{set\-P\-\_\-three@{set\-P\-\_\-three}!Point@{Point}}
 \subsubsection[{set\-P\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-::set\-P\-\_\-three (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{\-\_\-three}
+\item[{const double \&}]{th}
 \end{DoxyParamCaption}
-)}}\label{class_point_aa46638c8c613fa6192272d4a4168f503}
+)}}\label{class_point_a097d97049b319bb131b51f990a52aa94}
+
+
+Mutateur du point 3. 
+
+Modifie la coordonnée du troisième point 
+\begin{DoxyParams}{Paramètres}
+{\em th} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
 
 
 Définition à la ligne 16 du fichier point.\-cpp.
 
-\hypertarget{class_point_a282784b2c6669e5270b9ec447f6e9dc1}{\index{Point@{Point}!set\-P\-\_\-two@{set\-P\-\_\-two}}
+\hypertarget{class_point_a3b70e89e253f5339392990ae29313ae8}{\index{Point@{Point}!set\-P\-\_\-two@{set\-P\-\_\-two}}
 \index{set\-P\-\_\-two@{set\-P\-\_\-two}!Point@{Point}}
 \subsubsection[{set\-P\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-::set\-P\-\_\-two (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{\-\_\-two}
+\item[{const double \&}]{t}
 \end{DoxyParamCaption}
-)}}\label{class_point_a282784b2c6669e5270b9ec447f6e9dc1}
+)}}\label{class_point_a3b70e89e253f5339392990ae29313ae8}
+
+
+Mutateur du point 2. 
+
+Modifie la coordonnée du deuxième point 
+\begin{DoxyParams}{Paramètres}
+{\em t} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
 
 
 Définition à la ligne 15 du fichier point.\-cpp.
@@ -166,27 +229,27 @@ Définition à la ligne 15 du fichier point.\-cpp.
 \hypertarget{class_point_a030522c3949dc71bc4c1f39eb1b0c77e}{\index{Point@{Point}!point\-\_\-one@{point\-\_\-one}}
 \index{point\-\_\-one@{point\-\_\-one}!Point@{Point}}
 \subsubsection[{point\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-one\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_a030522c3949dc71bc4c1f39eb1b0c77e}
+Coordonnées du premier point dans l'espace(x) 
 
-
-Définition à la ligne 6 du fichier point.\-hpp.
+Définition à la ligne 14 du fichier point.\-hpp.
 
 \hypertarget{class_point_af7cb3c4c0c0f52218ac9ce180df003da}{\index{Point@{Point}!point\-\_\-three@{point\-\_\-three}}
 \index{point\-\_\-three@{point\-\_\-three}!Point@{Point}}
 \subsubsection[{point\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-three\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_af7cb3c4c0c0f52218ac9ce180df003da}
+Coordonnées du troisième point dans l'espace(z) 
 
-
-Définition à la ligne 8 du fichier point.\-hpp.
+Définition à la ligne 16 du fichier point.\-hpp.
 
 \hypertarget{class_point_a7eece7f7413a741137cf32bb763f3987}{\index{Point@{Point}!point\-\_\-two@{point\-\_\-two}}
 \index{point\-\_\-two@{point\-\_\-two}!Point@{Point}}
 \subsubsection[{point\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-two\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_a7eece7f7413a741137cf32bb763f3987}
+Coordonnées du deuxième point dans l'espace(y) 
 
-
-Définition à la ligne 7 du fichier point.\-hpp.
+Définition à la ligne 15 du fichier point.\-hpp.
 
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
 \item 
-/home/spoken/\-Documents/\-System/\-Objet3\-D/\hyperlink{point_8hpp}{point.\-hpp}\item 
-/home/spoken/\-Documents/\-System/\-Objet3\-D/\hyperlink{point_8cpp}{point.\-cpp}\end{DoxyCompactItemize}
+\hyperlink{point_8hpp}{point.\-hpp}\item 
+\hyperlink{point_8cpp}{point.\-cpp}\end{DoxyCompactItemize}

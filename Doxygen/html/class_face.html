@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Calcul de l&#39;air d&#39;un objet 3D Maillé: Référence de la classe Face</title>
+<title>Calcul de l&#39;aire d&#39;un objet 3D Maillé: Référence de la classe Face</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -35,7 +35,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Calcul de l&#39;air d&#39;un objet 3D Maillé
+   <div id="projectname">Calcul de l&#39;aire d&#39;un objet 3D Maillé
    </div>
   </td>
  </tr>
@@ -199,10 +199,10 @@ Attributs privés</h2></td></tr>
 <tr class="separator:ae63fcd017fcd355e212a2510209db17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Une face compose un objet 3D, où plutôt un objet 3D est composé d'une multitude de faces. Celle-ci peut-être décomposée en trois sommets, ainsi que trois segments (il s'agit ici de faces triangulaires). Par suite de calcul(via les coordonnées de chaques sommets dans l'espace - x, y, z - soit 3*3 = 9 coordonnées pour chaque face) on obtient la longueur des segments composant la face et donc son périmètre. Nous pouvons alors effectuer le calcul d' <b>Héron</b> pour trouver l'aire d'une face triangulaire. <br/>
+<div class="textblock"><p>La classe <a class="el" href="class_face.html">Face</a> vient ici représenter les faces qui compose un objet 3D. Celle-ci peut-être décomposée en trois sommets, ainsi que trois segments (il s'agit ici de faces triangulaires). Par suite de calcul(via les coordonnées de chaques sommets dans l'espace - x, y, z - soit 3*3 = 9 coordonnées pour chaque face) on obtient la longueur des segments composant la face et donc son périmètre. Nous pouvons alors effectuer le calcul d' <b>Héron</b> pour trouver l'aire d'une face triangulaire. <br/>
  <br/>
 Choix des types pour les attributs : <br/>
-Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type <b>double</b>. Sachant qu'il peut y avoir beaucoup de coordonnées nous préférons partir sur un type <b>unsigned</b> <b>long</b> <b>int</b> pour la valeur des sommets. </p>
+Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type <b>double</b>. Sachant qu'il peut y avoir beaucoup de coordonnées nous préférons partir sur un type <b>unsigned</b> <b>long</b> <b>int</b> pour la valeur des attributs sommets. </p>
 
 <p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00015">15</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
@@ -309,7 +309,7 @@ Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il
 
 <p>Accesseur de l'aire. </p>
 <p>Retourne la valeur de l'aire </p>
-<dl class="section return"><dt>Renvoie</dt><dd>area un double réel </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>area un réel double </dd></dl>
 
 <p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00020">20</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
 
@@ -864,8 +864,8 @@ Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>/home/spoken/Documents/System/Objet3D/<a class="el" href="face_8hpp_source.html">face.hpp</a></li>
-<li>/home/spoken/Documents/System/Objet3D/<a class="el" href="face_8cpp_source.html">face.cpp</a></li>
+<li><a class="el" href="face_8hpp_source.html">face.hpp</a></li>
+<li><a class="el" href="face_8cpp_source.html">face.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -873,7 +873,7 @@ Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_face.html">Face</a></li>
-    <li class="footer">Généré le Mercredi 28 Octobre 2015 16:21:19 pour Calcul de l&#39;air d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Jeudi 29 Octobre 2015 13:56:32 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

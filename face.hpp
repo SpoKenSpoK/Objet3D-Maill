@@ -1,7 +1,7 @@
 #ifndef FACE_HPP
 #define FACE_HPP
 
-/** Une face compose un objet 3D, où plutôt un objet 3D est composé d'une multitude de faces.
+/** La classe Face vient ici représenter les faces qui compose un objet 3D.
     Celle-ci peut-être décomposée en trois sommets, ainsi que trois segments (il s'agit ici de faces triangulaires).
     Par suite de calcul(via les coordonnées de chaques sommets dans l'espace - x, y, z - soit 3*3 = 9 coordonnées pour chaque face)
     on obtient la longueur des segments composant la face et donc son périmètre.
@@ -9,7 +9,7 @@
     \n \n
     Choix des types pour les attributs : \n
     Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type \b double.
-    Sachant qu'il peut y avoir beaucoup de coordonnées nous préférons partir sur un type \b unsigned \b long \b int pour la valeur des sommets. */
+    Sachant qu'il peut y avoir beaucoup de coordonnées nous préférons partir sur un type \b unsigned \b long \b int pour la valeur des attributs sommets. */
 
 
 class Face{
@@ -58,7 +58,7 @@ class Face{
         double getPerimeter() const;
 
     /// Accesseur de l'aire
-    /** Retourne la valeur de l'aire \return area un double réel */
+    /** Retourne la valeur de l'aire \return area un réel double */
         double getArea() const;
 
     /// Mutateur du sommet 1

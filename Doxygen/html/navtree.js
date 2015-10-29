@@ -1,7 +1,7 @@
 var NAVTREE =
 [
-  [ "Calcul de l'air d'un objet 3D Maillé", "index.html", [
-    [ "Objet3D-Maill-", "md__home_spoken__documents__system__objet3_d__r_e_a_d_m_e.html", null ],
+  [ "Calcul de l'aire d'un objet 3D Maillé", "index.html", [
+    [ "Objet3D-Maill-", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", null, [
       [ "Liste des classes", "annotated.html", "annotated" ],
       [ "Index des classes", "classes.html", null ],
