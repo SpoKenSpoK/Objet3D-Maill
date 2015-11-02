@@ -40,7 +40,7 @@ int main()
             fichier.seekg(4, fichier.beg);
 
             ///Lit le nombre de points présents dans le fichier
-            long unsigned point_count, face_count;
+            unsigned int point_count, face_count;
             fichier >> point_count >> face_count;
 
             Mesh mesh(point_count, face_count);

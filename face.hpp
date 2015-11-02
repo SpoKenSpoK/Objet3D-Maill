@@ -9,14 +9,14 @@
     \n \n
     Choix des types pour les attributs : \n
     Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type \b double.
-    Sachant qu'il peut y avoir beaucoup de coordonnées nous préférons partir sur un type \b unsigned \b long \b int pour la valeur des attributs sommets. */
+    Pour les coordonnées nous préférons partir sur un type \b unsigned \b int pour la valeur des attributs sommets. */
 
 
 class Face{
     private:
-        long unsigned int summit_one;   /**< Place (ligne du fichier .OFF) où se situe les coordonnées du premier sommet de la Face */
-        long unsigned int summit_two;   /**< Place (ligne du fichier .OFF) où se situe les coordonnées du second sommet de la Face */
-        long unsigned int summit_three; /**< Place (ligne du fichier .OFF) où se situe les coordonnées du troisième sommet de la Face */
+        unsigned int summit_one;   /**< Place (ligne du fichier .OFF) où se situe les coordonnées du premier sommet de la Face */
+        unsigned int summit_two;   /**< Place (ligne du fichier .OFF) où se situe les coordonnées du second sommet de la Face */
+        unsigned int summit_three; /**< Place (ligne du fichier .OFF) où se situe les coordonnées du troisième sommet de la Face */
         double segment_one; /**< Longueur du segment entre le premier et le second sommets de la Face */
         double segment_two; /**< Longueur du segment entre le second et le troisième sommets de la Face */
         double segment_three;   /**< Longueur du segment entre le troisième et le premier sommets de la Face */
@@ -30,16 +30,16 @@ class Face{
         ~Face();
 
     /// Accesseur du sommet 1
-    /** Retourne la valeur du sommet 1 \return summit_one un entier positif long */
-        long unsigned getS_one() const;
+    /** Retourne la valeur du sommet 1 \return summit_one un entier positif */
+        unsigned int getS_one() const;
 
     /// Accesseur du sommet 2
-    /** Retourne la valeur du sommet 2 \return summit_two un entier positif long */
-        long unsigned getS_two() const;
+    /** Retourne la valeur du sommet 2 \return summit_two un entier positif */
+        unsigned int getS_two() const;
 
     /// Accesseur du sommet 3
-    /** Retourne la valeur du sommet 3 \return summit_three un entier positif long */
-        long unsigned getS_three() const;
+    /** Retourne la valeur du sommet 3 \return summit_three un entier positif */
+        unsigned int getS_three() const;
 
     /// Accesseur du segment 1
     /** Retourne la valeur du segment 1  \return segment_one un réel double */
@@ -63,15 +63,15 @@ class Face{
 
     /// Mutateur du sommet 1
     /** Modifie la valeur du sommet 1 \param one un entier positif long constant passé par référence */
-        void setS_one(const long unsigned& one);
+        void setS_one(const unsigned int& one);
 
     /// Mutateur du sommet 2
     /** Modifie la valeur du sommet 2 \param two un entier positif long constant passé par référence */
-        void setS_two(const long unsigned& two);
+        void setS_two(const unsigned int& two);
 
     /// Mutateur du sommet 3
     /** Modifie la valeur du sommet 3 \param three un entier positif long constant passé par référence */
-        void setS_three(const long unsigned& three);
+        void setS_three(const unsigned int& three);
 
     /// Mutateur du segment 1
     /** Modifie la valeur du segment 1 \param o un réel double constant passé par référence */

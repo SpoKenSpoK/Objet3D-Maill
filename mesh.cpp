@@ -1,7 +1,7 @@
 #include "mesh.hpp"
 
 //Constructeur
-Mesh::Mesh(long unsigned point, long unsigned face)
+Mesh::Mesh(unsigned int point, unsigned int face)
     :numberof_point(point), numberof_face(face)
 {}
 
@@ -9,12 +9,12 @@ Mesh::Mesh(long unsigned point, long unsigned face)
 Mesh::~Mesh() {}
 
 //Getters
-long unsigned Mesh::getNumberof_p() const { return numberof_point; }
-long unsigned Mesh::getNumberof_f() const { return numberof_face; }
+unsigned int Mesh::getNumberof_p() const { return numberof_point; }
+unsigned int Mesh::getNumberof_f() const { return numberof_face; }
 
 //Setters
-void Mesh::setNumberof_p(const long unsigned& point) { numberof_point = point; }
-void Mesh::setNumberof_f(const long unsigned& face) { numberof_face = face; }
+void Mesh::setNumberof_p(const unsigned int& point) { numberof_point = point; }
+void Mesh::setNumberof_f(const unsigned int& face) { numberof_face = face; }
 
 
 

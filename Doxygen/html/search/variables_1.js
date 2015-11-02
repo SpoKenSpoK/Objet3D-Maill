@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['numberof_5fface',['numberof_face',['../class_mesh.html#a82d6983d05490dd70b4daef4e9434d3b',1,'Mesh']]],
-  ['numberof_5fpoint',['numberof_point',['../class_mesh.html#a26a55fa0390c41fda68fb97bf89b06be',1,'Mesh']]]
+  ['numberof_5fface',['numberof_face',['../class_mesh.html#a8ad7f6788ff772d5e0e17e992571f364',1,'Mesh']]],
+  ['numberof_5fpoint',['numberof_point',['../class_mesh.html#a9c058bf3f414b6119d7e6ea09703057d',1,'Mesh']]]
 ];
