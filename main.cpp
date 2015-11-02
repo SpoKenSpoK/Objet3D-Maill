@@ -21,6 +21,9 @@ int main()
     Face* tab_face; /**< Création d'un tableau de face*/
     Point* tab_point;
 
+    double clock_debut;
+    double clock_fin;
+
     std::string name_fichier;
     bool is_here = false; /// sert a effectuer le while tant que le fichier n'est pas renseigné
 
@@ -85,6 +88,9 @@ int main()
 
             ///On calcul pour chaque face les segments
             ///Racine carré de [ (xB - xA)² + (yB - yA)² + (zB - zA)² ]
+            ///Récupération du temps au debut du calcul
+            clock_debut = (double)clock()/CLOCKS_PER_SEC;
+
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                 tab_face[i].setSeg_one( tab_point->calc_length(tab_face[i].getS_one(), tab_face[i].getS_two()) ); //Calcul de la longueur AB
                 tab_face[i].setSeg_two( tab_point->calc_length(tab_face[i].getS_two(), tab_face[i].getS_three()) );  //Calcul de la longueur BC
@@ -100,13 +106,16 @@ int main()
 
     }while(!is_here);
 
+    ///Récupération du temps a la fin du calcul
+    clock_fin = (double)clock()/CLOCKS_PER_SEC;
+
     ///Suppression des tableaux de Faces et de Points
     delete [] tab_face;
     delete [] tab_point;
 
-    ///Récupération du temps d'éxecution
-    std::cout << "Temps d'execution : " << (double)clock()/CLOCKS_PER_SEC << " s";
-    ///le temps de la saisie du nom du fichier jusqu'à la pression de la touche "Entrée" n'est ici pas décompté
+    ///Affichage du temps de calcul
+    std::cout << "Temps de calcul : " <<  clock_fin - clock_debut << " s";
+    ///Le temps de la saisie du nom du fichier ainsi que la lecture du fichier n'est pas prise en compte
 
     return 0;
 }
