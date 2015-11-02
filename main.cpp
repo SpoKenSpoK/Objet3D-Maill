@@ -53,7 +53,6 @@ int main()
 
             ///Lecture des coordonnées de chaque sommet
             double p_value;
-
             for(unsigned int i=0; i<mesh.getNumberof_p(); ++i){
                 fichier >> p_value;
                 tab_point[i].setP_one(p_value);
