@@ -85,27 +85,15 @@ int main()
 
             ///On calcul pour chaque face les segments
             ///Racine carré de [ (xB - xA)² + (yB - yA)² + (zB - zA)² ]
-            double FULL_AREA;
-
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                tab_face[i].setSeg_one( sqrt(   tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_one(), tab_point[tab_face[i].getS_two()].getP_one() )      /// Calcul de (xB - xA)²
-                                            +   tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_two(), tab_point[tab_face[i].getS_two()].getP_two() )     /// Calcul de (yB - yA)²
-                                            +   tab_point->calc_length( tab_point[tab_face[i].getS_one()].getP_three(), tab_point[tab_face[i].getS_two()].getP_three() )  /// Calcul de (zB - zA)²
-                ));  ///Longueur AB
+                tab_face[i].setSeg_one( tab_point->calc_length(tab_face[i].getS_one(), tab_face[i].getS_two()) ); //Calcul de la longueur AB
+                tab_face[i].setSeg_two( tab_point->calc_length(tab_face[i].getS_two(), tab_face[i].getS_three()) );  //Calcul de la longueur BC
+                tab_face[i].setSeg_three( tab_point->calc_length(tab_face[i].getS_three(), tab_face[i].getS_one()) ); //Calcul de la longueur CA
 
-                tab_face[i].setSeg_two( sqrt(   tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_one(), tab_point[tab_face[i].getS_three()].getP_one() )     /// Calcul de (xC - xB)²
-                                            +   tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_two(), tab_point[tab_face[i].getS_three()].getP_two() )     /// Calcul de (yC - yB)²
-                                            +   tab_point->calc_length( tab_point[tab_face[i].getS_two()].getP_three(), tab_point[tab_face[i].getS_three()].getP_three() )    /// Calcul de (zC - zB)²²
-                ));  ///Longueur BC
-
-                tab_face[i].setSeg_three(  sqrt(    tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_one(), tab_point[tab_face[i].getS_one()].getP_one() )   /// Calcul de (xA - xC)²
-                                                +   tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_two(), tab_point[tab_face[i].getS_one()].getP_two() )   /// Calcul de (yA - yC)²
-                                                +   tab_point->calc_length( tab_point[tab_face[i].getS_three()].getP_three(), tab_point[tab_face[i].getS_one()].getP_three() )  /// Calcul de (zA - zC)²
-                ));  ///Longueur CA
-
-                FULL_AREA+=tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three());   /// Calcul de Aire(ABC)
+               mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
             }
-            std::cout<<"Aire totale de la forme : "<<FULL_AREA<<std::endl;
+
+            std::cout<<"Aire totale de la forme : "<<mesh.getFull()<<std::endl;
         }
         else
             std::cerr<<"Impossible d'ouvrir le fichier "<<name_fichier<<" !"<<std::endl;

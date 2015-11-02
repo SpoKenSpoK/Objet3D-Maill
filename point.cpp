@@ -17,7 +17,11 @@ void Point::setP_three(const double& _three) { point_three = _three; }
 
 //Methodes
 //Calcul d'une longueur d'un segment d'une face suivant les coordonnées de deux sommets
-double Point::calc_length(double A, double B){  return pow((B - A), 2);  }
+double Point::calc_length(unsigned int x, unsigned int y) {
+    double temp = ( pow((this[y].getP_one() - this[x].getP_one()), 2) + pow((this[y].getP_two() - this[x].getP_two()), 2)
+                                                                    + pow((this[y].getP_three() - this[x].getP_three()), 2) );
+    return sqrt(temp);
+}
 
 
 
