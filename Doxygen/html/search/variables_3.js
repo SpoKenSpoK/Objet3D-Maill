@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['segment_5fone',['segment_one',['../class_face.html#ae4053947c53549d2fd5cf43aa9c712f4',1,'Face']]],
-  ['segment_5fthree',['segment_three',['../class_face.html#a777ca579978d8d20c6e8a5e64a6999cc',1,'Face']]],
-  ['segment_5ftwo',['segment_two',['../class_face.html#ae79107e53090d0a7efb5070ea093a70e',1,'Face']]],
-  ['summit_5fone',['summit_one',['../class_face.html#a68ff25f391cfe3ee5ce2b7f13dac64fa',1,'Face']]],
-  ['summit_5fthree',['summit_three',['../class_face.html#af322077aea999dd19dd169bd5bdd4bdf',1,'Face']]],
-  ['summit_5ftwo',['summit_two',['../class_face.html#a8d0b2a96bd53dcf7767c2cefe1fcc1f3',1,'Face']]]
+  ['perimeter',['perimeter',['../class_face.html#a9b759ee3c90c67bc7af3969546f568f9',1,'Face']]],
+  ['point_5fone',['point_one',['../class_point.html#a030522c3949dc71bc4c1f39eb1b0c77e',1,'Point']]],
+  ['point_5fthree',['point_three',['../class_point.html#af7cb3c4c0c0f52218ac9ce180df003da',1,'Point']]],
+  ['point_5ftwo',['point_two',['../class_point.html#a7eece7f7413a741137cf32bb763f3987',1,'Point']]]
 ];

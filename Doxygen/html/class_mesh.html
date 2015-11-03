@@ -133,12 +133,18 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ac5fdb24c0693a8d02c739cd254b826e1"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#ac5fdb24c0693a8d02c739cd254b826e1">getNumberof_f</a> () const </td></tr>
 <tr class="memdesc:ac5fdb24c0693a8d02c739cd254b826e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du nombre de faces.  <a href="#ac5fdb24c0693a8d02c739cd254b826e1">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ac5fdb24c0693a8d02c739cd254b826e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf4ba84ba3a807377f391cd2bf37f2fe"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#abf4ba84ba3a807377f391cd2bf37f2fe">getFull</a> () const </td></tr>
+<tr class="memdesc:abf4ba84ba3a807377f391cd2bf37f2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la valeur totale de l'aire.  <a href="#abf4ba84ba3a807377f391cd2bf37f2fe">Plus de détails...</a><br/></td></tr>
+<tr class="separator:abf4ba84ba3a807377f391cd2bf37f2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76b45fbfdfa33d0f0285f86a918192ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a76b45fbfdfa33d0f0285f86a918192ba">setNumberof_p</a> (const unsigned int &amp;p)</td></tr>
 <tr class="memdesc:a76b45fbfdfa33d0f0285f86a918192ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du nombre de points.  <a href="#a76b45fbfdfa33d0f0285f86a918192ba">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a76b45fbfdfa33d0f0285f86a918192ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1b46c508d09b76ac575564fcaa24931"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#ad1b46c508d09b76ac575564fcaa24931">setNumberof_f</a> (const unsigned int &amp;f)</td></tr>
 <tr class="memdesc:ad1b46c508d09b76ac575564fcaa24931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du nombre de faces.  <a href="#ad1b46c508d09b76ac575564fcaa24931">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ad1b46c508d09b76ac575564fcaa24931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b9b1d7b1a616def0cefb1f8fd7b7a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#ab5b9b1d7b1a616def0cefb1f8fd7b7a4">setFull</a> (const double &amp;a)</td></tr>
+<tr class="memdesc:ab5b9b1d7b1a616def0cefb1f8fd7b7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur de la valeur totale de l'aire.  <a href="#ab5b9b1d7b1a616def0cefb1f8fd7b7a4">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab5b9b1d7b1a616def0cefb1f8fd7b7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
@@ -146,6 +152,8 @@ Attributs privés</h2></td></tr>
 <tr class="separator:a9c058bf3f414b6119d7e6ea09703057d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ad7f6788ff772d5e0e17e992571f364"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a8ad7f6788ff772d5e0e17e992571f364">numberof_face</a></td></tr>
 <tr class="separator:a8ad7f6788ff772d5e0e17e992571f364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1f18abe6ea5a9943e6f8e672f8b037"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a0e1f18abe6ea5a9943e6f8e672f8b037">FULL_AREA</a></td></tr>
+<tr class="separator:a0e1f18abe6ea5a9943e6f8e672f8b037"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_mesh.html">Mesh</a> représente l'objet maillé 3D. Ce dernier contient un certain nombre de points ainsi que de faces. <br/>
@@ -211,6 +219,27 @@ Nous utilisons donc ici les types <b>unsigned</b> <b>int</b> pour les attributs.
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="abf4ba84ba3a807377f391cd2bf37f2fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Mesh::getFull </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la valeur totale de l'aire. </p>
+<p>Retourne la valeur totale de l'aire </p>
+<dl class="section return"><dt>Renvoie</dt><dd>FULL_AREA un réel double </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00014">14</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac5fdb24c0693a8d02c739cd254b826e1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -253,6 +282,33 @@ Nous utilisons donc ici les types <b>unsigned</b> <b>int</b> pour les attributs.
 
 </div>
 </div>
+<a class="anchor" id="ab5b9b1d7b1a616def0cefb1f8fd7b7a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mesh::setFull </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur de la valeur totale de l'aire. </p>
+<p>Modifie la valeur totale de l'aire </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>un réel double constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00019">19</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad1b46c508d09b76ac575564fcaa24931"></a>
 <div class="memitem">
 <div class="memproto">
@@ -276,7 +332,7 @@ Nous utilisons donc ici les types <b>unsigned</b> <b>int</b> pour les attributs.
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00017">17</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00018">18</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
 </div>
 </div>
@@ -303,11 +359,34 @@ Nous utilisons donc ici les types <b>unsigned</b> <b>int</b> pour les attributs.
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00016">16</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="mesh_8cpp_source.html#l00017">17</a> du fichier <a class="el" href="mesh_8cpp_source.html">mesh.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a0e1f18abe6ea5a9943e6f8e672f8b037"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Mesh::FULL_AREA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Aire totale de la forme </p>
+
+<p>Définition à la ligne <a class="el" href="mesh_8hpp_source.html#l00012">12</a> du fichier <a class="el" href="mesh_8hpp_source.html">mesh.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a8ad7f6788ff772d5e0e17e992571f364"></a>
 <div class="memitem">
 <div class="memproto">
@@ -364,7 +443,7 @@ Nous utilisons donc ici les types <b>unsigned</b> <b>int</b> pour les attributs.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_mesh.html">Mesh</a></li>
-    <li class="footer">Généré le Lundi 2 Novembre 2015 14:51:31 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mardi 3 Novembre 2015 10:05:19 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

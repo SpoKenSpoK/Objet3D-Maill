@@ -145,9 +145,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a097d97049b319bb131b51f990a52aa94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a097d97049b319bb131b51f990a52aa94">setP_three</a> (const double &amp;th)</td></tr>
 <tr class="memdesc:a097d97049b319bb131b51f990a52aa94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du point 3.  <a href="#a097d97049b319bb131b51f990a52aa94">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a097d97049b319bb131b51f990a52aa94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1caba2edf0ae2ddef66114b029b99008"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#a1caba2edf0ae2ddef66114b029b99008">calc_length</a> (double x1, double x2)</td></tr>
-<tr class="memdesc:a1caba2edf0ae2ddef66114b029b99008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcul de longueur entre deux coordonnées.  <a href="#a1caba2edf0ae2ddef66114b029b99008">Plus de détails...</a><br/></td></tr>
-<tr class="separator:a1caba2edf0ae2ddef66114b029b99008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af33a5d06f58de83f60b926b04ffa5d79"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_point.html#af33a5d06f58de83f60b926b04ffa5d79">calc_length</a> (unsigned int x1, unsigned int x2)</td></tr>
+<tr class="memdesc:af33a5d06f58de83f60b926b04ffa5d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcul la longueur d'un côté  <a href="#af33a5d06f58de83f60b926b04ffa5d79">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af33a5d06f58de83f60b926b04ffa5d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
@@ -161,12 +161,13 @@ Attributs privés</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_point.html">Point</a> représente les points ou sommets(composés de coordonnées) des triangles <a class="el" href="class_face.html">Face</a> composant l'objet <a class="el" href="class_mesh.html">Mesh</a>. Chaque sommet du triangle a donc trois points dans l'espace(coordonnées). <br/>
 Il s'agit donc ici de récupérer les coordonnées se trouvant dans le fichier .OFF . Ces coordonnées sont alors placées respectueusement dans les attributs point_one, point_two, point_three de type <b>double</b> <br/>
-Par la suite il nous sera donc possible d'aller chercher une coordonnée suivant la ligne de lecture qui nous sera indiquée (cf. <a class="el" href="main_8cpp.html">main.cpp</a> &amp; explication de <a class="el" href="class_face.html">Face</a>). <br/>
+ ___ tout à refaire ici Par la suite il nous sera donc possible d'aller chercher une coordonnée suivant la ligne de lecture qui nous sera indiquée (cf. <a class="el" href="main_8cpp.html">main.cpp</a> &amp; explication de <a class="el" href="class_face.html">Face</a>). <br/>
 Une méthode de calcul est aussi présente, celle-ci récupère la différence entre deux coordonnées \((x2-x1)^2\). <br/>
 Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dans l'espace (en y ajoutant la racine carré). Soit : <br/>
- \(\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}\) (cf. <a class="el" href="main_8cpp.html">main.cpp</a>) </p>
+</p>
+<h2>\(\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}\) (cf. <a class="el" href="main_8cpp.html">main.cpp</a>) </h2>
 
-<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00012">12</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00016">16</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="ad92f2337b839a94ce97dcdb439b4325a"></a>
 <div class="memitem">
@@ -207,20 +208,20 @@ Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dan
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a class="anchor" id="a1caba2edf0ae2ddef66114b029b99008"></a>
+<a class="anchor" id="af33a5d06f58de83f60b926b04ffa5d79"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">double Point::calc_length </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>x1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>x2</em>&#160;</td>
         </tr>
         <tr>
@@ -231,16 +232,16 @@ Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dan
       </table>
 </div><div class="memdoc">
 
-<p>Calcul de longueur entre deux coordonnées. </p>
-<p>\((x2-x1)^2\) </p>
+<p>Calcul la longueur d'un côté </p>
+<p>\((x2-x1)^2\) =&gt; à changer </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x1</td><td>un réel double </td></tr>
-    <tr><td class="paramname">x2</td><td>un réel double </td></tr>
+    <tr><td class="paramname">x1</td><td>un entier positif </td></tr>
+    <tr><td class="paramname">x2</td><td>un entier positif </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>la différence entre les deux coordonnées entrées en paramètres, soit un réel double </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la longueur d'un segement entre deux points donnés en paramètres, calculé via leurs coordonnées qui sont des réels doubles. Nous retournons donc un double </dd></dl>
 
 <p>Définition à la ligne <a class="el" href="point_8cpp_source.html#l00020">20</a> du fichier <a class="el" href="point_8cpp_source.html">point.cpp</a>.</p>
 
@@ -410,7 +411,7 @@ Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dan
 </div><div class="memdoc">
 <p>Coordonnées du premier point dans l'espace(x) </p>
 
-<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00014">14</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00018">18</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
 
 </div>
 </div>
@@ -433,7 +434,7 @@ Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dan
 </div><div class="memdoc">
 <p>Coordonnées du troisième point dans l'espace(z) </p>
 
-<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00016">16</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00020">20</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +457,7 @@ Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dan
 </div><div class="memdoc">
 <p>Coordonnées du deuxième point dans l'espace(y) </p>
 
-<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00015">15</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="point_8hpp_source.html#l00019">19</a> du fichier <a class="el" href="point_8hpp_source.html">point.hpp</a>.</p>
 
 </div>
 </div>
@@ -470,7 +471,7 @@ Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dan
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_point.html">Point</a></li>
-    <li class="footer">Généré le Lundi 2 Novembre 2015 14:51:31 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mardi 3 Novembre 2015 10:05:19 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

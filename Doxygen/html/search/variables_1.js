@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['numberof_5fface',['numberof_face',['../class_mesh.html#a8ad7f6788ff772d5e0e17e992571f364',1,'Mesh']]],
-  ['numberof_5fpoint',['numberof_point',['../class_mesh.html#a9c058bf3f414b6119d7e6ea09703057d',1,'Mesh']]]
+  ['full_5farea',['FULL_AREA',['../class_mesh.html#a0e1f18abe6ea5a9943e6f8e672f8b037',1,'Mesh']]]
 ];

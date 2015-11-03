@@ -118,32 +118,42 @@ $(document).ready(function(){initNavTree('mesh_8hpp_source.html','');});
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_mesh.html#a9c058bf3f414b6119d7e6ea09703057d">   10</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#a9c058bf3f414b6119d7e6ea09703057d">numberof_point</a>;   </div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_mesh.html#a8ad7f6788ff772d5e0e17e992571f364">   11</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#a8ad7f6788ff772d5e0e17e992571f364">numberof_face</a>;    </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_mesh.html#a88e83e4a86e03f23069bfe397de58389">Mesh</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> f);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#a9e33572dbe48c4d96f98c2731fd97dcd">getNumberof_p</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#ac5fdb24c0693a8d02c739cd254b826e1">getNumberof_f</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a76b45fbfdfa33d0f0285f86a918192ba">setNumberof_p</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; p);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#ad1b46c508d09b76ac575564fcaa24931">setNumberof_f</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; f);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_mesh.html#a0e1f18abe6ea5a9943e6f8e672f8b037">   12</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_mesh.html#a0e1f18abe6ea5a9943e6f8e672f8b037">FULL_AREA</a>; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_mesh.html#a88e83e4a86e03f23069bfe397de58389">Mesh</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> f);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#a9e33572dbe48c4d96f98c2731fd97dcd">getNumberof_p</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#ac5fdb24c0693a8d02c739cd254b826e1">getNumberof_f</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_mesh.html#abf4ba84ba3a807377f391cd2bf37f2fe">getFull</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a76b45fbfdfa33d0f0285f86a918192ba">setNumberof_p</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; p);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif // MESH_HPP</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#ad1b46c508d09b76ac575564fcaa24931">setNumberof_f</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; f);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#ab5b9b1d7b1a616def0cefb1f8fd7b7a4">setFull</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; a);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif // MESH_HPP</span></div>
 <div class="ttc" id="class_mesh_html_ac5fdb24c0693a8d02c739cd254b826e1"><div class="ttname"><a href="class_mesh.html#ac5fdb24c0693a8d02c739cd254b826e1">Mesh::getNumberof_f</a></div><div class="ttdeci">unsigned int getNumberof_f() const </div><div class="ttdoc">Accesseur du nombre de faces. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00013">mesh.cpp:13</a></div></div>
 <div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00008">mesh.hpp:8</a></div></div>
-<div class="ttc" id="class_mesh_html_ad1b46c508d09b76ac575564fcaa24931"><div class="ttname"><a href="class_mesh.html#ad1b46c508d09b76ac575564fcaa24931">Mesh::setNumberof_f</a></div><div class="ttdeci">void setNumberof_f(const unsigned int &amp;f)</div><div class="ttdoc">Mutateur du nombre de faces. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00017">mesh.cpp:17</a></div></div>
+<div class="ttc" id="class_mesh_html_a0e1f18abe6ea5a9943e6f8e672f8b037"><div class="ttname"><a href="class_mesh.html#a0e1f18abe6ea5a9943e6f8e672f8b037">Mesh::FULL_AREA</a></div><div class="ttdeci">double FULL_AREA</div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00012">mesh.hpp:12</a></div></div>
+<div class="ttc" id="class_mesh_html_ad1b46c508d09b76ac575564fcaa24931"><div class="ttname"><a href="class_mesh.html#ad1b46c508d09b76ac575564fcaa24931">Mesh::setNumberof_f</a></div><div class="ttdeci">void setNumberof_f(const unsigned int &amp;f)</div><div class="ttdoc">Mutateur du nombre de faces. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00018">mesh.cpp:18</a></div></div>
+<div class="ttc" id="class_mesh_html_ab5b9b1d7b1a616def0cefb1f8fd7b7a4"><div class="ttname"><a href="class_mesh.html#ab5b9b1d7b1a616def0cefb1f8fd7b7a4">Mesh::setFull</a></div><div class="ttdeci">void setFull(const double &amp;a)</div><div class="ttdoc">Mutateur de la valeur totale de l&#39;aire. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00019">mesh.cpp:19</a></div></div>
 <div class="ttc" id="class_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00009">mesh.cpp:9</a></div></div>
 <div class="ttc" id="class_mesh_html_a8ad7f6788ff772d5e0e17e992571f364"><div class="ttname"><a href="class_mesh.html#a8ad7f6788ff772d5e0e17e992571f364">Mesh::numberof_face</a></div><div class="ttdeci">unsigned int numberof_face</div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00011">mesh.hpp:11</a></div></div>
+<div class="ttc" id="class_mesh_html_abf4ba84ba3a807377f391cd2bf37f2fe"><div class="ttname"><a href="class_mesh.html#abf4ba84ba3a807377f391cd2bf37f2fe">Mesh::getFull</a></div><div class="ttdeci">double getFull() const </div><div class="ttdoc">Accesseur de la valeur totale de l&#39;aire. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00014">mesh.cpp:14</a></div></div>
 <div class="ttc" id="class_mesh_html_a9e33572dbe48c4d96f98c2731fd97dcd"><div class="ttname"><a href="class_mesh.html#a9e33572dbe48c4d96f98c2731fd97dcd">Mesh::getNumberof_p</a></div><div class="ttdeci">unsigned int getNumberof_p() const </div><div class="ttdoc">Accesseur du nombre de points. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00012">mesh.cpp:12</a></div></div>
-<div class="ttc" id="class_mesh_html_a76b45fbfdfa33d0f0285f86a918192ba"><div class="ttname"><a href="class_mesh.html#a76b45fbfdfa33d0f0285f86a918192ba">Mesh::setNumberof_p</a></div><div class="ttdeci">void setNumberof_p(const unsigned int &amp;p)</div><div class="ttdoc">Mutateur du nombre de points. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00016">mesh.cpp:16</a></div></div>
+<div class="ttc" id="class_mesh_html_a76b45fbfdfa33d0f0285f86a918192ba"><div class="ttname"><a href="class_mesh.html#a76b45fbfdfa33d0f0285f86a918192ba">Mesh::setNumberof_p</a></div><div class="ttdeci">void setNumberof_p(const unsigned int &amp;p)</div><div class="ttdoc">Mutateur du nombre de points. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00017">mesh.cpp:17</a></div></div>
 <div class="ttc" id="class_mesh_html_a9c058bf3f414b6119d7e6ea09703057d"><div class="ttname"><a href="class_mesh.html#a9c058bf3f414b6119d7e6ea09703057d">Mesh::numberof_point</a></div><div class="ttdeci">unsigned int numberof_point</div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00010">mesh.hpp:10</a></div></div>
 <div class="ttc" id="class_mesh_html_a88e83e4a86e03f23069bfe397de58389"><div class="ttname"><a href="class_mesh.html#a88e83e4a86e03f23069bfe397de58389">Mesh::Mesh</a></div><div class="ttdeci">Mesh(unsigned int p, unsigned int f)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00004">mesh.cpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -152,7 +162,7 @@ $(document).ready(function(){initNavTree('mesh_8hpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_14964cf464c5923c8b65fd6c109e9613.html">System</a></li><li class="navelem"><a class="el" href="dir_d504f2360395835c3e499be94580043d.html">Objet3D</a></li><li class="navelem"><a class="el" href="mesh_8hpp.html">mesh.hpp</a></li>
-    <li class="footer">Généré le Lundi 2 Novembre 2015 14:51:31 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
+    <li class="footer">Généré le Mardi 3 Novembre 2015 10:05:19 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

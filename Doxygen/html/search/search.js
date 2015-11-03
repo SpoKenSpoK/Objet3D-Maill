@@ -11,7 +11,7 @@ var indexSectionsWithContent =
   1: "fmp",
   2: "fmpr",
   3: "cfgmps~",
-  4: "anps",
+  4: "afnps",
   5: "o"
 };
 
