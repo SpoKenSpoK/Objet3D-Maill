@@ -99,7 +99,9 @@ int main()
                 mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
             }
 
-            std::cout << "Aire totale de la forme "<< name_fichier << " : " << mesh.getFull() << std::endl;
+            std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
+            std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
+            std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
         }
         else
             std::cerr << "Impossible d'ouvrir le fichier " << name_fichier << " !" << std::endl;
