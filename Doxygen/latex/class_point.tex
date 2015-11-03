@@ -24,8 +24,8 @@ void \hyperlink{class_point_a3b70e89e253f5339392990ae29313ae8}{set\-P\-\_\-two} 
 \begin{DoxyCompactList}\small\item\em Mutateur du point 2. \end{DoxyCompactList}\item 
 void \hyperlink{class_point_a097d97049b319bb131b51f990a52aa94}{set\-P\-\_\-three} (const double \&th)
 \begin{DoxyCompactList}\small\item\em Mutateur du point 3. \end{DoxyCompactList}\item 
-double \hyperlink{class_point_af33a5d06f58de83f60b926b04ffa5d79}{calc\-\_\-length} (unsigned int x1, unsigned int x2)
-\begin{DoxyCompactList}\small\item\em Calcul la longueur d'un côté \end{DoxyCompactList}\end{DoxyCompactItemize}
+double \hyperlink{class_point_a6b523817c6565922eb02e15225ba4b82}{calc\-\_\-length} (unsigned int p1, unsigned int p2)
+\begin{DoxyCompactList}\small\item\em Calcul de la longueur d'un côté \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,12 +40,9 @@ double \hyperlink{class_point_af7cb3c4c0c0f52218ac9ce180df003da}{point\-\_\-thre
 \subsection{Description détaillée}
 La classe \hyperlink{class_point}{Point} représente les points ou sommets(composés de coordonnées) des triangles \hyperlink{class_face}{Face} composant l'objet \hyperlink{class_mesh}{Mesh}. Chaque sommet du triangle a donc trois points dans l'espace(coordonnées). \par
 Il s'agit donc ici de récupérer les coordonnées se trouvant dans le fichier .O\-F\-F . Ces coordonnées sont alors placées respectueusement dans les attributs point\-\_\-one, point\-\_\-two, point\-\_\-three de type {\bfseries double} \par
- \-\_\-\-\_\-\-\_\- tout à refaire ici Par la suite il nous sera donc possible d'aller chercher une coordonnée suivant la ligne de lecture qui nous sera indiquée (cf. \hyperlink{main_8cpp}{main.\-cpp} \& explication de \hyperlink{class_face}{Face}). \par
-Une méthode de calcul est aussi présente, celle-\/ci récupère la différence entre deux coordonnées $(x2-x1)^2$. \par
-Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dans l'espace (en y ajoutant la racine carré). Soit \-: \par
-\subsubsection*{$\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}$ (cf. \hyperlink{main_8cpp}{main.\-cpp}) }
 
-Définition à la ligne 16 du fichier point.\-hpp.
+
+Définition à la ligne 9 du fichier point.\-hpp.
 
 
 
@@ -83,23 +80,24 @@ Définition à la ligne 7 du fichier point.\-cpp.
 
 
 \subsection{Documentation des fonctions membres}
-\hypertarget{class_point_af33a5d06f58de83f60b926b04ffa5d79}{\index{Point@{Point}!calc\-\_\-length@{calc\-\_\-length}}
+\hypertarget{class_point_a6b523817c6565922eb02e15225ba4b82}{\index{Point@{Point}!calc\-\_\-length@{calc\-\_\-length}}
 \index{calc\-\_\-length@{calc\-\_\-length}!Point@{Point}}
 \subsubsection[{calc\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::calc\-\_\-length (
 \begin{DoxyParamCaption}
-\item[{unsigned int}]{x1, }
-\item[{unsigned int}]{x2}
+\item[{unsigned int}]{p1, }
+\item[{unsigned int}]{p2}
 \end{DoxyParamCaption}
-)}}\label{class_point_af33a5d06f58de83f60b926b04ffa5d79}
+)}}\label{class_point_a6b523817c6565922eb02e15225ba4b82}
 
 
-Calcul la longueur d'un côté 
+Calcul de la longueur d'un côté 
 
-$(x2-x1)^2$ =$>$ à changer 
+Soit la formule suivant \-: $\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}$ \par
+
 \begin{DoxyParams}{Paramètres}
-{\em x1} & un entier positif \\
+{\em p1} & un entier positif \\
 \hline
-{\em x2} & un entier positif \\
+{\em p2} & un entier positif \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
@@ -231,21 +229,21 @@ Définition à la ligne 15 du fichier point.\-cpp.
 \subsubsection[{point\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-one\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_a030522c3949dc71bc4c1f39eb1b0c77e}
 Coordonnées du premier point dans l'espace(x) 
 
-Définition à la ligne 18 du fichier point.\-hpp.
+Définition à la ligne 11 du fichier point.\-hpp.
 
 \hypertarget{class_point_af7cb3c4c0c0f52218ac9ce180df003da}{\index{Point@{Point}!point\-\_\-three@{point\-\_\-three}}
 \index{point\-\_\-three@{point\-\_\-three}!Point@{Point}}
 \subsubsection[{point\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-three\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_af7cb3c4c0c0f52218ac9ce180df003da}
 Coordonnées du troisième point dans l'espace(z) 
 
-Définition à la ligne 20 du fichier point.\-hpp.
+Définition à la ligne 13 du fichier point.\-hpp.
 
 \hypertarget{class_point_a7eece7f7413a741137cf32bb763f3987}{\index{Point@{Point}!point\-\_\-two@{point\-\_\-two}}
 \index{point\-\_\-two@{point\-\_\-two}!Point@{Point}}
 \subsubsection[{point\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-two\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_a7eece7f7413a741137cf32bb763f3987}
 Coordonnées du deuxième point dans l'espace(y) 
 
-Définition à la ligne 19 du fichier point.\-hpp.
+Définition à la ligne 12 du fichier point.\-hpp.
 
 
 

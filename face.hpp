@@ -9,8 +9,7 @@
     \n \n
     Choix des types pour les attributs : \n
     Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type \b double.
-    Pour les coordonnées nous préférons partir sur un type \b unsigned \b int pour la valeur des attributs sommets. */
-
+    Nous préférons partir sur un type \b unsigned \b int pour la valeur des attributs sommets. */
 
 class Face{
     private:

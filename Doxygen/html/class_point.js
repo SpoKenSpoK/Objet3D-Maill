@@ -2,7 +2,7 @@ var class_point =
 [
     [ "Point", "class_point.html#ad92f2337b839a94ce97dcdb439b4325a", null ],
     [ "~Point", "class_point.html#a395fa04b4ec126b66fc053f829a30cc1", null ],
-    [ "calc_length", "class_point.html#af33a5d06f58de83f60b926b04ffa5d79", null ],
+    [ "calc_length", "class_point.html#a6b523817c6565922eb02e15225ba4b82", null ],
     [ "getP_one", "class_point.html#a211f8dee098122a2f1c326ba42652ee2", null ],
     [ "getP_three", "class_point.html#adf0f89d9beca24315b45d96786896a56", null ],
     [ "getP_two", "class_point.html#afd9ee8dca2913903fd6a1a95d743afaa", null ],

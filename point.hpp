@@ -4,13 +4,6 @@
     Chaque sommet du triangle a donc trois points dans l'espace(coordonnées). \n
     Il s'agit donc ici de récupérer les coordonnées se trouvant dans le fichier .OFF .
     Ces coordonnées sont alors placées respectueusement dans les attributs point_one, point_two, point_three de type \b double \n
-
-    ___ tout à refaire ici
-    Par la suite il nous sera donc possible d'aller chercher une coordonnée suivant la ligne de lecture qui nous sera indiquée (cf. main.cpp & explication de Face). \n
-    Une méthode de calcul est aussi présente, celle-ci récupère la différence entre deux coordonnées \f$(x2-x1)^2\f$. \n
-    Il faudra alors la répeter trois fois pour obtenir la longueur d'un segment dans l'espace (en y ajoutant la racine carré). Soit : \n
-    \f$\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}\f$ (cf. main.cpp)
-    -----
     */
 
 class Point{
@@ -49,12 +42,12 @@ class Point{
     /** Modifie la coordonnée du troisième point \param th un réel double constant passé par référence */
         void setP_three(const double& th);
 
-    /// Calcul la longueur d'un côté
-    /** \f$(x2-x1)^2\f$ => à changer
-        \param x1 un entier positif
-        \param x2 un entier positif
+    /// Calcul de la longueur d'un côté
+    /** Soit la formule suivant : \f$\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}\f$ \n
+        \param p1 un entier positif
+        \param p2 un entier positif
         \return la longueur d'un segement entre deux points donnés en paramètres, calculé via leurs coordonnées qui sont des réels doubles. Nous retournons donc un double */
-        double calc_length(unsigned int x1, unsigned int x2);
+        double calc_length(unsigned int p1, unsigned int p2);
 };
 
 #endif // POINT_HPP
