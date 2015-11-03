@@ -28,8 +28,8 @@ int main()
     bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
 
     do{
-        std::cout<<"Entrez le nom du fichier .off a tester: "<<std::endl;
-        std::cin>>name_fichier;
+        std::cout << "Entrez le nom du fichier .off a tester: " << std::endl;
+        std::cin >> name_fichier;
 
         // Ouverture du fichier en lecture
         std::ifstream fichier(name_fichier.c_str(), std::ios::in);
