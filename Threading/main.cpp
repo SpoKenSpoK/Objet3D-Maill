@@ -6,12 +6,25 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
+#include <pthread.h>
 #include "mesh.hpp"
 #include "face.hpp"
 #include "point.hpp"
 
+ void* thread_1(void* arg)
+    {
+        std::cout<< "Nous sommes dans le thread. \n" << std::endl;
+        (void)arg;
+        pthread_exit(NULL);
+    }
+
+
 int main()
 {
+    pthread_t thread;
+    pthread_create(&thread, NULL, thread_1, NULL);
+    pthread_join(thread, NULL);
+
     // Création d'un tableau de Faces & de Points
     Face* tab_face;
     Point* tab_point;
