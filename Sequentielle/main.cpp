@@ -17,12 +17,12 @@ int main()
     Point* tab_point;
 
     // Création des deux clock nous permettant de calculer le temps d'exécution du programme
-    double clock_debut;
-    double clock_fin;
+    double clock_debut = 0;
+    double clock_fin = 0;
 
     // Clock pour le temps d'éxecution de la lecture
-    double clock_debut_lecture;
-    double clock_fin_lecture;
+    double clock_debut_lecture = 0;
+    double clock_fin_lecture = 0;
 
     std::string name_fichier; //< Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -> while serait fausse (fichier inexistant)
     bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
@@ -42,14 +42,15 @@ int main()
             // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
             fichier.seekg(4, fichier.beg);
 
-            unsigned int point_count;   //< Création d'un entier positif représentant le nombre de point présent dans le fichier
-            unsigned int face_count;    //< Création d'un autre entier positif, celui représentant le nombre de face
+            unsigned int point_count = 0;   //< Création d'un entier positif représentant le nombre de point présent dans le fichier
+            unsigned int face_count = 0;    //< Création d'un autre entier positif, celui représentant le nombre de face
 
             // Lecture du fichier, les deux premiers entiers positifs sont insérés dans les variables précédemments définies
             fichier >> point_count >> face_count;
 
             // Création d'une instance de Mesh en insérant dans le constructeur le nombre de point et face obtenu
             Mesh mesh(point_count, face_count);
+            mesh.setFull(0.0);
 
             tab_point = new Point[mesh.getNumberof_p()];    //< Allocation dynamique du tableau de Point prennant comme taille le nombre de point
             tab_face = new Face[mesh.getNumberof_f()];  //< Allocation dynamique du tableau de Face prennant comme taille le nombre de face
@@ -58,7 +59,7 @@ int main()
             fichier.seekg(3, fichier.cur);
 
             // Lecture des coordonnées de chaque sommet
-            double p_value;
+            long double p_value;
             for(unsigned int i=0; i<mesh.getNumberof_p(); ++i){
                 fichier >> p_value;
                 tab_point[i].setP_one(p_value);
@@ -86,12 +87,15 @@ int main()
 
             // Fermeture du fichier ouvert en lecture
             fichier.close();
+
             clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;
+
+            std::cerr<<"LECTURE FINIE - NOUS PASSONS AU CALCUL"<<std::endl;
 
             clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
 
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() ) ); //< Calcul de la longueur AB
+                tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() )); //< Calcul de la longueur AB
                 tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
                 tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
 
