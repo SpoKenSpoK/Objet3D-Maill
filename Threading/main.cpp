@@ -38,7 +38,7 @@ void* calcul(void* args)
 int main()
 {
 
-    const short THREAD_COUNT = 10;
+    const short THREAD_COUNT = 4;
 
     // Création d'un tableau de Faces & de Points
     Face* tab_face;

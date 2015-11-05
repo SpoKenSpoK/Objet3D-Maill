@@ -17,12 +17,12 @@ int main()
     Point* tab_point;
 
     // Création des deux clock nous permettant de calculer le temps d'exécution du programme
-    double clock_debut = 0;
-    double clock_fin = 0;
+    double clock_debut;
+    double clock_fin;
 
     // Clock pour le temps d'éxecution de la lecture
-    double clock_debut_lecture = 0;
-    double clock_fin_lecture = 0;
+    double clock_debut_lecture;
+    double clock_fin_lecture;
 
     std::string name_fichier; //< Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -> while serait fausse (fichier inexistant)
     bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
