@@ -17,6 +17,8 @@ class Mesh{
         \param p un entier positif
         \param f un entier positif */
         Mesh(unsigned int p, unsigned int f);
+    /// Constructeur par défaut
+        Mesh();
     /// Destructeur
         ~Mesh();
 

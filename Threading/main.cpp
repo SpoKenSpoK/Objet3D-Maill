@@ -11,19 +11,34 @@
 #include "face.hpp"
 #include "point.hpp"
 
- void* thread_1(void* arg)
-    {
-        std::cout<< "Nous sommes dans le thread. \n" << std::endl;
-        (void)arg;
-        pthread_exit(NULL);
+struct ThreadParams{
+    unsigned int _max;
+    unsigned int _min;
+    Face* _tab_face;
+    Point* _tab_point;
+    Mesh* _mesh;
+};
+
+void* calcul(void* args)
+{
+    ThreadParams *thread_params = (ThreadParams*)args;
+
+    for(unsigned int i=thread_params->_min; i<thread_params->_max; ++i){
+        thread_params->_tab_face[i].setSeg_one( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_one(), thread_params->_tab_face[i].getS_two() ) ); //< Calcul de la longueur AB
+        thread_params->_tab_face[i].setSeg_two( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_two(), thread_params->_tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
+        thread_params->_tab_face[i].setSeg_three( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_three(), thread_params->_tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
+
+        // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
+        thread_params->_mesh->setFull(thread_params->_mesh->getFull() + thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three()) );
     }
+    pthread_exit(NULL);
+}
 
 
 int main()
 {
-    pthread_t thread;
-    pthread_create(&thread, NULL, thread_1, NULL);
-    pthread_join(thread, NULL);
+
+    const short THREAD_COUNT = 10;
 
     // Création d'un tableau de Faces & de Points
     Face* tab_face;
@@ -102,7 +117,7 @@ int main()
             clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;
 
             clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
-
+/*
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                 tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() ) ); //< Calcul de la longueur AB
                 tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
@@ -111,6 +126,26 @@ int main()
                 // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
                 mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
             }
+*/
+            pthread_t* threads_array;
+            ThreadParams* thread_params;
+            int segments = face_count/THREAD_COUNT;
+            threads_array = new pthread_t[THREAD_COUNT];
+            thread_params = new ThreadParams[THREAD_COUNT];
+            for(unsigned int i=0; i<THREAD_COUNT; ++i){
+                thread_params[i]._max=(i+1)*segments;
+                thread_params[i]._min=i*segments;
+                thread_params[i]._tab_face=tab_face;
+                thread_params[i]._tab_point=tab_point;
+                thread_params[i]._mesh=&mesh;
+                pthread_create(&threads_array[i], NULL, calcul, &thread_params[i]);
+            }
+            for(unsigned int i=0; i<THREAD_COUNT; ++i){
+                pthread_join(threads_array[i],NULL);
+            }
+            delete[]threads_array;
+            delete[]thread_params;
+
 
             std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
             std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;

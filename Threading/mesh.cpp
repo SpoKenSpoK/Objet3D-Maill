@@ -5,6 +5,10 @@ Mesh::Mesh(unsigned int point, unsigned int face)
     :numberof_point(point), numberof_face(face)
 {}
 
+Mesh::Mesh()
+    :numberof_point(0), numberof_face(0)
+{}
+
 //Destructeur
 Mesh::~Mesh() {}
 
