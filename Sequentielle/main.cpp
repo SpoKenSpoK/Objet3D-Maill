@@ -90,8 +90,6 @@ int main()
 
             clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;
 
-            std::cerr<<"LECTURE FINIE - NOUS PASSONS AU CALCUL"<<std::endl;
-
             clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
 
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
