@@ -121,7 +121,7 @@ int main()
     //---> La différence des deux clock nous permet de connaître précisement (et seulement) le temps d'éxecution des calculs. En oubliant ainsi le temps passé sur la lecture.
     //---> Dans une clock, le temps que met l'utilisateur pour entrer une valeur au clavier jusqu'à la pression de la touche "Entrée" (Return) n'est pas décompté.
     std::cout << "Temps de lecture : "<< clock_fin_lecture - clock_debut_lecture << " s"<< std::endl;
-    std::cout << "Temps d'éxecution total : " << (clock_fin - clock_debut) + (clock_fin_lecture - clock_debut_lecture) << " s";
+    std::cout << "Temps d'éxecution total : " << (clock_fin - clock_debut) + (clock_fin_lecture - clock_debut_lecture) << " s" << std::endl;
 
     return 0;
 }
