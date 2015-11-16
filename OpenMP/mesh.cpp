@@ -1,8 +1,8 @@
 #include "mesh.hpp"
 
 //Constructeur
-Mesh::Mesh(unsigned int point, unsigned int face)
-    :numberof_point(point), numberof_face(face)
+Mesh::Mesh(unsigned int point, unsigned int face, double area)
+    :numberof_point(point), numberof_face(face), FULL_AREA(area)
 {}
 
 //Destructeur

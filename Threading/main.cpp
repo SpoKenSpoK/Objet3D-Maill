@@ -79,7 +79,7 @@ int main()
             fichier >> point_count >> face_count;
 
             // Création d'une instance de Mesh en insérant dans le constructeur le nombre de point et face obtenu
-            Mesh mesh(point_count, face_count);
+            Mesh mesh(point_count, face_count, 0);
 
             tab_point = new Point[mesh.getNumberof_p()];    //< Allocation dynamique du tableau de Point prennant comme taille le nombre de point
             tab_face = new Face[mesh.getNumberof_f()];  //< Allocation dynamique du tableau de Face prennant comme taille le nombre de face
