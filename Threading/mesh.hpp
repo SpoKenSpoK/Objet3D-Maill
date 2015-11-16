@@ -15,8 +15,9 @@ class Mesh{
     /// Constructeur
     /** Constructeur prennant en paramètre le nombre de Point et de Face présents dans l'objet maillé
         \param p un entier positif
-        \param f un entier positif */
-        Mesh(unsigned int p, unsigned int f);
+        \param f un entier positif
+        \param area un double réel */
+        Mesh(unsigned int p, unsigned int f, double area);
     /// Constructeur par défaut
         Mesh();
     /// Destructeur

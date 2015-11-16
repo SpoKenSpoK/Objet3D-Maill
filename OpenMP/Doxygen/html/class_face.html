@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Calcul de l&#39;aire d&#39;un objet 3D Maillé: Référence de la classe Face</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Calcul de l&#39;aire d&#39;un objet 3D Maillé
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_face.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="class_face-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe Face</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="face_8hpp_source.html">face.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:afdb634bc2d5287ba0d62e46b57e9dc2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#afdb634bc2d5287ba0d62e46b57e9dc2e">Face</a> ()</td></tr>
+<tr class="memdesc:afdb634bc2d5287ba0d62e46b57e9dc2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#afdb634bc2d5287ba0d62e46b57e9dc2e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:afdb634bc2d5287ba0d62e46b57e9dc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182c8c9ba652d46b01fdf6816cd65590"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a182c8c9ba652d46b01fdf6816cd65590">~Face</a> ()</td></tr>
+<tr class="memdesc:a182c8c9ba652d46b01fdf6816cd65590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a182c8c9ba652d46b01fdf6816cd65590">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a182c8c9ba652d46b01fdf6816cd65590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6ce8497a59d3de67cd861a1d3aeb1ee"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#ac6ce8497a59d3de67cd861a1d3aeb1ee">getS_one</a> () const </td></tr>
+<tr class="memdesc:ac6ce8497a59d3de67cd861a1d3aeb1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du sommet 1.  <a href="#ac6ce8497a59d3de67cd861a1d3aeb1ee">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ac6ce8497a59d3de67cd861a1d3aeb1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2106a9b3661a4dcb41306a7010106221"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a2106a9b3661a4dcb41306a7010106221">getS_two</a> () const </td></tr>
+<tr class="memdesc:a2106a9b3661a4dcb41306a7010106221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du sommet 2.  <a href="#a2106a9b3661a4dcb41306a7010106221">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a2106a9b3661a4dcb41306a7010106221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb2a3e263ede7ed39eb044ef7b5e8c7"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a5bb2a3e263ede7ed39eb044ef7b5e8c7">getS_three</a> () const </td></tr>
+<tr class="memdesc:a5bb2a3e263ede7ed39eb044ef7b5e8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du sommet 3.  <a href="#a5bb2a3e263ede7ed39eb044ef7b5e8c7">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a5bb2a3e263ede7ed39eb044ef7b5e8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906d16f2f1c9adbe881ae46ee7f3e3e9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a906d16f2f1c9adbe881ae46ee7f3e3e9">getSeg_one</a> () const </td></tr>
+<tr class="memdesc:a906d16f2f1c9adbe881ae46ee7f3e3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du segment 1.  <a href="#a906d16f2f1c9adbe881ae46ee7f3e3e9">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a906d16f2f1c9adbe881ae46ee7f3e3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a58b3b43a78239defee57e7202968e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a50a58b3b43a78239defee57e7202968e">getSeg_two</a> () const </td></tr>
+<tr class="memdesc:a50a58b3b43a78239defee57e7202968e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du segment 2.  <a href="#a50a58b3b43a78239defee57e7202968e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a50a58b3b43a78239defee57e7202968e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19bb64415987240d90a1ec86d2432f05"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a19bb64415987240d90a1ec86d2432f05">getSeg_three</a> () const </td></tr>
+<tr class="memdesc:a19bb64415987240d90a1ec86d2432f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du segment 3.  <a href="#a19bb64415987240d90a1ec86d2432f05">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a19bb64415987240d90a1ec86d2432f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3e36c17c14b6617d92b0b9ecb2b6fc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc">getPerimeter</a> () const </td></tr>
+<tr class="memdesc:acd3e36c17c14b6617d92b0b9ecb2b6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du périmètre.  <a href="#acd3e36c17c14b6617d92b0b9ecb2b6fc">Plus de détails...</a><br/></td></tr>
+<tr class="separator:acd3e36c17c14b6617d92b0b9ecb2b6fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58beb8ce1b9f8154379db998a02ffa3d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a58beb8ce1b9f8154379db998a02ffa3d">getArea</a> () const </td></tr>
+<tr class="memdesc:a58beb8ce1b9f8154379db998a02ffa3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'aire.  <a href="#a58beb8ce1b9f8154379db998a02ffa3d">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a58beb8ce1b9f8154379db998a02ffa3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96639aea98e0c24899d892bec1d5f513"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a96639aea98e0c24899d892bec1d5f513">setS_one</a> (const unsigned int &amp;one)</td></tr>
+<tr class="memdesc:a96639aea98e0c24899d892bec1d5f513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du sommet 1.  <a href="#a96639aea98e0c24899d892bec1d5f513">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a96639aea98e0c24899d892bec1d5f513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bd40f7c3c9592fd4cc3cbd898d6fe42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a7bd40f7c3c9592fd4cc3cbd898d6fe42">setS_two</a> (const unsigned int &amp;two)</td></tr>
+<tr class="memdesc:a7bd40f7c3c9592fd4cc3cbd898d6fe42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du sommet 2.  <a href="#a7bd40f7c3c9592fd4cc3cbd898d6fe42">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a7bd40f7c3c9592fd4cc3cbd898d6fe42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b474b884d3f7f54b20e5fe45c8c33f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#aa6b474b884d3f7f54b20e5fe45c8c33f">setS_three</a> (const unsigned int &amp;three)</td></tr>
+<tr class="memdesc:aa6b474b884d3f7f54b20e5fe45c8c33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du sommet 3.  <a href="#aa6b474b884d3f7f54b20e5fe45c8c33f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aa6b474b884d3f7f54b20e5fe45c8c33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467b326e9be6b5aac350c9b87a5ab14c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a467b326e9be6b5aac350c9b87a5ab14c">setSeg_one</a> (const double &amp;o)</td></tr>
+<tr class="memdesc:a467b326e9be6b5aac350c9b87a5ab14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du segment 1.  <a href="#a467b326e9be6b5aac350c9b87a5ab14c">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a467b326e9be6b5aac350c9b87a5ab14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eebfcfb41d87470d675ab8fb106585e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a1eebfcfb41d87470d675ab8fb106585e">setSeg_two</a> (const double &amp;t)</td></tr>
+<tr class="memdesc:a1eebfcfb41d87470d675ab8fb106585e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du segment 2.  <a href="#a1eebfcfb41d87470d675ab8fb106585e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a1eebfcfb41d87470d675ab8fb106585e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1fc08e71b974483dc876adb43da487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#acc1fc08e71b974483dc876adb43da487">setSeg_three</a> (const double &amp;th)</td></tr>
+<tr class="memdesc:acc1fc08e71b974483dc876adb43da487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du segment 3.  <a href="#acc1fc08e71b974483dc876adb43da487">Plus de détails...</a><br/></td></tr>
+<tr class="separator:acc1fc08e71b974483dc876adb43da487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2be08b9e991f22d85aa39901a353a53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#af2be08b9e991f22d85aa39901a353a53">setPerimeter</a> (const double &amp;p)</td></tr>
+<tr class="memdesc:af2be08b9e991f22d85aa39901a353a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur du périmètre.  <a href="#af2be08b9e991f22d85aa39901a353a53">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af2be08b9e991f22d85aa39901a353a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ee83e39c97a515c49f076d55a14b8bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a6ee83e39c97a515c49f076d55a14b8bd">setArea</a> (const double &amp;a)</td></tr>
+<tr class="memdesc:a6ee83e39c97a515c49f076d55a14b8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur de l'aire.  <a href="#a6ee83e39c97a515c49f076d55a14b8bd">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a6ee83e39c97a515c49f076d55a14b8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d460b44871e8f720de067063734aede"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a0d460b44871e8f720de067063734aede">calc_area</a> (double a, double b, double c)</td></tr>
+<tr class="memdesc:a0d460b44871e8f720de067063734aede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcul de l'aire du Triangle(Face) via la Forume d'Héron.  <a href="#a0d460b44871e8f720de067063734aede">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a0d460b44871e8f720de067063734aede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a68ff25f391cfe3ee5ce2b7f13dac64fa"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a68ff25f391cfe3ee5ce2b7f13dac64fa">summit_one</a></td></tr>
+<tr class="separator:a68ff25f391cfe3ee5ce2b7f13dac64fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0b2a96bd53dcf7767c2cefe1fcc1f3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a8d0b2a96bd53dcf7767c2cefe1fcc1f3">summit_two</a></td></tr>
+<tr class="separator:a8d0b2a96bd53dcf7767c2cefe1fcc1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af322077aea999dd19dd169bd5bdd4bdf"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#af322077aea999dd19dd169bd5bdd4bdf">summit_three</a></td></tr>
+<tr class="separator:af322077aea999dd19dd169bd5bdd4bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4053947c53549d2fd5cf43aa9c712f4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#ae4053947c53549d2fd5cf43aa9c712f4">segment_one</a></td></tr>
+<tr class="separator:ae4053947c53549d2fd5cf43aa9c712f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79107e53090d0a7efb5070ea093a70e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#ae79107e53090d0a7efb5070ea093a70e">segment_two</a></td></tr>
+<tr class="separator:ae79107e53090d0a7efb5070ea093a70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777ca579978d8d20c6e8a5e64a6999cc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a777ca579978d8d20c6e8a5e64a6999cc">segment_three</a></td></tr>
+<tr class="separator:a777ca579978d8d20c6e8a5e64a6999cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b759ee3c90c67bc7af3969546f568f9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#a9b759ee3c90c67bc7af3969546f568f9">perimeter</a></td></tr>
+<tr class="separator:a9b759ee3c90c67bc7af3969546f568f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae63fcd017fcd355e212a2510209db17c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_face.html#ae63fcd017fcd355e212a2510209db17c">area</a></td></tr>
+<tr class="separator:ae63fcd017fcd355e212a2510209db17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>La classe <a class="el" href="class_face.html">Face</a> vient ici représenter les faces qui compose un objet 3D. Celle-ci peut-être décomposée en trois sommets, ainsi que trois segments (il s'agit ici de faces triangulaires). Par suite de calcul(via les coordonnées de chaques sommets dans l'espace - x, y, z - soit 3*3 = 9 coordonnées pour chaque face) on obtient la longueur des segments composant la face et donc son périmètre. Nous pouvons alors effectuer le calcul d' <b>Héron</b> pour trouver l'aire d'une face triangulaire. <br/>
+ <br/>
+Choix des types pour les attributs : <br/>
+Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type <b>double</b>. Nous préférons partir sur un type <b>unsigned</b> <b>int</b> pour la valeur des attributs sommets. </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00014">14</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="afdb634bc2d5287ba0d62e46b57e9dc2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Face::Face </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur. </p>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00006">6</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a182c8c9ba652d46b01fdf6816cd65590"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Face::~Face </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructeur. </p>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00007">7</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a0d460b44871e8f720de067063734aede"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::calc_area </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcul de l'aire du Triangle(Face) via la Forume d'Héron. </p>
+<p><b>Forume</b> <b>d'</b> <b>Héron</b> : <br/>
+ En géométrie euclidienne, la formule de Héron, du nom de Héron d'Alexandrie, permet de calculer l'aire d'un triangle quelconque en ne connaissant que les longueurs des trois côtés du triangle : <br/>
+ Soit trois côtés : \( a\) , \( b\) et \( c\) <br/>
+ On a donc : \(\sqrt{(p-a)+(p-b)+(p-c)}\) Avec \( p\) = \( 1/2 *(a+b+c)\)</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>un réel double </td></tr>
+    <tr><td class="paramname">b</td><td>un réel double </td></tr>
+    <tr><td class="paramname">c</td><td>un réel double </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>un réel double valant l'aire de la <a class="el" href="class_face.html">Face</a> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00036">36</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58beb8ce1b9f8154379db998a02ffa3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::getArea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'aire. </p>
+<p>Retourne la valeur de l'aire </p>
+<dl class="section return"><dt>Renvoie</dt><dd>area un réel double </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00020">20</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd3e36c17c14b6617d92b0b9ecb2b6fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::getPerimeter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du périmètre. </p>
+<p>Retourne la valeur du périmètre </p>
+<dl class="section return"><dt>Renvoie</dt><dd>perimeter un réel double </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00018">18</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6ce8497a59d3de67cd861a1d3aeb1ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Face::getS_one </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du sommet 1. </p>
+<p>Retourne la valeur du sommet 1 </p>
+<dl class="section return"><dt>Renvoie</dt><dd>summit_one un entier positif </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00010">10</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5bb2a3e263ede7ed39eb044ef7b5e8c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Face::getS_three </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du sommet 3. </p>
+<p>Retourne la valeur du sommet 3 </p>
+<dl class="section return"><dt>Renvoie</dt><dd>summit_three un entier positif </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00012">12</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2106a9b3661a4dcb41306a7010106221"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Face::getS_two </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du sommet 2. </p>
+<p>Retourne la valeur du sommet 2 </p>
+<dl class="section return"><dt>Renvoie</dt><dd>summit_two un entier positif </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00011">11</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a906d16f2f1c9adbe881ae46ee7f3e3e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::getSeg_one </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du segment 1. </p>
+<p>Retourne la valeur du segment 1 </p>
+<dl class="section return"><dt>Renvoie</dt><dd>segment_one un réel double </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00014">14</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19bb64415987240d90a1ec86d2432f05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::getSeg_three </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du segment 3. </p>
+<p>Retourne la valeur du segment 3 </p>
+<dl class="section return"><dt>Renvoie</dt><dd>segment_three un réel double </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00016">16</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a50a58b3b43a78239defee57e7202968e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::getSeg_two </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du segment 2. </p>
+<p>Retourne la valeur du segment 2 </p>
+<dl class="section return"><dt>Renvoie</dt><dd>segment_two un réel double </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ee83e39c97a515c49f076d55a14b8bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Face::setArea </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur de l'aire. </p>
+<p>Modifie la valeur de l'aire </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>un réel double constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00033">33</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2be08b9e991f22d85aa39901a353a53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Face::setPerimeter </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur du périmètre. </p>
+<p>Modifie la valeur du périmètre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>un réel double constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00031">31</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96639aea98e0c24899d892bec1d5f513"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Face::setS_one </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>one</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur du sommet 1. </p>
+<p>Modifie la valeur du sommet 1 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">one</td><td>un entier positif long constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00023">23</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6b474b884d3f7f54b20e5fe45c8c33f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Face::setS_three </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>three</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur du sommet 3. </p>
+<p>Modifie la valeur du sommet 3 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">three</td><td>un entier positif long constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00025">25</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bd40f7c3c9592fd4cc3cbd898d6fe42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Face::setS_two </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>two</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur du sommet 2. </p>
+<p>Modifie la valeur du sommet 2 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">two</td><td>un entier positif long constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00024">24</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a467b326e9be6b5aac350c9b87a5ab14c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Face::setSeg_one </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur du segment 1. </p>
+<p>Modifie la valeur du segment 1 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>un réel double constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00027">27</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc1fc08e71b974483dc876adb43da487"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Face::setSeg_three </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>th</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur du segment 3. </p>
+<p>Modifie la valeur du segment 3 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">th</td><td>un réel double constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00029">29</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1eebfcfb41d87470d675ab8fb106585e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Face::setSeg_two </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur du segment 2. </p>
+<p>Modifie la valeur du segment 2 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>un réel double constant passé par référence </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="face_8cpp_source.html#l00028">28</a> du fichier <a class="el" href="face_8cpp_source.html">face.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="ae63fcd017fcd355e212a2510209db17c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::area</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Aire de la <a class="el" href="class_face.html">Face</a> </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00023">23</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b759ee3c90c67bc7af3969546f568f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::perimeter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Périmètre de la <a class="el" href="class_face.html">Face</a> </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00022">22</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4053947c53549d2fd5cf43aa9c712f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::segment_one</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Longueur du segment entre le premier et le second sommets de la <a class="el" href="class_face.html">Face</a> </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00019">19</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a777ca579978d8d20c6e8a5e64a6999cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::segment_three</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Longueur du segment entre le troisième et le premier sommets de la <a class="el" href="class_face.html">Face</a> </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00021">21</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae79107e53090d0a7efb5070ea093a70e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Face::segment_two</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Longueur du segment entre le second et le troisième sommets de la <a class="el" href="class_face.html">Face</a> </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00020">20</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a68ff25f391cfe3ee5ce2b7f13dac64fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Face::summit_one</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Place (ligne du fichier .OFF) où se situe les coordonnées du premier sommet de la <a class="el" href="class_face.html">Face</a> </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00016">16</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af322077aea999dd19dd169bd5bdd4bdf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Face::summit_three</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Place (ligne du fichier .OFF) où se situe les coordonnées du troisième sommet de la <a class="el" href="class_face.html">Face</a> </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00018">18</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8d0b2a96bd53dcf7767c2cefe1fcc1f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Face::summit_two</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Place (ligne du fichier .OFF) où se situe les coordonnées du second sommet de la <a class="el" href="class_face.html">Face</a> </p>
+
+<p>Définition à la ligne <a class="el" href="face_8hpp_source.html#l00017">17</a> du fichier <a class="el" href="face_8hpp_source.html">face.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>/home/spoken/Documents/System/Objet3D/<a class="el" href="face_8hpp_source.html">face.hpp</a></li>
+<li>/home/spoken/Documents/System/Objet3D/<a class="el" href="face_8cpp_source.html">face.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_face.html">Face</a></li>
+    <li class="footer">Généré le Mardi 3 Novembre 2015 10:57:30 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
