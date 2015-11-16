@@ -86,7 +86,6 @@ int main()
 
             // Fermeture du fichier ouvert en lecture
             fichier.close();
-
             clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;
 
             clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
@@ -100,6 +99,8 @@ int main()
                 mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
             }
 
+             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
+
             std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
             std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
@@ -109,12 +110,10 @@ int main()
 
     }while(!is_here);
 
-    clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
-
     // Suppression des tableaux de Faces et de Points
     delete [] tab_face;
     delete [] tab_point;
-
+    
     // Affichage du temps de calcul
     std::cout << "Temps de calcul : " <<  clock_fin - clock_debut << " s"<< std::endl;
     //---> La différence des deux clock nous permet de connaître précisement (et seulement) le temps d'éxecution des calculs. En oubliant ainsi le temps passé sur la lecture.

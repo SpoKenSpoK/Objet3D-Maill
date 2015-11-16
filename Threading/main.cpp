@@ -149,6 +149,9 @@ int main()
             for(unsigned int i=0; i<THREAD_COUNT; ++i){
                 pthread_join(threads_array[i],NULL);
             }
+
+            clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
+
             delete[]threads_array;
             delete[]thread_params;
 
@@ -161,7 +164,7 @@ int main()
 
     }while(!is_here);
 
-    clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
+    
 
     // Suppression des tableaux de Faces et de Points
     delete [] tab_face;
