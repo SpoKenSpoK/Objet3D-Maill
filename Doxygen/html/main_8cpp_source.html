@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Calcul de l&#39;aire d&#39;un objet 3D Maillé:  Fichier source de /home/spoken/Documents/System/Objet3D/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Calcul de l&#39;aire d&#39;un objet 3D Maillé
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('main_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Projet de Système: &quot;Calcul de surface d&#39;un objet 3D maillé&quot; *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   IUT d&#39;Arles - Département Informatique - Année 2015/2016   *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*   Réalisé par Guillaume BOEHM &amp; Thibault HECKEL              *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*               - Programmation séquentielle -                */</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mesh_8hpp.html">mesh.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="face_8hpp.html">face.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   13</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// Création d&#39;un tableau de Faces &amp; de Points</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_face.html">Face</a>* tab_face;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_point.html">Point</a>* tab_point;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// Création des deux clock nous permettant de calculer le temps d&#39;exécution du programme</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">double</span> clock_debut;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">double</span> clock_fin;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// Clock pour le temps d&#39;éxecution de la lecture</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">double</span> clock_debut_lecture;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">double</span> clock_fin_lecture;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::string name_fichier; <span class="comment">//&lt; Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -&gt; while serait fausse (fichier inexistant)</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> is_here = <span class="keyword">false</span>;   <span class="comment">//&lt; Booléen permettant d&#39;éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">do</span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot;Entrez le nom du fichier .off a tester: &quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::cin&gt;&gt;name_fichier;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Ouverture du fichier en lecture</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::ifstream fichier(name_fichier.c_str(), std::ios::in);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span>(fichier) <span class="comment">// Test pour savoir si le fichier est bien présent</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            is_here = <span class="keyword">true</span>; <span class="comment">//&lt; Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -&gt; while</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            clock_debut_lecture = (double)clock()/CLOCKS_PER_SEC;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="comment">// On se place au quatrième octet dans le fichier (en partant du début), ici après le &quot;OFF&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            fichier.seekg(4, fichier.beg);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> point_count;   <span class="comment">//&lt; Création d&#39;un entier positif représentant le nombre de point présent dans le fichier</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> face_count;    <span class="comment">//&lt; Création d&#39;un autre entier positif, celui représentant le nombre de face</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="comment">// Lecture du fichier, les deux premiers entiers positifs sont insérés dans les variables précédemments définies</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            fichier &gt;&gt; point_count &gt;&gt; face_count;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">// Création d&#39;une instance de Mesh en insérant dans le constructeur le nombre de point et face obtenu</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="class_mesh.html">Mesh</a> mesh(point_count, face_count);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            tab_point = <span class="keyword">new</span> <a class="code" href="class_point.html">Point</a>[mesh.<a class="code" href="class_mesh.html#a9e33572dbe48c4d96f98c2731fd97dcd">getNumberof_p</a>()];    <span class="comment">//&lt; Allocation dynamique du tableau de Point prennant comme taille le nombre de point</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            tab_face = <span class="keyword">new</span> <a class="code" href="class_face.html">Face</a>[mesh.<a class="code" href="class_mesh.html#ac5fdb24c0693a8d02c739cd254b826e1">getNumberof_f</a>()];  <span class="comment">//&lt; Allocation dynamique du tableau de Face prennant comme taille le nombre de face</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// On vient se placer à la ligne évitant le &#39;0&#39; (en partant de la dernière position du curseur)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            fichier.seekg(3, fichier.cur);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// Lecture des coordonnées de chaque sommet</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">double</span> p_value;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;mesh.<a class="code" href="class_mesh.html#a9e33572dbe48c4d96f98c2731fd97dcd">getNumberof_p</a>(); ++i){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                fichier &gt;&gt; p_value;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                tab_point[i].<a class="code" href="class_point.html#ac79f8c3f0fb8b9dea4f5b8a8e0315779">setP_one</a>(p_value);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                fichier &gt;&gt; p_value;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                tab_point[i].<a class="code" href="class_point.html#a3b70e89e253f5339392990ae29313ae8">setP_two</a>(p_value);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                fichier &gt;&gt; p_value;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                tab_point[i].<a class="code" href="class_point.html#a097d97049b319bb131b51f990a52aa94">setP_three</a>(p_value);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="comment">// Lecture des emplacements des coordonnées de chaque sommet pour chaque face</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> s_value;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;mesh.<a class="code" href="class_mesh.html#ac5fdb24c0693a8d02c739cd254b826e1">getNumberof_f</a>(); ++i){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                fichier &gt;&gt; s_value; <span class="comment">//&lt; Lecture du &#39;3&#39; nous indiquant qu&#39;il y a bien trois valeur (inutile de le traiter car nous ne travaillons qu&#39;avec des faces triangulaires)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                fichier &gt;&gt; s_value;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                tab_face[i].<a class="code" href="class_face.html#a96639aea98e0c24899d892bec1d5f513">setS_one</a>(s_value);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                fichier &gt;&gt; s_value;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                tab_face[i].<a class="code" href="class_face.html#a7bd40f7c3c9592fd4cc3cbd898d6fe42">setS_two</a>(s_value);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                fichier &gt;&gt; s_value;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                tab_face[i].<a class="code" href="class_face.html#aa6b474b884d3f7f54b20e5fe45c8c33f">setS_three</a>(s_value);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="comment">// Fermeture du fichier ouvert en lecture</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            fichier.close();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            clock_debut = (double)clock()/CLOCKS_PER_SEC; <span class="comment">//&lt; Récupération du temps écoulé depuis le début du programme</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;mesh.<a class="code" href="class_mesh.html#ac5fdb24c0693a8d02c739cd254b826e1">getNumberof_f</a>(); ++i){</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                tab_face[i].<a class="code" href="class_face.html#a467b326e9be6b5aac350c9b87a5ab14c">setSeg_one</a>( tab_point-&gt;<a class="code" href="class_point.html#a6b523817c6565922eb02e15225ba4b82">calc_length</a>( tab_face[i].<a class="code" href="class_face.html#ac6ce8497a59d3de67cd861a1d3aeb1ee">getS_one</a>(), tab_face[i].<a class="code" href="class_face.html#a2106a9b3661a4dcb41306a7010106221">getS_two</a>() ) ); <span class="comment">//&lt; Calcul de la longueur AB</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                tab_face[i].<a class="code" href="class_face.html#a1eebfcfb41d87470d675ab8fb106585e">setSeg_two</a>( tab_point-&gt;<a class="code" href="class_point.html#a6b523817c6565922eb02e15225ba4b82">calc_length</a>( tab_face[i].<a class="code" href="class_face.html#a2106a9b3661a4dcb41306a7010106221">getS_two</a>(), tab_face[i].<a class="code" href="class_face.html#a5bb2a3e263ede7ed39eb044ef7b5e8c7">getS_three</a>() ) );  <span class="comment">//&lt; Calcul de la longueur BC</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                tab_face[i].<a class="code" href="class_face.html#acc1fc08e71b974483dc876adb43da487">setSeg_three</a>( tab_point-&gt;<a class="code" href="class_point.html#a6b523817c6565922eb02e15225ba4b82">calc_length</a>( tab_face[i].<a class="code" href="class_face.html#a5bb2a3e263ede7ed39eb044ef7b5e8c7">getS_three</a>(), tab_face[i].<a class="code" href="class_face.html#ac6ce8497a59d3de67cd861a1d3aeb1ee">getS_one</a>() ) ); <span class="comment">//&lt; Calcul de la longueur CA</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">// Calcul de l&#39;aire totale de l&#39;objet 3D Maillé : il s&#39;agit ici d&#39;ajouter l&#39;aire de chaque face à l&#39;aire totale</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                mesh.<a class="code" href="class_mesh.html#ab5b9b1d7b1a616def0cefb1f8fd7b7a4">setFull</a>(mesh.<a class="code" href="class_mesh.html#abf4ba84ba3a807377f391cd2bf37f2fe">getFull</a>() + tab_face[i].<a class="code" href="class_face.html#a0d460b44871e8f720de067063734aede">calc_area</a>(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Aire totale de la forme &quot;</span>&lt;&lt; name_fichier &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; mesh.<a class="code" href="class_mesh.html#abf4ba84ba3a807377f391cd2bf37f2fe">getFull</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;Impossible d&#39;ouvrir le fichier &quot;</span> &lt;&lt; name_fichier &lt;&lt; <span class="stringliteral">&quot; !&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }<span class="keywordflow">while</span>(!is_here);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    clock_fin = (double)clock()/CLOCKS_PER_SEC; <span class="comment">//&lt; Récupération du temps écoulé depuis le début depuis le début du programme</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// Suppression des tableaux de Faces et de Points</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">delete</span> [] tab_face;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">delete</span> [] tab_point;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Affichage du temps de calcul</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Temps de calcul : &quot;</span> &lt;&lt;  clock_fin - clock_debut &lt;&lt; <span class="stringliteral">&quot; s&quot;</span>&lt;&lt; std::endl;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">//---&gt; La différence des deux clock nous permet de connaître précisement (et seulement) le temps d&#39;éxecution des calculs. En oubliant ainsi le temps passé sur la lecture.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">//---&gt; Dans une clock, le temps que met l&#39;utilisateur pour entrer une valeur au clavier jusqu&#39;à la pression de la touche &quot;Entrée&quot; (Return) n&#39;est pas décompté.</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Temps de lecture : &quot;</span>&lt;&lt; clock_fin_lecture - clock_debut_lecture &lt;&lt; <span class="stringliteral">&quot; s&quot;</span>&lt;&lt; std::endl;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Temps d&#39;éxecution total : &quot;</span> &lt;&lt; (clock_fin - clock_debut) + (clock_fin_lecture - clock_debut_lecture) &lt;&lt; <span class="stringliteral">&quot; s&quot;</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="ttc" id="class_mesh_html_ac5fdb24c0693a8d02c739cd254b826e1"><div class="ttname"><a href="class_mesh.html#ac5fdb24c0693a8d02c739cd254b826e1">Mesh::getNumberof_f</a></div><div class="ttdeci">unsigned int getNumberof_f() const </div><div class="ttdoc">Accesseur du nombre de faces. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00013">mesh.cpp:13</a></div></div>
+<div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdef"><b>Definition:</b> <a href="mesh_8hpp_source.html#l00008">mesh.hpp:8</a></div></div>
+<div class="ttc" id="class_point_html_a3b70e89e253f5339392990ae29313ae8"><div class="ttname"><a href="class_point.html#a3b70e89e253f5339392990ae29313ae8">Point::setP_two</a></div><div class="ttdeci">void setP_two(const double &amp;t)</div><div class="ttdoc">Mutateur du point 2. </div><div class="ttdef"><b>Definition:</b> <a href="point_8cpp_source.html#l00015">point.cpp:15</a></div></div>
+<div class="ttc" id="point_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="class_face_html_a7bd40f7c3c9592fd4cc3cbd898d6fe42"><div class="ttname"><a href="class_face.html#a7bd40f7c3c9592fd4cc3cbd898d6fe42">Face::setS_two</a></div><div class="ttdeci">void setS_two(const unsigned int &amp;two)</div><div class="ttdoc">Mutateur du sommet 2. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00024">face.cpp:24</a></div></div>
+<div class="ttc" id="class_face_html_a0d460b44871e8f720de067063734aede"><div class="ttname"><a href="class_face.html#a0d460b44871e8f720de067063734aede">Face::calc_area</a></div><div class="ttdeci">double calc_area(double a, double b, double c)</div><div class="ttdoc">Calcul de l&#39;aire du Triangle(Face) via la Forume d&#39;Héron. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00036">face.cpp:36</a></div></div>
+<div class="ttc" id="class_face_html"><div class="ttname"><a href="class_face.html">Face</a></div><div class="ttdef"><b>Definition:</b> <a href="face_8hpp_source.html#l00014">face.hpp:14</a></div></div>
+<div class="ttc" id="class_mesh_html_ab5b9b1d7b1a616def0cefb1f8fd7b7a4"><div class="ttname"><a href="class_mesh.html#ab5b9b1d7b1a616def0cefb1f8fd7b7a4">Mesh::setFull</a></div><div class="ttdeci">void setFull(const double &amp;a)</div><div class="ttdoc">Mutateur de la valeur totale de l&#39;aire. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00019">mesh.cpp:19</a></div></div>
+<div class="ttc" id="face_8hpp_html"><div class="ttname"><a href="face_8hpp.html">face.hpp</a></div></div>
+<div class="ttc" id="class_face_html_a467b326e9be6b5aac350c9b87a5ab14c"><div class="ttname"><a href="class_face.html#a467b326e9be6b5aac350c9b87a5ab14c">Face::setSeg_one</a></div><div class="ttdeci">void setSeg_one(const double &amp;o)</div><div class="ttdoc">Mutateur du segment 1. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00027">face.cpp:27</a></div></div>
+<div class="ttc" id="class_point_html_a097d97049b319bb131b51f990a52aa94"><div class="ttname"><a href="class_point.html#a097d97049b319bb131b51f990a52aa94">Point::setP_three</a></div><div class="ttdeci">void setP_three(const double &amp;th)</div><div class="ttdoc">Mutateur du point 3. </div><div class="ttdef"><b>Definition:</b> <a href="point_8cpp_source.html#l00016">point.cpp:16</a></div></div>
+<div class="ttc" id="class_face_html_a96639aea98e0c24899d892bec1d5f513"><div class="ttname"><a href="class_face.html#a96639aea98e0c24899d892bec1d5f513">Face::setS_one</a></div><div class="ttdeci">void setS_one(const unsigned int &amp;one)</div><div class="ttdoc">Mutateur du sommet 1. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00023">face.cpp:23</a></div></div>
+<div class="ttc" id="main_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00013">main.cpp:13</a></div></div>
+<div class="ttc" id="class_mesh_html_abf4ba84ba3a807377f391cd2bf37f2fe"><div class="ttname"><a href="class_mesh.html#abf4ba84ba3a807377f391cd2bf37f2fe">Mesh::getFull</a></div><div class="ttdeci">double getFull() const </div><div class="ttdoc">Accesseur de la valeur totale de l&#39;aire. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00014">mesh.cpp:14</a></div></div>
+<div class="ttc" id="class_face_html_acc1fc08e71b974483dc876adb43da487"><div class="ttname"><a href="class_face.html#acc1fc08e71b974483dc876adb43da487">Face::setSeg_three</a></div><div class="ttdeci">void setSeg_three(const double &amp;th)</div><div class="ttdoc">Mutateur du segment 3. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00029">face.cpp:29</a></div></div>
+<div class="ttc" id="class_face_html_a5bb2a3e263ede7ed39eb044ef7b5e8c7"><div class="ttname"><a href="class_face.html#a5bb2a3e263ede7ed39eb044ef7b5e8c7">Face::getS_three</a></div><div class="ttdeci">unsigned int getS_three() const </div><div class="ttdoc">Accesseur du sommet 3. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00012">face.cpp:12</a></div></div>
+<div class="ttc" id="class_face_html_a2106a9b3661a4dcb41306a7010106221"><div class="ttname"><a href="class_face.html#a2106a9b3661a4dcb41306a7010106221">Face::getS_two</a></div><div class="ttdeci">unsigned int getS_two() const </div><div class="ttdoc">Accesseur du sommet 2. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00011">face.cpp:11</a></div></div>
+<div class="ttc" id="mesh_8hpp_html"><div class="ttname"><a href="mesh_8hpp.html">mesh.hpp</a></div></div>
+<div class="ttc" id="class_face_html_ac6ce8497a59d3de67cd861a1d3aeb1ee"><div class="ttname"><a href="class_face.html#ac6ce8497a59d3de67cd861a1d3aeb1ee">Face::getS_one</a></div><div class="ttdeci">unsigned int getS_one() const </div><div class="ttdoc">Accesseur du sommet 1. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00010">face.cpp:10</a></div></div>
+<div class="ttc" id="class_face_html_aa6b474b884d3f7f54b20e5fe45c8c33f"><div class="ttname"><a href="class_face.html#aa6b474b884d3f7f54b20e5fe45c8c33f">Face::setS_three</a></div><div class="ttdeci">void setS_three(const unsigned int &amp;three)</div><div class="ttdoc">Mutateur du sommet 3. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00025">face.cpp:25</a></div></div>
+<div class="ttc" id="class_mesh_html_a9e33572dbe48c4d96f98c2731fd97dcd"><div class="ttname"><a href="class_mesh.html#a9e33572dbe48c4d96f98c2731fd97dcd">Mesh::getNumberof_p</a></div><div class="ttdeci">unsigned int getNumberof_p() const </div><div class="ttdoc">Accesseur du nombre de points. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00012">mesh.cpp:12</a></div></div>
+<div class="ttc" id="class_point_html_a6b523817c6565922eb02e15225ba4b82"><div class="ttname"><a href="class_point.html#a6b523817c6565922eb02e15225ba4b82">Point::calc_length</a></div><div class="ttdeci">double calc_length(unsigned int p1, unsigned int p2)</div><div class="ttdoc">Calcul de la longueur d&#39;un côté </div><div class="ttdef"><b>Definition:</b> <a href="point_8cpp_source.html#l00020">point.cpp:20</a></div></div>
+<div class="ttc" id="class_point_html_ac79f8c3f0fb8b9dea4f5b8a8e0315779"><div class="ttname"><a href="class_point.html#ac79f8c3f0fb8b9dea4f5b8a8e0315779">Point::setP_one</a></div><div class="ttdeci">void setP_one(const double &amp;o)</div><div class="ttdoc">Mutateur du point 1. </div><div class="ttdef"><b>Definition:</b> <a href="point_8cpp_source.html#l00014">point.cpp:14</a></div></div>
+<div class="ttc" id="class_point_html"><div class="ttname"><a href="class_point.html">Point</a></div><div class="ttdef"><b>Definition:</b> <a href="point_8hpp_source.html#l00009">point.hpp:9</a></div></div>
+<div class="ttc" id="class_face_html_a1eebfcfb41d87470d675ab8fb106585e"><div class="ttname"><a href="class_face.html#a1eebfcfb41d87470d675ab8fb106585e">Face::setSeg_two</a></div><div class="ttdeci">void setSeg_two(const double &amp;t)</div><div class="ttdoc">Mutateur du segment 2. </div><div class="ttdef"><b>Definition:</b> <a href="face_8cpp_source.html#l00028">face.cpp:28</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_14964cf464c5923c8b65fd6c109e9613.html">System</a></li><li class="navelem"><a class="el" href="dir_d504f2360395835c3e499be94580043d.html">Objet3D</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Généré le Mardi 3 Novembre 2015 10:57:30 pour Calcul de l&#39;aire d&#39;un objet 3D Maillé par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

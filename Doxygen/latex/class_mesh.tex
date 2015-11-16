@@ -1,0 +1,231 @@
+\hypertarget{class_mesh}{\section{Référence de la classe Mesh}
+\label{class_mesh}\index{Mesh@{Mesh}}
+}
+
+
+{\ttfamily \#include $<$mesh.\-hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_mesh_a88e83e4a86e03f23069bfe397de58389}{Mesh} (unsigned int p, unsigned int f)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{$\sim$\-Mesh} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_mesh_a9e33572dbe48c4d96f98c2731fd97dcd}{get\-Numberof\-\_\-p} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur du nombre de points. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_mesh_ac5fdb24c0693a8d02c739cd254b826e1}{get\-Numberof\-\_\-f} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur du nombre de faces. \end{DoxyCompactList}\item 
+double \hyperlink{class_mesh_abf4ba84ba3a807377f391cd2bf37f2fe}{get\-Full} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de la valeur totale de l'aire. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a76b45fbfdfa33d0f0285f86a918192ba}{set\-Numberof\-\_\-p} (const unsigned int \&p)
+\begin{DoxyCompactList}\small\item\em Mutateur du nombre de points. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_ad1b46c508d09b76ac575564fcaa24931}{set\-Numberof\-\_\-f} (const unsigned int \&f)
+\begin{DoxyCompactList}\small\item\em Mutateur du nombre de faces. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_ab5b9b1d7b1a616def0cefb1f8fd7b7a4}{set\-Full} (const double \&a)
+\begin{DoxyCompactList}\small\item\em Mutateur de la valeur totale de l'aire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{class_mesh_a9c058bf3f414b6119d7e6ea09703057d}{numberof\-\_\-point}
+\item 
+unsigned int \hyperlink{class_mesh_a8ad7f6788ff772d5e0e17e992571f364}{numberof\-\_\-face}
+\item 
+double \hyperlink{class_mesh_a0e1f18abe6ea5a9943e6f8e672f8b037}{F\-U\-L\-L\-\_\-\-A\-R\-E\-A}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+La classe \hyperlink{class_mesh}{Mesh} représente l'objet maillé 3\-D. Ce dernier contient un certain nombre de points ainsi que de faces. \par
+Nous utilisons donc ici les types {\bfseries unsigned} {\bfseries int} pour les attributs. 
+
+Définition à la ligne 8 du fichier mesh.\-hpp.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_mesh_a88e83e4a86e03f23069bfe397de58389}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\subsubsection[{Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\-::\-Mesh (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{p, }
+\item[{unsigned int}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a88e83e4a86e03f23069bfe397de58389}
+
+
+Constructeur. 
+
+Constructeur prennant en paramètre le nombre de \hyperlink{class_point}{Point} et de \hyperlink{class_face}{Face} présents dans l'objet maillé 
+\begin{DoxyParams}{Paramètres}
+{\em p} & un entier positif \\
+\hline
+{\em f} & un entier positif \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 4 du fichier mesh.\-cpp.
+
+\hypertarget{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{\index{Mesh@{Mesh}!$\sim$\-Mesh@{$\sim$\-Mesh}}
+\index{$\sim$\-Mesh@{$\sim$\-Mesh}!Mesh@{Mesh}}
+\subsubsection[{$\sim$\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\-::$\sim$\-Mesh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}
+
+
+Destructeur. 
+
+
+
+Définition à la ligne 9 du fichier mesh.\-cpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_mesh_abf4ba84ba3a807377f391cd2bf37f2fe}{\index{Mesh@{Mesh}!get\-Full@{get\-Full}}
+\index{get\-Full@{get\-Full}!Mesh@{Mesh}}
+\subsubsection[{get\-Full}]{\setlength{\rightskip}{0pt plus 5cm}double Mesh\-::get\-Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_mesh_abf4ba84ba3a807377f391cd2bf37f2fe}
+
+
+Accesseur de la valeur totale de l'aire. 
+
+Retourne la valeur totale de l'aire \begin{DoxyReturn}{Renvoie}
+F\-U\-L\-L\-\_\-\-A\-R\-E\-A un réel double 
+\end{DoxyReturn}
+
+
+Définition à la ligne 14 du fichier mesh.\-cpp.
+
+\hypertarget{class_mesh_ac5fdb24c0693a8d02c739cd254b826e1}{\index{Mesh@{Mesh}!get\-Numberof\-\_\-f@{get\-Numberof\-\_\-f}}
+\index{get\-Numberof\-\_\-f@{get\-Numberof\-\_\-f}!Mesh@{Mesh}}
+\subsubsection[{get\-Numberof\-\_\-f}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mesh\-::get\-Numberof\-\_\-f (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_mesh_ac5fdb24c0693a8d02c739cd254b826e1}
+
+
+Accesseur du nombre de faces. 
+
+Retourne la valeur du nombre de faces \begin{DoxyReturn}{Renvoie}
+numberof\-\_\-face un entier positif 
+\end{DoxyReturn}
+
+
+Définition à la ligne 13 du fichier mesh.\-cpp.
+
+\hypertarget{class_mesh_a9e33572dbe48c4d96f98c2731fd97dcd}{\index{Mesh@{Mesh}!get\-Numberof\-\_\-p@{get\-Numberof\-\_\-p}}
+\index{get\-Numberof\-\_\-p@{get\-Numberof\-\_\-p}!Mesh@{Mesh}}
+\subsubsection[{get\-Numberof\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mesh\-::get\-Numberof\-\_\-p (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_mesh_a9e33572dbe48c4d96f98c2731fd97dcd}
+
+
+Accesseur du nombre de points. 
+
+Retourne la valeur du nombres de points \begin{DoxyReturn}{Renvoie}
+numberof\-\_\-point un entier positif 
+\end{DoxyReturn}
+
+
+Définition à la ligne 12 du fichier mesh.\-cpp.
+
+\hypertarget{class_mesh_ab5b9b1d7b1a616def0cefb1f8fd7b7a4}{\index{Mesh@{Mesh}!set\-Full@{set\-Full}}
+\index{set\-Full@{set\-Full}!Mesh@{Mesh}}
+\subsubsection[{set\-Full}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\-::set\-Full (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{a}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_ab5b9b1d7b1a616def0cefb1f8fd7b7a4}
+
+
+Mutateur de la valeur totale de l'aire. 
+
+Modifie la valeur totale de l'aire 
+\begin{DoxyParams}{Paramètres}
+{\em a} & un réel double constant passé par référence \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 19 du fichier mesh.\-cpp.
+
+\hypertarget{class_mesh_ad1b46c508d09b76ac575564fcaa24931}{\index{Mesh@{Mesh}!set\-Numberof\-\_\-f@{set\-Numberof\-\_\-f}}
+\index{set\-Numberof\-\_\-f@{set\-Numberof\-\_\-f}!Mesh@{Mesh}}
+\subsubsection[{set\-Numberof\-\_\-f}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\-::set\-Numberof\-\_\-f (
+\begin{DoxyParamCaption}
+\item[{const unsigned int \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_ad1b46c508d09b76ac575564fcaa24931}
+
+
+Mutateur du nombre de faces. 
+
+Modifie la valeur du nombre de faces 
+\begin{DoxyParams}{Paramètres}
+{\em f} & un entier positif constant passé par référence \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 18 du fichier mesh.\-cpp.
+
+\hypertarget{class_mesh_a76b45fbfdfa33d0f0285f86a918192ba}{\index{Mesh@{Mesh}!set\-Numberof\-\_\-p@{set\-Numberof\-\_\-p}}
+\index{set\-Numberof\-\_\-p@{set\-Numberof\-\_\-p}!Mesh@{Mesh}}
+\subsubsection[{set\-Numberof\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\-::set\-Numberof\-\_\-p (
+\begin{DoxyParamCaption}
+\item[{const unsigned int \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a76b45fbfdfa33d0f0285f86a918192ba}
+
+
+Mutateur du nombre de points. 
+
+Modifie la valeur du nombre de points 
+\begin{DoxyParams}{Paramètres}
+{\em p} & un entier positif constant passé par référence \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 17 du fichier mesh.\-cpp.
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_mesh_a0e1f18abe6ea5a9943e6f8e672f8b037}{\index{Mesh@{Mesh}!F\-U\-L\-L\-\_\-\-A\-R\-E\-A@{F\-U\-L\-L\-\_\-\-A\-R\-E\-A}}
+\index{F\-U\-L\-L\-\_\-\-A\-R\-E\-A@{F\-U\-L\-L\-\_\-\-A\-R\-E\-A}!Mesh@{Mesh}}
+\subsubsection[{F\-U\-L\-L\-\_\-\-A\-R\-E\-A}]{\setlength{\rightskip}{0pt plus 5cm}double Mesh\-::\-F\-U\-L\-L\-\_\-\-A\-R\-E\-A\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a0e1f18abe6ea5a9943e6f8e672f8b037}
+Aire totale de la forme 
+
+Définition à la ligne 12 du fichier mesh.\-hpp.
+
+\hypertarget{class_mesh_a8ad7f6788ff772d5e0e17e992571f364}{\index{Mesh@{Mesh}!numberof\-\_\-face@{numberof\-\_\-face}}
+\index{numberof\-\_\-face@{numberof\-\_\-face}!Mesh@{Mesh}}
+\subsubsection[{numberof\-\_\-face}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mesh\-::numberof\-\_\-face\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a8ad7f6788ff772d5e0e17e992571f364}
+Nombre total de faces dans l'objet maillé 
+
+Définition à la ligne 11 du fichier mesh.\-hpp.
+
+\hypertarget{class_mesh_a9c058bf3f414b6119d7e6ea09703057d}{\index{Mesh@{Mesh}!numberof\-\_\-point@{numberof\-\_\-point}}
+\index{numberof\-\_\-point@{numberof\-\_\-point}!Mesh@{Mesh}}
+\subsubsection[{numberof\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mesh\-::numberof\-\_\-point\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a9c058bf3f414b6119d7e6ea09703057d}
+Nombre total de points dans l'objet maillé 
+
+Définition à la ligne 10 du fichier mesh.\-hpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+/home/spoken/\-Documents/\-System/\-Objet3\-D/\hyperlink{mesh_8hpp}{mesh.\-hpp}\item 
+/home/spoken/\-Documents/\-System/\-Objet3\-D/\hyperlink{mesh_8cpp}{mesh.\-cpp}\end{DoxyCompactItemize}
