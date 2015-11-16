@@ -139,7 +139,7 @@ int main()
             thread_params = new ThreadParams[THREAD_COUNT];
 			for(unsigned int i=0; i<THREAD_COUNT; ++i){
                 thread_params[i]._max=(i+1)*segments;
-                thread_params[i]._min=i*segments+1;
+                thread_params[i]._min=i*segments-1;
                 thread_params[i]._tab_face=tab_face;
                 thread_params[i]._tab_point=tab_point;
                 thread_params[i]._mesh=&mesh;
