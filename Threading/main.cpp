@@ -31,14 +31,16 @@ void* calcul(void* args)
         // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
         thread_params->_mesh->setFull(thread_params->_mesh->getFull() + thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three()) );
     }
+    
+    std::cerr << thread_params->_mesh->getFull() << std::endl;
+
     pthread_exit(NULL);
 }
-
 
 int main()
 {
 
-    const short THREAD_COUNT = 4;
+    const unsigned short THREAD_COUNT = 4;
 
     // Création d'un tableau de Faces & de Points
     Face* tab_face;
@@ -127,19 +129,23 @@ int main()
                 mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
             }
 */
+
+
             pthread_t* threads_array;
             ThreadParams* thread_params;
             int segments = face_count/THREAD_COUNT;
+            std::cerr<< segments << std::endl;
             threads_array = new pthread_t[THREAD_COUNT];
             thread_params = new ThreadParams[THREAD_COUNT];
-            for(unsigned int i=0; i<THREAD_COUNT; ++i){
+			for(unsigned int i=0; i<THREAD_COUNT; ++i){
                 thread_params[i]._max=(i+1)*segments;
-                thread_params[i]._min=i*segments;
+                thread_params[i]._min=i*segments+1;
                 thread_params[i]._tab_face=tab_face;
                 thread_params[i]._tab_point=tab_point;
                 thread_params[i]._mesh=&mesh;
                 pthread_create(&threads_array[i], NULL, calcul, &thread_params[i]);
             }
+            
             for(unsigned int i=0; i<THREAD_COUNT; ++i){
                 pthread_join(threads_array[i],NULL);
             }
