@@ -145,7 +145,7 @@ int main()
             }
             delete[]threads_array;
             delete[]thread_params;
-            
+
             std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
             std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
