@@ -23,18 +23,20 @@ void* calcul(void* args)
 {
     ThreadParams *thread_params = (ThreadParams*)args;
 
+    double* area_temp = new double(0);
+
     for(unsigned int i=thread_params->_min; i<thread_params->_max; ++i){
         thread_params->_tab_face[i].setSeg_one( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_one(), thread_params->_tab_face[i].getS_two() ) ); //< Calcul de la longueur AB
         thread_params->_tab_face[i].setSeg_two( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_two(), thread_params->_tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
         thread_params->_tab_face[i].setSeg_three( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_three(), thread_params->_tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
 
         // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
-        thread_params->_mesh->setFull(thread_params->_mesh->getFull() + thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three()) );
+        *area_temp += thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three());
     }
     
-    std::cerr << thread_params->_mesh->getFull() << std::endl;
+    std::cerr << *area_temp << std::endl;
 
-    pthread_exit(NULL);
+    pthread_exit((void*)area_temp);
 }
 
 int main()
@@ -133,13 +135,16 @@ int main()
 
             pthread_t* threads_array;
             ThreadParams* thread_params;
-            int segments = face_count/THREAD_COUNT;
+            if(face_count%THREAD_COUNT > 0){
+
+            }
+            int segments = (face_count - (face_count%THREAD_COUNT))/THREAD_COUNT;
             std::cerr<< segments << std::endl;
             threads_array = new pthread_t[THREAD_COUNT];
             thread_params = new ThreadParams[THREAD_COUNT];
 			for(unsigned int i=0; i<THREAD_COUNT; ++i){
-                thread_params[i]._max=(i+1)*segments;
-                thread_params[i]._min=i*segments-1;
+                thread_params[i]._max=(i+1)*segments-1;
+                thread_params[i]._min=i*segments;
                 thread_params[i]._tab_face=tab_face;
                 thread_params[i]._tab_point=tab_point;
                 thread_params[i]._mesh=&mesh;
@@ -147,7 +152,13 @@ int main()
             }
             
             for(unsigned int i=0; i<THREAD_COUNT; ++i){
-                pthread_join(threads_array[i],NULL);
+                void** temp = NULL;
+                pthread_join(threads_array[i],temp);
+                //temp = (double**)temp;**
+                std::cout<<"essai mesh\n";
+                std::cout<<temp<<std::endl;
+                //mesh.setFull(mesh.getFull() + **(double**)temp);
+                std::cout<<"fin mesh\n";
             }
 
             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
