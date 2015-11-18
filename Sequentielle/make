@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "-- Compilation --"
+g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp
+
+file=`ls|grep main.o`
+
+if [ "$file" = "main.o" ];then
+g++ -Wall -o main main.o face.o point.o mesh.o
+
+echo "-- Execution --"
+free
+echo " "
+
+time ./main
+echo " "
+
+free
+
+rm *.o
+
+else
+	echo "-- Error: Failed compilation --"
+fi
