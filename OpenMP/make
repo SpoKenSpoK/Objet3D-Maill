@@ -6,7 +6,7 @@ g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp -fopenmp
 file=`ls|grep main.o`
 
 if [ "$file" = "main.o" ];then
-g++ -Wall -o main main.o face.o point.o mesh.o
+g++ -Wall -o main main.o face.o point.o mesh.o -fopenmp
 
 echo "-- Execution --"
 free
