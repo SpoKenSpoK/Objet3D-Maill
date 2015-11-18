@@ -33,8 +33,6 @@ void* calcul(void* args)
         // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
         *area_temp += thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three());
     }
-    
-    std::cerr << *area_temp << std::endl;
 
     pthread_exit((void*)area_temp);
 }
@@ -62,7 +60,6 @@ int main()
     do{
         std::cout << "Entrez le nom du fichier .off a tester: " << std::endl;
         std::cin >> name_fichier;
-
         // Ouverture du fichier en lecture
         std::ifstream fichier(name_fichier.c_str(), std::ios::in);
         if(fichier) // Test pour savoir si le fichier est bien présent
@@ -139,7 +136,6 @@ int main()
 
             }
             int segments = (face_count - (face_count%THREAD_COUNT))/THREAD_COUNT;
-            std::cerr<< segments << std::endl;
             threads_array = new pthread_t[THREAD_COUNT];
             thread_params = new ThreadParams[THREAD_COUNT];
 			for(unsigned int i=0; i<THREAD_COUNT; ++i){
@@ -152,13 +148,10 @@ int main()
             }
             
             for(unsigned int i=0; i<THREAD_COUNT; ++i){
-                void** temp = NULL;
-                pthread_join(threads_array[i],temp);
-                //temp = (double**)temp;**
-                std::cout<<"essai mesh\n";
-                std::cout<<temp<<std::endl;
-                //mesh.setFull(mesh.getFull() + **(double**)temp);
-                std::cout<<"fin mesh\n";
+                void* temp = NULL;
+                pthread_join(threads_array[i],&temp);
+                mesh.setFull(mesh.getFull() + *(double*)temp);
+                delete (double*)temp;
             }
 
             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
