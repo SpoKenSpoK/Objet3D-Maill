@@ -9,6 +9,7 @@
 #include "mesh.hpp"
 #include "face.hpp"
 #include "point.hpp"
+#include <stdlib.h> 
 
 int main()
 {
@@ -30,6 +31,7 @@ int main()
     do{
         std::cout << "Entrez le nom du fichier .off a tester: " << std::endl;
         std::cin >> name_fichier;
+
 
         // Ouverture du fichier en lecture
         std::ifstream fichier(name_fichier.c_str(), std::ios::in);
@@ -98,10 +100,11 @@ int main()
                 // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
                 mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
             }
+            system("ps -C main -o pmem,pcpu");
 
-             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
+            clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
 
-            std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
+            std::cout << "\nAire totale de la forme : " << mesh.getFull() << std::endl;
             std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
         }
