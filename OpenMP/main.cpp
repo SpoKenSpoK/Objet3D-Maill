@@ -11,6 +11,8 @@
 #include "point.hpp"
 #include <omp.h>
 
+#define NUM_THREADS 22
+
 int main()
 {
     // Création d'un tableau de Faces & de Points
@@ -93,19 +95,27 @@ int main()
 
             clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
 
-            //#pragma omp parallel //<<<=== cette chose là  
-            #pragma omp for //ça peut s'écrire #pragma omp parallel for     aussi, mais pour les tests better.
-           // #pragma shared(mesh.getFull())
-            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() )); //< Calcul de la longueur AB
-                tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
-                tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
-           
-                // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
-                mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
-                
+            omp_set_num_threads(NUM_THREADS);
+            #pragma omp parallel
+            {
+                double temp=0;
+                #pragma omp for
+                for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
+                    tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() )); //< Calcul de la longueur AB
+                    tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
+                    tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
+               
+                    // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
+                    temp += tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three() );
+                    
+                }
+
+                #pragma omp critical
+                {
+                    mesh.setFull(mesh.getFull() + temp);
+                }
+                std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
             }
-            std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
             #pragma omp barrier
 
             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
