@@ -15,8 +15,6 @@ echo " "
 time ./main
 echo " "
 
-free
-
 rm *.o
 
 else

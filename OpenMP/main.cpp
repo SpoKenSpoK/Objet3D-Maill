@@ -92,17 +92,21 @@ int main()
 
             clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
 
-            #pragma omp for
+           //#pragma omp parallel //<<<=== cette chose là  
+            #pragma omp for //ça peut s'écrire #pragma omp parallel for     aussi, mais pour les tests better.
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                 tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() )); //< Calcul de la longueur AB
                 tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
                 tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
-
+           
                 // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
                 mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
+                
             }
+            std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
             #pragma omp barrier
 
+           
             std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
             std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
