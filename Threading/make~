@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "-- Compilation --"
-g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp
+g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp #-lpthread
 
 file=`ls|grep main.o`
 

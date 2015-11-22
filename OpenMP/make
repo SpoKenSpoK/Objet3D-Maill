@@ -10,7 +10,7 @@ g++ -Wall -o main main.o face.o point.o mesh.o -fopenmp
 
 echo "-- Execution --"
 free
-echo " "
+echo " --------------------------------------------------- "
 
 time ./main
 echo " "

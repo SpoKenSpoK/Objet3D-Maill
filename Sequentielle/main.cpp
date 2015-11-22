@@ -31,7 +31,7 @@ int main()
     do{
         std::cout << "Entrez le nom du fichier .off a tester: " << std::endl;
         std::cin >> name_fichier;
-
+        name_fichier+=".off";
 
         // Ouverture du fichier en lecture
         std::ifstream fichier(name_fichier.c_str(), std::ios::in);

@@ -11,7 +11,7 @@
 #include "point.hpp"
 #include <omp.h>
 
-#define NUM_THREADS 22
+#define NUM_THREADS 10
 
 int main()
 {
@@ -106,15 +106,8 @@ int main()
                     tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
                
                     // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
-                    temp += tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three() );
-                    
+                    temp += tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three() );  
                 }
-
-                #pragma omp critical
-                {
-                    mesh.setFull(mesh.getFull() + temp);
-                }
-                std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
             }
             #pragma omp barrier
 
@@ -128,8 +121,6 @@ int main()
             std::cerr << "Impossible d'ouvrir le fichier " << name_fichier << " !" << std::endl;
 
     }while(!is_here);
-
-    
 
     // Suppression des tableaux de Faces et de Points
     delete [] tab_face;
