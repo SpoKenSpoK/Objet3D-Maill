@@ -58,7 +58,7 @@ int main()
 
             // On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
             fichier.seekg(3, fichier.cur);
-
+            system("ps -C main -o pmem,pcpu");
             // Lecture des coordonnées de chaque sommet
             long double p_value;
             for(unsigned int i=0; i<mesh.getNumberof_p(); ++i){
