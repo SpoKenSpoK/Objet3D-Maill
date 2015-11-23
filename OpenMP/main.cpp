@@ -120,7 +120,7 @@ int main()
 
             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
             
-            std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
+            std::cout << "\nAire totale de la forme : " << mesh.getFull() << std::endl;
             std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
         }

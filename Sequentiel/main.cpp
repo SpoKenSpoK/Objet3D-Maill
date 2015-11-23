@@ -9,7 +9,6 @@
 #include "mesh.hpp"
 #include "face.hpp"
 #include "point.hpp"
-#include <stdlib.h> 
 
 int main()
 {
@@ -58,7 +57,7 @@ int main()
 
             // On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
             fichier.seekg(3, fichier.cur);
-            system("ps -C main -o pmem,pcpu");
+
             // Lecture des coordonnées de chaque sommet
             long double p_value;
             for(unsigned int i=0; i<mesh.getNumberof_p(); ++i){
@@ -100,7 +99,6 @@ int main()
                 // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
                 mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
             }
-            system("ps -C main -o pmem,pcpu");
 
             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
 
