@@ -23,7 +23,7 @@ void* calcul(void* args)
 {
     ThreadParams *thread_params = (ThreadParams*)args;
 
-    double* area_temp = new double(0);
+    //double* area_temp = new double(0);
 
     for(unsigned int i=thread_params->_min; i<thread_params->_max; ++i){
         thread_params->_tab_face[i].setSeg_one( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_one(), thread_params->_tab_face[i].getS_two() ) ); //< Calcul de la longueur AB
@@ -31,10 +31,12 @@ void* calcul(void* args)
         thread_params->_tab_face[i].setSeg_three( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_three(), thread_params->_tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
 
         // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
-        *area_temp += thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three());
+    /*    *area_temp += thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three()); */
+
+        thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three());
     }
 
-    pthread_exit((void*)area_temp);
+    pthread_exit(NULL/*(void*)area_temp*/);
 }
 
 int main()
@@ -131,20 +133,23 @@ int main()
             threads_array = new pthread_t[THREAD_COUNT];
             thread_params = new ThreadParams[THREAD_COUNT];
 			for(unsigned int i=0; i<THREAD_COUNT; ++i){
-                thread_params[i]._max=(i+1)*segments-1;
+                thread_params[i]._max=(i+1)*segments;
                 thread_params[i]._min=i*segments;
                 thread_params[i]._tab_face=tab_face;
                 thread_params[i]._tab_point=tab_point;
                 thread_params[i]._mesh=&mesh;
                 pthread_create(&threads_array[i], NULL, calcul, &thread_params[i]);
             }
-            
+
             for(unsigned int i=0; i<THREAD_COUNT; ++i){
-                void* temp = NULL;
-                pthread_join(threads_array[i],&temp);
-                mesh.setFull(mesh.getFull() + *(double*)temp);
-                delete (double*)temp;
+                //void* temp = NULL;
+                pthread_join(threads_array[i],NULL/*,&temp*/);
+                //mesh.setFull(mesh.getFull() + *(double*)temp);
+                //delete (double*)temp;
             }
+
+            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)
+                mesh.setFull(mesh.getFull()+tab_face[i].getArea());
 
             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
 
@@ -160,7 +165,7 @@ int main()
 
     }while(!is_here);
 
-    
+
 
     // Suppression des tableaux de Faces et de Points
     delete [] tab_face;

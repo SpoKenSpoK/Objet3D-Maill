@@ -11,7 +11,7 @@
 #include "point.hpp"
 #include <omp.h>
 
-#define NUM_THREADS 4
+#define NUM_THREADS 2
 #define BILLION 1000000000.0;
 
 int main()
@@ -23,14 +23,6 @@ int main()
     timespec start_lec, stop_lec;
     timespec start_cal, stop_cal;
     double timerone, timertwo;
-
-    // Création des deux clock nous permettant de calculer le temps d'exécution du programme
-    double clock_debut;
-    double clock_fin;
-
-    // Clock pour le temps d'éxecution de la lecture
-    double clock_debut_lecture;
-    double clock_fin_lecture;
 
     std::string name_fichier; //< Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -> while serait fausse (fichier inexistant)
     bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
@@ -46,7 +38,6 @@ int main()
         {
             is_here = true; //< Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -> while
 
-            clock_debut_lecture = (double)clock()/CLOCKS_PER_SEC;
             clock_gettime(CLOCK_REALTIME, &start_lec);
 
             // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
@@ -97,10 +88,8 @@ int main()
             // Fermeture du fichier ouvert en lecture
             fichier.close();
 
-            clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;
             clock_gettime(CLOCK_REALTIME, &stop_lec);
 
-            clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
             clock_gettime(CLOCK_REALTIME, &start_cal);
 
             omp_set_num_threads(NUM_THREADS);
@@ -123,7 +112,6 @@ int main()
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)
                 mesh.setFull(mesh.getFull()+tab_face[i].getArea());
 
-            clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
             clock_gettime(CLOCK_REALTIME, &stop_cal);
 
             std::cout << "\nAire totale de la forme : " << mesh.getFull() << std::endl;
@@ -144,13 +132,6 @@ int main()
 
     std::cout<< "temps de lecture : " << timerone << std::endl;
     std::cout<< "temps de calcul : " << timertwo << std::endl;
-
-    // Affichage du temps de calcul
-    std::cout << "Temps de calcul : " <<  clock_fin - clock_debut << " s"<< std::endl;
-    //---> La différence des deux clock nous permet de connaître précisement (et seulement) le temps d'éxecution des calculs. En oubliant ainsi le temps passé sur la lecture.
-    //---> Dans une clock, le temps que met l'utilisateur pour entrer une valeur au clavier jusqu'à la pression de la touche "Entrée" (Return) n'est pas décompté.
-    std::cout << "Temps de lecture : "<< clock_fin_lecture - clock_debut_lecture << " s"<< std::endl;
-    std::cout << "Temps d'éxecution total : " << (clock_fin - clock_debut) + (clock_fin_lecture - clock_debut_lecture) << " s" << std::endl;
 
     return 0;
 }
