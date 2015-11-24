@@ -12,7 +12,7 @@
 #include <omp.h>
 
 #define NUM_THREADS 4
-#define BILLION 1000000000;
+#define BILLION 1000000000.0;
 
 int main()
 {
@@ -20,8 +20,9 @@ int main()
     Face* tab_face;
     Point* tab_point;
 
-    timespec time1, time2;
-    double timerone;
+    timespec start_lec, stop_lec;
+    timespec start_cal, stop_cal;
+    double timerone, timertwo;
 
     // Création des deux clock nous permettant de calculer le temps d'exécution du programme
     double clock_debut;
@@ -46,7 +47,7 @@ int main()
             is_here = true; //< Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -> while
 
             clock_debut_lecture = (double)clock()/CLOCKS_PER_SEC;
-            clock_gettime(CLOCK_REALTIME, &time1);
+            clock_gettime(CLOCK_REALTIME, &start_lec);
 
             // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
             fichier.seekg(4, fichier.beg);
@@ -97,11 +98,13 @@ int main()
             fichier.close();
 
             clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;
-            clock_gettime(CLOCK_REALTIME, &time2);
+            clock_gettime(CLOCK_REALTIME, &stop_lec);
 
             clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
+            clock_gettime(CLOCK_REALTIME, &start_cal);
 
             omp_set_num_threads(NUM_THREADS);
+            std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
             #pragma omp parallel
             {
                 #pragma omp for
@@ -115,14 +118,13 @@ int main()
                 }
 
             }
-
-            std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
             #pragma omp barrier
 
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)
                 mesh.setFull(mesh.getFull()+tab_face[i].getArea());
 
             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
+            clock_gettime(CLOCK_REALTIME, &stop_cal);
 
             std::cout << "\nAire totale de la forme : " << mesh.getFull() << std::endl;
             std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
@@ -137,9 +139,11 @@ int main()
     delete [] tab_face;
     delete [] tab_point;
 
-    timerone = (time2.tv_sec - time1.tv_sec) + (time2.tv_nsec - time1.tv_nsec) / BILLION;
+    timerone = (stop_lec.tv_sec - start_lec.tv_sec) + (stop_lec.tv_nsec - start_lec.tv_nsec) / BILLION;
+    timertwo = (stop_cal.tv_sec - start_cal.tv_sec) + (stop_cal.tv_nsec - start_cal.tv_nsec) / BILLION;
 
-    std::cout<< "Bruh" << timerone << std::endl;
+    std::cout<< "temps de lecture : " << timerone << std::endl;
+    std::cout<< "temps de calcul : " << timertwo << std::endl;
 
     // Affichage du temps de calcul
     std::cout << "Temps de calcul : " <<  clock_fin - clock_debut << " s"<< std::endl;
