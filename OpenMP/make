@@ -6,7 +6,9 @@ g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp -fopenmp
 file=`ls|grep main.o`
 
 if [ "$file" = "main.o" ];then
-g++ -Wall -o main main.o face.o point.o mesh.o -fopenmp
+g++ -Wall -o main main.o face.o point.o mesh.o -fopenmp -lrt
+
+rm *.o
 
 echo "-- Execution --"
 free
@@ -14,8 +16,6 @@ echo " --------------------------------------------------- "
 
 time ./main
 echo " "
-
-rm *.o
 
 else
 	echo "-- Error: Failed compilation --"

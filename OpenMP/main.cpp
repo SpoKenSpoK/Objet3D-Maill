@@ -12,12 +12,16 @@
 #include <omp.h>
 
 #define NUM_THREADS 4
+#define BILLION 1000000000;
 
 int main()
 {
     // Création d'un tableau de Faces & de Points
     Face* tab_face;
     Point* tab_point;
+
+    timespec time1, time2;
+    double timerone;
 
     // Création des deux clock nous permettant de calculer le temps d'exécution du programme
     double clock_debut;
@@ -42,6 +46,7 @@ int main()
             is_here = true; //< Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -> while
 
             clock_debut_lecture = (double)clock()/CLOCKS_PER_SEC;
+            clock_gettime(CLOCK_REALTIME, &time1);
 
             // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
             fichier.seekg(4, fichier.beg);
@@ -92,34 +97,33 @@ int main()
             fichier.close();
 
             clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;
+            clock_gettime(CLOCK_REALTIME, &time2);
 
             clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
 
             omp_set_num_threads(NUM_THREADS);
             #pragma omp parallel
             {
-                double temp=0;
                 #pragma omp for
                 for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                 tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() )); //< Calcul de la longueur AB
                 tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
                 tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
-                               
+
                 // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
-                temp += tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three() );
-                                   
-            }
-                #pragma omp critical
-                {
-                    mesh.setFull(mesh.getFull() + temp);
+                tab_face[i].calc_area( tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three() );
                 }
+
             }
 
             std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
             #pragma omp barrier
 
+            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)
+                mesh.setFull(mesh.getFull()+tab_face[i].getArea());
+
             clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
-            
+
             std::cout << "\nAire totale de la forme : " << mesh.getFull() << std::endl;
             std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
@@ -132,6 +136,10 @@ int main()
     // Suppression des tableaux de Faces et de Points
     delete [] tab_face;
     delete [] tab_point;
+
+    timerone = (time2.tv_sec - time1.tv_sec) + (time2.tv_nsec - time1.tv_nsec) / BILLION;
+
+    std::cout<< "Bruh" << timerone << std::endl;
 
     // Affichage du temps de calcul
     std::cout << "Temps de calcul : " <<  clock_fin - clock_debut << " s"<< std::endl;
