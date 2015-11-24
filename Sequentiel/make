@@ -8,8 +8,6 @@ file=`ls|grep main.o`
 if [ "$file" = "main.o" ];then
 g++ -Wall -o main main.o face.o point.o mesh.o
 
-rm *.o
-
 echo "-- Execution --"
 free
 echo " --------------------------------------------------- "
@@ -19,3 +17,5 @@ time ./main
 else
 	echo "-- Error: Failed compilation --"
 fi
+
+rm *.o

@@ -20,9 +20,11 @@ int main()
     Face* tab_face;
     Point* tab_point;
 
+    /*
     timespec start_lec, stop_lec;
     timespec start_cal, stop_cal;
     double timerone, timertwo;
+    */
 
     std::string name_fichier; //< Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -> while serait fausse (fichier inexistant)
     bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
@@ -38,7 +40,7 @@ int main()
         {
             is_here = true; //< Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -> while
 
-            clock_gettime(CLOCK_REALTIME, &start_lec);
+            //clock_gettime(CLOCK_REALTIME, &start_lec);
 
             // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
             fichier.seekg(4, fichier.beg);
@@ -88,13 +90,13 @@ int main()
             // Fermeture du fichier ouvert en lecture
             fichier.close();
 
-            clock_gettime(CLOCK_REALTIME, &stop_lec);
+            //clock_gettime(CLOCK_REALTIME, &stop_lec);
 
-            clock_gettime(CLOCK_REALTIME, &start_cal);
+            //clock_gettime(CLOCK_REALTIME, &start_cal);
 
             omp_set_num_threads(NUM_THREADS);
             std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
-            #pragma omp parallel
+            #pragma omp parallel shared(mesh)
             {
                 #pragma omp for
                 for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
@@ -109,34 +111,35 @@ int main()
 
 
 
-            #pragma omp for
-            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                #pragma omp critical
-                mesh.setFull(mesh.getFull()+tab_face[i].getArea());
-            }
+                #pragma omp for
+                for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
+                    #pragma omp critical
+                    mesh.setFull(mesh.getFull()+tab_face[i].getArea());
+                }
 
             }
 
-            clock_gettime(CLOCK_REALTIME, &stop_cal);
+            //clock_gettime(CLOCK_REALTIME, &stop_cal);
 
-            std::cout << "\nAire totale de la forme : " << mesh.getFull() << std::endl;
-            std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
+            std::cout << "\nNombre de points : " << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
+            std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
         }
         else
-            std::cerr << "Impossible d'ouvrir le fichier " << name_fichier << " !" << std::endl;
+            std::cerr << "@@--> Impossible d'ouvrir le fichier <--@@ : " << name_fichier << " !" << std::endl;
 
     }while(!is_here);
 
     // Suppression des tableaux de Faces et de Points
     delete [] tab_face;
     delete [] tab_point;
-
+    /*
     timerone = (stop_lec.tv_sec - start_lec.tv_sec) + (stop_lec.tv_nsec - start_lec.tv_nsec) / BILLION;
     timertwo = (stop_cal.tv_sec - start_cal.tv_sec) + (stop_cal.tv_nsec - start_cal.tv_nsec) / BILLION;
 
     std::cout<< "temps de lecture : " << timerone << std::endl;
     std::cout<< "temps de calcul : " << timertwo << std::endl;
+    */
 
     return 0;
 }

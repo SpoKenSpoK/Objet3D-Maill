@@ -30,31 +30,19 @@ void* calcul(void* args)
         thread_params->_tab_face[i].setSeg_two( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_two(), thread_params->_tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
         thread_params->_tab_face[i].setSeg_three( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_three(), thread_params->_tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
 
-        // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
-    /*    *area_temp += thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three()); */
-
         thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three());
     }
 
-    pthread_exit(NULL/*(void*)area_temp*/);
+    pthread_exit(NULL);
 }
 
 int main()
 {
-
     const unsigned short THREAD_COUNT = 4;
 
     // Création d'un tableau de Faces & de Points
     Face* tab_face;
     Point* tab_point;
-
-    // Création des deux clock nous permettant de calculer le temps d'exécution du programme
-    double clock_debut;
-    double clock_fin;
-
-    // Clock pour le temps d'éxecution de la lecture
-    double clock_debut_lecture;
-    double clock_fin_lecture;
 
     std::string name_fichier; //< Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -> while serait fausse (fichier inexistant)
     bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
@@ -68,8 +56,6 @@ int main()
         if(fichier) // Test pour savoir si le fichier est bien présent
         {
             is_here = true; //< Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -> while
-
-            clock_debut_lecture = (double)clock()/CLOCKS_PER_SEC;
 
             // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
             fichier.seekg(4, fichier.beg);
@@ -118,10 +104,6 @@ int main()
 
             // Fermeture du fichier ouvert en lecture
             fichier.close();
-            clock_fin_lecture = (double)clock()/CLOCKS_PER_SEC;
-
-            clock_debut = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début du programme
-
 
             // Création du thread
             pthread_t* threads_array;
@@ -151,32 +133,21 @@ int main()
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)
                 mesh.setFull(mesh.getFull()+tab_face[i].getArea());
 
-            clock_fin = (double)clock()/CLOCKS_PER_SEC; //< Récupération du temps écoulé depuis le début depuis le début du programme
-
             delete[]threads_array;
             delete[]thread_params;
 
-            std::cout << "\nAire totale de la forme : " << mesh.getFull() << std::endl;
-            std::cout << "Nombre de points : " << mesh.getNumberof_p() << std::endl;
+            std::cout << "\nNombre de points : " << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
+            std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
         }
         else
-            std::cerr << "Impossible d'ouvrir le fichier " << name_fichier << " !" << std::endl;
+            std::cerr << "@@--> Impossible d'ouvrir le fichier <--@@ : " << name_fichier << " !" << std::endl;
 
     }while(!is_here);
-
-
 
     // Suppression des tableaux de Faces et de Points
     delete [] tab_face;
     delete [] tab_point;
-
-    // Affichage du temps de calcul
-    std::cout << "Temps de calcul : " <<  clock_fin - clock_debut << " s"<< std::endl;
-    //---> La différence des deux clock nous permet de connaître précisement (et seulement) le temps d'éxecution des calculs. En oubliant ainsi le temps passé sur la lecture.
-    //---> Dans une clock, le temps que met l'utilisateur pour entrer une valeur au clavier jusqu'à la pression de la touche "Entrée" (Return) n'est pas décompté.
-    std::cout << "Temps de lecture : "<< clock_fin_lecture - clock_debut_lecture << " s"<< std::endl;
-    std::cout << "Temps d'éxecution total : " << (clock_fin - clock_debut) + (clock_fin_lecture - clock_debut_lecture) << " s" << std::endl;
 
     return 0;
 }
