@@ -11,7 +11,7 @@
 #include "point.hpp"
 #include <omp.h>
 
-#define NUM_THREADS 2
+#define NUM_THREADS 4
 #define BILLION 1000000000.0;
 
 int main()
@@ -105,12 +105,17 @@ int main()
                 // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
                 tab_face[i].calc_area( tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three() );
                 }
+                #pragma omp barrier
+
+
+
+            #pragma omp for
+            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
+                #pragma omp critical
+                mesh.setFull(mesh.getFull()+tab_face[i].getArea());
+            }
 
             }
-            #pragma omp barrier
-
-            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)
-                mesh.setFull(mesh.getFull()+tab_face[i].getArea());
 
             clock_gettime(CLOCK_REALTIME, &stop_cal);
 
