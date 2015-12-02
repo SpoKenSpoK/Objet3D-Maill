@@ -5,11 +5,11 @@
     Une surface triangulaire à donc 3 sommets, ainsi que trois côtés (segments). \n
     C'est donc par simple déduction (car travaillant dans l'espace) que chaque face a 9 coordonnées.
     En effet un sommet a 3 coordonnées \f$ x\f$ \f$ y\f$ \f$ z\f$ : soit \f$ {3² = 9}\f$ \n
-     d' \b Héron pour trouver l'aire d'une face triangulaire.
+    Nous utilierons la formule d' \b Héron pour trouver l'aire d'une face triangulaire.
     \n \n
     Choix des types pour les attributs : \n
     Un sommet obtient une valeur entière lors de la lecture de fichier, nous préférons donc un type \b unsigned \b int pour la valeur des attributs sommets. \n
-    Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnées réeles nous préférons le type \b double.
+    Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnées réelles nous préférons le type \b double.
     */
 
 class Face{

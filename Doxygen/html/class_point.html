@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -77,21 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('class_point.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -106,6 +84,7 @@ $(document).ready(function(){initNavTree('class_point.html','');});
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
@@ -190,15 +169,8 @@ Il s'agit donc ici de récupérer les coordonnées se trouvant dans le fichier .
 
 <p>Calcul de la longueur d'un côté </p>
 <p>Soit la formule suivant : \(\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}\) <br/>
-Il s'agit ici de calculer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx finir </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p1</td><td>un entier positif </td></tr>
-    <tr><td class="paramname">p2</td><td>un entier positif </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>la longueur d'un segement entre deux points donnés en paramètres, calculé via leurs coordonnées qui sont des réels doubles. Nous retournons donc un double </dd></dl>
+Par le calcul on obtient la longueur d'un côté obtenu grâce à des coordonnées réelles. Le résultat obtenu sera donc double. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>la longueur AB (BC ou encore CA), un réel double </dd></dl>
 
 </div>
 </div>
@@ -403,15 +375,11 @@ Il s'agit ici de calculer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 <li>/home/spoken/Documents/spacestation/Systeme_Objet3D/Sequentiel/point.cpp</li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_point.html">Point</a></li>
-    <li class="footer">Généré le Mercredi 2 Décembre 2015 15:51:55 pour M3101 - Système avancé - Projet : Calcul de surface d&#39;un objet 3D maillé par
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 2 Décembre 2015 17:04:34 pour M3101 - Système avancé - Projet : Calcul de surface d&#39;un objet 3D maillé par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

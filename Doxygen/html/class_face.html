@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -77,21 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('class_face.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -106,6 +84,7 @@ $(document).ready(function(){initNavTree('class_face.html','');});
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
@@ -202,11 +181,11 @@ Attributs privés</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_face.html">Face</a> sert à représenter les faces (traingulaires) qui composent un objet 3D. Une surface triangulaire à donc 3 sommets, ainsi que trois côtés (segments). <br/>
 C'est donc par simple déduction (car travaillant dans l'espace) que chaque face a 9 coordonnées. En effet un sommet a 3 coordonnées \( x\) \( y\) \( z\) : soit \( {3² = 9}\) <br/>
- d' <b>Héron</b> pour trouver l'aire d'une face triangulaire. <br/>
+Nous utilierons la formule d' <b>Héron</b> pour trouver l'aire d'une face triangulaire. <br/>
  <br/>
 Choix des types pour les attributs : <br/>
 Un sommet obtient une valeur entière lors de la lecture de fichier, nous préférons donc un type <b>unsigned</b> <b>int</b> pour la valeur des attributs sommets. <br/>
-Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnées réeles nous préférons le type <b>double</b>. </p>
+Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnées réelles nous préférons le type <b>double</b>. </p>
 </div><h2 class="groupheader">Documentation des fonctions membres</h2>
 <a class="anchor" id="a837adad0761996482010bfc7f5c1403a"></a>
 <div class="memitem">
@@ -226,14 +205,6 @@ Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnée
  En géométrie euclidienne, la formule de Héron, du nom de Héron d'Alexandrie, permet de calculer l'aire d'un triangle quelconque en ne connaissant que les longueurs des trois côtés du triangle : <br/>
  Soit trois côtés : \( a\) , \( b\) et \( c\) <br/>
  On a donc : \(\sqrt{p(p-a)(p-b)(p-c)}\) Avec \( p\) = \( 1/2 *(a+b+c)\)</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>un réel double </td></tr>
-    <tr><td class="paramname">b</td><td>un réel double </td></tr>
-    <tr><td class="paramname">c</td><td>un réel double </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>un réel double valant l'aire de la <a class="el" href="class_face.html">Face</a> </dd></dl>
 
 </div>
@@ -764,15 +735,11 @@ Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnée
 <li>/home/spoken/Documents/spacestation/Systeme_Objet3D/Sequentiel/face.cpp</li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_face.html">Face</a></li>
-    <li class="footer">Généré le Mercredi 2 Décembre 2015 15:51:55 pour M3101 - Système avancé - Projet : Calcul de surface d&#39;un objet 3D maillé par
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 2 Décembre 2015 17:04:34 pour M3101 - Système avancé - Projet : Calcul de surface d&#39;un objet 3D maillé par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

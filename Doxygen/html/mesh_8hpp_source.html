@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -75,21 +68,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('mesh_8hpp_source.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -104,6 +82,11 @@ $(document).ready(function(){initNavTree('mesh_8hpp_source.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_ec36dfa6d889e5de6155955d72dee250.html">Sequentiel</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">mesh.hpp</div>  </div>
@@ -155,15 +138,11 @@ $(document).ready(function(){initNavTree('mesh_8hpp_source.html','');});
 <div class="ttc" id="class_mesh_html_a76b45fbfdfa33d0f0285f86a918192ba"><div class="ttname"><a href="class_mesh.html#a76b45fbfdfa33d0f0285f86a918192ba">Mesh::setNumberof_p</a></div><div class="ttdeci">void setNumberof_p(const unsigned int &amp;p)</div><div class="ttdoc">Mutateur du nombre de points. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:17</div></div>
 <div class="ttc" id="class_mesh_html_a9c058bf3f414b6119d7e6ea09703057d"><div class="ttname"><a href="class_mesh.html#a9c058bf3f414b6119d7e6ea09703057d">Mesh::numberof_point</a></div><div class="ttdeci">unsigned int numberof_point</div><div class="ttdef"><b>Definition:</b> mesh.hpp:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_ec36dfa6d889e5de6155955d72dee250.html">Sequentiel</a></li><li class="navelem"><b>mesh.hpp</b></li>
-    <li class="footer">Généré le Mercredi 2 Décembre 2015 15:51:55 pour M3101 - Système avancé - Projet : Calcul de surface d&#39;un objet 3D maillé par
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 2 Décembre 2015 17:04:34 pour M3101 - Système avancé - Projet : Calcul de surface d&#39;un objet 3D maillé par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

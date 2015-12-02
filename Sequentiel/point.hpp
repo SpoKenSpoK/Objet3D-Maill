@@ -44,10 +44,10 @@ class Point{
 
     /// Calcul de la longueur d'un côté
     /** Soit la formule suivant : \f$\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}\f$ \n
-        Il s'agit ici de calculer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx finir
-        \param p1 un entier positif
-        \param p2 un entier positif
-        \return la longueur d'un segement entre deux points donnés en paramètres, calculé via leurs coordonnées qui sont des réels doubles. Nous retournons donc un double */
+        Par le calcul on obtient la longueur d'un côté obtenu grâce à des coordonnées réelles. Le résultat obtenu sera donc double.
+        \param p1 un entier positif nous donnant la ligne où se situe les coordonnées du sommet p1 avec lesquels travailler
+        \param p2 un entier positif nous donnant la ligne où se situe les coordonnées du sommet p2 avec lesquels travailler
+        \return la longueur AB (BC ou encore CA), un réel double */
         double calc_length(unsigned int p1, unsigned int p2);
 };
 

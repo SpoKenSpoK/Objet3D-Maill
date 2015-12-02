@@ -72,11 +72,11 @@ double \hyperlink{class_face_ae63fcd017fcd355e212a2510209db17c}{area}
 \subsection{Description détaillée}
 La classe \hyperlink{class_face}{Face} sert à représenter les faces (traingulaires) qui composent un objet 3\-D. Une surface triangulaire à donc 3 sommets, ainsi que trois côtés (segments). \par
 C'est donc par simple déduction (car travaillant dans l'espace) que chaque face a 9 coordonnées. En effet un sommet a 3 coordonnées $ x$ $ y$ $ z$ \-: soit $ {3² = 9}$ \par
- d' {\bfseries Héron} pour trouver l'aire d'une face triangulaire. \par
+Nous utilierons la formule d' {\bfseries Héron} pour trouver l'aire d'une face triangulaire. \par
  \par
 Choix des types pour les attributs \-: \par
 Un sommet obtient une valeur entière lors de la lecture de fichier, nous préférons donc un type {\bfseries unsigned} {\bfseries int} pour la valeur des attributs sommets. \par
-Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnées réeles nous préférons le type {\bfseries double}. 
+Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnées réelles nous préférons le type {\bfseries double}. 
 
 \subsection{Documentation des fonctions membres}
 \hypertarget{class_face_a837adad0761996482010bfc7f5c1403a}{\index{Face@{Face}!calc\-\_\-area@{calc\-\_\-area}}
@@ -95,15 +95,6 @@ Calcul de l'aire du Triangle(\-Face) via la Forume d'Héron.
  Soit trois côtés \-: $ a$ , $ b$ et $ c$ \par
  On a donc \-: $\sqrt{p(p-a)(p-b)(p-c)}$ Avec $ p$ = $ 1/2 *(a+b+c)$
 
-
-\begin{DoxyParams}{Paramètres}
-{\em a} & un réel double \\
-\hline
-{\em b} & un réel double \\
-\hline
-{\em c} & un réel double \\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 un réel double valant l'aire de la \hyperlink{class_face}{Face} 
 \end{DoxyReturn}
