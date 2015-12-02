@@ -10,12 +10,14 @@
 #include "../Sequentiel/point.hpp"
 #include <omp.h>
 
-#define NUM_THREADS 2
+#define NUM_THREADS 8
+// Défini le nombre de threads à utiliser dans les balises parallèles
 
 int main()
 {
     Face* tab_face;
     Point* tab_point;
+
 
     std::string name_file;
     bool is_here = false;
@@ -33,8 +35,9 @@ int main()
             unsigned int point_count = 0;
             unsigned int face_count = 0;
             file >> point_count >> face_count;
-            Mesh mesh(point_count, face_count, 0);
+            Mesh mesh(point_count, face_count);
             tab_point = new Point[mesh.getNumberof_p()];
+
             tab_face = new Face[mesh.getNumberof_f()];
             file.seekg(3, file.cur);
 
@@ -62,29 +65,20 @@ int main()
                 file >> s_value;
                 tab_face[i].setS_three(s_value);
             }
-
             file.close();
 
-            //omp_set_num_threads(NUM_THREADS);
-            std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
-            #pragma omp parallel shared(mesh) num_threads(NUM_THREADS)
+            #pragma omp parallel num_threads(NUM_THREADS)
             {
-                //std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
                 #pragma omp for
                 for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                 tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() ));
                 tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );
                 tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) );
-
-                tab_face[i].calc_area();
                 }
-                //#pragma omp barrier
+            }
 
-                #pragma omp for
-                for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                    #pragma omp critical
-                    mesh.setFull(mesh.getFull()+tab_face[i].getArea());
-                }
+            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
+                mesh.setFull(mesh.getFull()+tab_face[i].calc_area());
             }
 
             std::cout << "\nNombre de sommets : "       << mesh.getNumberof_p() << std::endl;

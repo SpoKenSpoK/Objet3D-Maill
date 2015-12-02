@@ -5,12 +5,15 @@
 
 #include <iostream>
 #include <fstream>
-#include <time.h>
 #include <pthread.h>
-#include "mesh.hpp"
-#include "face.hpp"
-#include "point.hpp"
+#include "../Sequentiel/mesh.hpp"
+#include "../Sequentiel/face.hpp"
+#include "../Sequentiel/point.hpp"
 
+/*
+    Nous avons besoin de passer plusieurs paramètres dans notre thread.
+    Pour ce faire l'utilisation d'une structure nous semble approprié.
+*/
 struct ThreadParams{
     unsigned int _max;
     unsigned int _min;
@@ -21,16 +24,17 @@ struct ThreadParams{
 
 void* calcul(void* args)
 {
-    ThreadParams *thread_params = (ThreadParams*)args;
-
-    //double* area_temp = new double(0);
-
+    ThreadParams *thread_params = (ThreadParams*)args;  // Nous castons le void* obtenu en paramètre en un pointeur sur notre structure
+    /*
+        Cette boucle for reprend le même principe que le séquentiel, à la chose prêt que l'addition des aires
+        se fait dans une boucle à part pour éviter le partage de données dans les threads.
+        Il est évident que voulant "threader" à la main il nous est nécessaire de faire varier les intervalles dans lesquels vont itérer nos boucles for.
+        D'où la précense de thread_params->_min et ->_max .
+    */
     for(unsigned int i=thread_params->_min; i<thread_params->_max; ++i){
-        thread_params->_tab_face[i].setSeg_one( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_one(), thread_params->_tab_face[i].getS_two() ) ); //< Calcul de la longueur AB
-        thread_params->_tab_face[i].setSeg_two( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_two(), thread_params->_tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
-        thread_params->_tab_face[i].setSeg_three( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_three(), thread_params->_tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
-
-        thread_params->_tab_face[i].calc_area(thread_params->_tab_face[i].getSeg_one(), thread_params->_tab_face[i].getSeg_two(), thread_params->_tab_face[i].getSeg_three());
+        thread_params->_tab_face[i].setSeg_one( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_one(), thread_params->_tab_face[i].getS_two() ) );
+        thread_params->_tab_face[i].setSeg_two( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_two(), thread_params->_tab_face[i].getS_three() ) );
+        thread_params->_tab_face[i].setSeg_three( thread_params->_tab_point->calc_length( thread_params->_tab_face[i].getS_three(), thread_params->_tab_face[i].getS_one() ) );
     }
 
     pthread_exit(NULL);
@@ -40,42 +44,30 @@ int main()
 {
     const unsigned short THREAD_COUNT = 4;
 
-    // Création d'un tableau de Faces & de Points
     Face* tab_face;
     Point* tab_point;
 
-    std::string name_fichier; //< Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -> while serait fausse (fichier inexistant)
-    bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
+    std::string name_fichier;
+    bool is_here = false;
 
     do{
         std::cout << "Entrez le nom du fichier .off a tester: " << std::endl;
         std::cin >> name_fichier;
         name_fichier+=".off";
-        // Ouverture du fichier en lecture
+
         std::ifstream fichier(name_fichier.c_str(), std::ios::in);
-        if(fichier) // Test pour savoir si le fichier est bien présent
+        if(fichier)
         {
-            is_here = true; //< Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -> while
-
-            // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
+            is_here = true;
             fichier.seekg(4, fichier.beg);
-
-            unsigned int point_count;   //< Création d'un entier positif représentant le nombre de point présent dans le fichier
-            unsigned int face_count;    //< Création d'un autre entier positif, celui représentant le nombre de face
-
-            // Lecture du fichier, les deux premiers entiers positifs sont insérés dans les variables précédemments définies
+            unsigned int point_count;
+            unsigned int face_count;
             fichier >> point_count >> face_count;
-
-            // Création d'une instance de Mesh en insérant dans le constructeur le nombre de point et face obtenu
-            Mesh mesh(point_count, face_count, 0);
-
-            tab_point = new Point[mesh.getNumberof_p()];    //< Allocation dynamique du tableau de Point prennant comme taille le nombre de point
-            tab_face = new Face[mesh.getNumberof_f()];  //< Allocation dynamique du tableau de Face prennant comme taille le nombre de face
-
-            // On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
+            Mesh mesh(point_count, face_count);
+            tab_point = new Point[mesh.getNumberof_p()];
+            tab_face = new Face[mesh.getNumberof_f()];
             fichier.seekg(3, fichier.cur);
 
-            // Lecture des coordonnées de chaque sommet
             double p_value;
             for(unsigned int i=0; i<mesh.getNumberof_p(); ++i){
                 fichier >> p_value;
@@ -88,10 +80,9 @@ int main()
                 tab_point[i].setP_three(p_value);
             }
 
-            // Lecture des emplacements des coordonnées de chaque sommet pour chaque face
             unsigned int s_value;
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                fichier >> s_value; //< Lecture du '3' nous indiquant qu'il y a bien trois valeur (inutile de le traiter car nous ne travaillons qu'avec des faces triangulaires)
+                fichier >> s_value;
                 fichier >> s_value;
                 tab_face[i].setS_one(s_value);
 
@@ -102,50 +93,40 @@ int main()
                 tab_face[i].setS_three(s_value);
             }
 
-            // Fermeture du fichier ouvert en lecture
             fichier.close();
 
-            // Création du thread
-            pthread_t* threads_array;
-            ThreadParams* thread_params;
-            if(face_count%THREAD_COUNT > 0){
+            /*if(face_count%THREAD_COUNT > 0){
 
-            }
-            int segments = (face_count - (face_count%THREAD_COUNT))/THREAD_COUNT;
-            threads_array = new pthread_t[THREAD_COUNT];
-            thread_params = new ThreadParams[THREAD_COUNT];
-			for(unsigned int i=0; i<THREAD_COUNT; ++i){
+            }*/
+            int segments = (face_count - (face_count%THREAD_COUNT))/THREAD_COUNT;   // Représente la taille des segments dans lesquels vont boucler chacun de nos threads.
+            pthread_t* threads_array = new pthread_t[THREAD_COUNT];                 // Création d'un tableau dynamique de pointeur
+            ThreadParams* thread_params = new ThreadParams[THREAD_COUNT];           // Création d'un tableau dynamique sur la structure précédemment définie
+			for(unsigned int i=0; i<THREAD_COUNT; ++i){                             // Cette boucle for remplie chacun des paramètres des threads dont nous allons avoir besoin
                 thread_params[i]._max=(i+1)*segments;
                 thread_params[i]._min=i*segments;
                 thread_params[i]._tab_face=tab_face;
                 thread_params[i]._tab_point=tab_point;
                 thread_params[i]._mesh=&mesh;
-                pthread_create(&threads_array[i], NULL, calcul, &thread_params[i]);
+                pthread_create(&threads_array[i], NULL, calcul, &thread_params[i]); // Création d'un thread 'i' ayant des paramètres 'i', ce dernier est alors executé
             }
 
-            for(unsigned int i=0; i<THREAD_COUNT; ++i){
-                //void* temp = NULL;
-                pthread_join(threads_array[i],NULL/*,&temp*/);
-                //mesh.setFull(mesh.getFull() + *(double*)temp);
-                //delete (double*)temp;
-            }
+            for(unsigned int i=0; i<THREAD_COUNT; ++i){ pthread_join(threads_array[i],NULL); }  // Boucle for permettant la jointure de tous les threads
 
-            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)
-                mesh.setFull(mesh.getFull()+tab_face[i].getArea());
+            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)                                  // Calcul de l'aire ici non threadé pour éviter tout conflit de variable partagée
+                mesh.setFull(mesh.getFull()+tab_face[i].calc_area());
 
-            delete[]threads_array;
-            delete[]thread_params;
+            delete [] threads_array;    // Suppression du tableau de threads
+            delete [] thread_params;    // Suppression du tableau de paramètres du thread
 
-            std::cout << "\nNombre de points : " << mesh.getNumberof_p() << std::endl;
-            std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
-            std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
+            std::cout << "\nNombre de sommets : "       << mesh.getNumberof_p() << std::endl;
+            std::cout << "Nombre de faces : "           << mesh.getNumberof_f() << std::endl;
+            std::cout << "Aire totale de la forme : "   << mesh.getFull() << std::endl;
         }
         else
-            std::cerr << "@@--> Impossible d'ouvrir le fichier <--@@ : " << name_fichier << " !" << std::endl;
+            std::cerr << "Impossible d'ouvrir le fichier : " << name_fichier << " !" << std::endl;
 
     }while(!is_here);
 
-    // Suppression des tableaux de Faces et de Points
     delete [] tab_face;
     delete [] tab_point;
 
