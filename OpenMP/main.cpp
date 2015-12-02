@@ -5,141 +5,98 @@
 
 #include <iostream>
 #include <fstream>
-#include <time.h>
-#include "mesh.hpp"
-#include "face.hpp"
-#include "point.hpp"
+#include "../Sequentiel/mesh.hpp"
+#include "../Sequentiel/face.hpp"
+#include "../Sequentiel/point.hpp"
 #include <omp.h>
 
-#define NUM_THREADS 4
-#define BILLION 1000000000.0;
+#define NUM_THREADS 2
 
 int main()
 {
-    // Création d'un tableau de Faces & de Points
     Face* tab_face;
     Point* tab_point;
 
-    /*
-    timespec start_lec, stop_lec;
-    timespec start_cal, stop_cal;
-    double timerone, timertwo;
-    */
-
-    std::string name_fichier; //< Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -> while serait fausse (fichier inexistant)
-    bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
+    std::string name_file;
+    bool is_here = false;
 
     do{
         std::cout << "Entrez le nom du fichier .off a tester: " << std::endl;
-        std::cin >> name_fichier;
-        name_fichier+=".off";
+        std::cin >> name_file;
+        name_file+=".off";
 
-        // Ouverture du fichier en lecture
-        std::ifstream fichier(name_fichier.c_str(), std::ios::in);
-        if(fichier) // Test pour savoir si le fichier est bien présent
+        std::ifstream file(name_file.c_str(), std::ios::in);
+        if(file)
         {
-            is_here = true; //< Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -> while
-
-            //clock_gettime(CLOCK_REALTIME, &start_lec);
-
-            // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
-            fichier.seekg(4, fichier.beg);
-
-            unsigned int point_count = 0;   //< Création d'un entier positif représentant le nombre de point présent dans le fichier
-            unsigned int face_count = 0;    //< Création d'un autre entier positif, celui représentant le nombre de face
-
-            // Lecture du fichier, les deux premiers entiers positifs sont insérés dans les variables précédemments définies
-            fichier >> point_count >> face_count;
-
-            // Création d'une instance de Mesh en insérant dans le constructeur le nombre de point et face obtenu
+            is_here = true;
+            file.seekg(4, file.beg);
+            unsigned int point_count = 0;
+            unsigned int face_count = 0;
+            file >> point_count >> face_count;
             Mesh mesh(point_count, face_count, 0);
+            tab_point = new Point[mesh.getNumberof_p()];
+            tab_face = new Face[mesh.getNumberof_f()];
+            file.seekg(3, file.cur);
 
-            tab_point = new Point[mesh.getNumberof_p()];    //< Allocation dynamique du tableau de Point prennant comme taille le nombre de point
-            tab_face = new Face[mesh.getNumberof_f()];  //< Allocation dynamique du tableau de Face prennant comme taille le nombre de face
-
-            // On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
-            fichier.seekg(3, fichier.cur);
-
-            // Lecture des coordonnées de chaque sommet
-            long double p_value;
+            double p_value;
             for(unsigned int i=0; i<mesh.getNumberof_p(); ++i){
-                fichier >> p_value;
+                file >> p_value;
                 tab_point[i].setP_one(p_value);
 
-                fichier >> p_value;
+                file >> p_value;
                 tab_point[i].setP_two(p_value);
 
-                fichier >> p_value;
+                file >> p_value;
                 tab_point[i].setP_three(p_value);
             }
 
-            // Lecture des emplacements des coordonnées de chaque sommet pour chaque face
             unsigned int s_value;
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                fichier >> s_value; //< Lecture du '3' nous indiquant qu'il y a bien trois valeur (inutile de le traiter car nous ne travaillons qu'avec des faces triangulaires)
-                fichier >> s_value;
+                file >> s_value;
+                file >> s_value;
                 tab_face[i].setS_one(s_value);
 
-                fichier >> s_value;
+                file >> s_value;
                 tab_face[i].setS_two(s_value);
 
-                fichier >> s_value;
+                file >> s_value;
                 tab_face[i].setS_three(s_value);
             }
 
-            // Fermeture du fichier ouvert en lecture
-            fichier.close();
+            file.close();
 
-            //clock_gettime(CLOCK_REALTIME, &stop_lec);
-
-            //clock_gettime(CLOCK_REALTIME, &start_cal);
-
-            omp_set_num_threads(NUM_THREADS);
+            //omp_set_num_threads(NUM_THREADS);
             std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
-            #pragma omp parallel shared(mesh)
+            #pragma omp parallel shared(mesh) num_threads(NUM_THREADS)
             {
+                //std::cerr<<omp_get_num_threads()<<std::endl; //De donne le nombre total de threads utilisés
                 #pragma omp for
                 for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() )); //< Calcul de la longueur AB
-                tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
-                tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
+                tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() ));
+                tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );
+                tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) );
 
-                // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
-                tab_face[i].calc_area( tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three() );
+                tab_face[i].calc_area();
                 }
-                #pragma omp barrier
-
-
+                //#pragma omp barrier
 
                 #pragma omp for
                 for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                     #pragma omp critical
                     mesh.setFull(mesh.getFull()+tab_face[i].getArea());
                 }
-
             }
 
-            //clock_gettime(CLOCK_REALTIME, &stop_cal);
-
-            std::cout << "\nNombre de points : " << mesh.getNumberof_p() << std::endl;
-            std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
-            std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
+            std::cout << "\nNombre de sommets : "       << mesh.getNumberof_p() << std::endl;
+            std::cout << "Nombre de faces : "           << mesh.getNumberof_f() << std::endl;
+            std::cout << "Aire totale de la forme : "   << mesh.getFull()<<std::endl;
         }
-        else
-            std::cerr << "@@--> Impossible d'ouvrir le fichier <--@@ : " << name_fichier << " !" << std::endl;
+        else std::cerr << "\nImpossible d'ouvrir le fichier : " << name_file << " !" << std::endl;
 
     }while(!is_here);
 
-    // Suppression des tableaux de Faces et de Points
     delete [] tab_face;
     delete [] tab_point;
-    /*
-    timerone = (stop_lec.tv_sec - start_lec.tv_sec) + (stop_lec.tv_nsec - start_lec.tv_nsec) / BILLION;
-    timertwo = (stop_cal.tv_sec - start_cal.tv_sec) + (stop_cal.tv_nsec - start_cal.tv_nsec) / BILLION;
-
-    std::cout<< "temps de lecture : " << timerone << std::endl;
-    std::cout<< "temps de calcul : " << timertwo << std::endl;
-    */
 
     return 0;
 }

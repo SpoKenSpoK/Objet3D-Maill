@@ -1,5 +1,4 @@
 #!/bin/bash
-rm *.o #Au cas où un malin aurait ctrl+C
 
 echo "-- Compilation --"
 g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp
@@ -17,10 +16,9 @@ time ./main
 
 else
 	echo "-- Error: Failed compilation --"
+	rm *.o
 	exit
 fi
-
-rm *.o
 
 echo "------------------------------------------------------"
 echo "Voulez-vous afficher la documentation en ligne ? (y/n)"
@@ -37,5 +35,7 @@ echo "		@       Programmation Séquentielle       @"
 echo "		@ Calcul de surface d'un Objet 3D Maillé @"
 echo "		@   Guillaume BOEHM & Thibault HECKEL    @"
 echo "		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+
+rm *.o
 
 exit

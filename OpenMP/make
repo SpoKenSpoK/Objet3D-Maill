@@ -1,22 +1,41 @@
 #!/bin/bash
 
 echo "-- Compilation --"
-g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp -fopenmp
+g++ -Wall -c main.cpp ../Sequentiel/face.cpp ../Sequentiel/point.cpp ../Sequentiel/mesh.cpp -fopenmp
 
 file=`ls|grep main.o`
 
 if [ "$file" = "main.o" ];then
-g++ -Wall -o main main.o face.o point.o mesh.o -fopenmp -lrt
+g++ -Wall -o main main.o face.o point.o mesh.o -fopenmp
 
 echo "-- Execution --"
-free
-echo " --------------------------------------------------- "
+
+echo "-----------------------------------------------------"
 
 time ./main
-echo " "
 
 else
 	echo "-- Error: Failed compilation --"
+	rm *.o
+	exit
 fi
 
+echo "------------------------------------------------------"
+echo "Voulez-vous afficher la documentation en ligne ? (y/n)"
+read y
+
+if [ $y = "y" ]; then
+firefox ../Doxygen/html/annotated.html
+
+fi
+
+echo "		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+echo "		@         Projet Systeme - M3101 :       @"
+echo "		@          Programmation OpenMP          @"
+echo "		@ Calcul de surface d'un Objet 3D Maillé @"
+echo "		@   Guillaume BOEHM & Thibault HECKEL    @"
+echo "		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+
 rm *.o
+
+exit
