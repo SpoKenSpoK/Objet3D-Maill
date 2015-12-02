@@ -117,7 +117,7 @@ int main()
 
             std::cout << "\nNombre de sommets : "       << mesh.getNumberof_p() << std::endl;
             std::cout << "Nombre de faces : "           << mesh.getNumberof_f() << std::endl;
-            std::cout << "Aire totale de la forme : "   << mesh.getFull();
+            std::cout << "Aire totale de la forme : "   << mesh.getFull()<<std::endl;
         }
         else std::cerr << "\nImpossible d'ouvrir le fichier : " << name_file << " !" << std::endl;
     }while(!is_here);

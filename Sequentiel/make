@@ -1,4 +1,5 @@
 #!/bin/bash
+rm *.o #Au cas où un malin aurait ctrl+C
 
 echo "-- Compilation --"
 g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp
@@ -10,12 +11,31 @@ g++ -Wall -o main main.o face.o point.o mesh.o
 
 echo "-- Execution --"
 free
-echo " --------------------------------------------------- "
+echo "-----------------------------------------------------"
 
 time ./main
 
 else
 	echo "-- Error: Failed compilation --"
+	exit
 fi
 
 rm *.o
+
+echo "------------------------------------------------------"
+echo "Voulez-vous afficher la documentation en ligne ? (y/n)"
+read y
+
+if [ $y = "y" ]; then
+firefox ../Doxygen/html/annotated.html
+
+fi
+
+echo "		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+echo "		@         Projet Systeme - M3101 :       @"
+echo "		@       Programmation Séquentielle       @"
+echo "		@ Calcul de surface d'un Objet 3D Maillé @"
+echo "		@   Guillaume BOEHM & Thibault HECKEL    @"
+echo "		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+
+exit
