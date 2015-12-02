@@ -1,100 +1,125 @@
-/* Projet de Système: "Calcul de surface d'un objet 3D maillé" *
-*   IUT d'Arles - Département Informatique - Année 2015/2016   *
-*   Réalisé par Guillaume BOEHM & Thibault HECKEL              *
-*               - Programmation séquentielle -                */
+/*
+    Projet de Système: "Calcul de surface d'un objet 3D maillé"
+    IUT d'Arles - Département Informatique - Année 2015/2016
+    Réalisé par Guillaume BOEHM & Thibault HECKEL
+              - Programmation séquentielle -
+*/
 
+// Include --------
 #include <iostream>
 #include <fstream>
-#include <time.h>
 #include "mesh.hpp"
 #include "face.hpp"
 #include "point.hpp"
+// ----------------
 
 int main()
 {
-    // Création d'un tableau de Faces & de Points
-    Face* tab_face;
-    Point* tab_point;
-
-    std::string name_fichier; //< Chaîne de caractère créer ici évitant ainsi de la recréer au cas où la saisie dans la boucle do -> while serait fausse (fichier inexistant)
-    bool is_here = false;   //< Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le fichier est vérifié
+    // Déclarations des principales variables locales au main ------
+    Face* tab_face;             // Création d'un pointeur sur Face qui sera par la suite associé à un tableau
+    Point* tab_point;           // Création d'un pointeur sur Point qui sera lui aussi associé à un tableau
+    std::string name_file;      // String récupérant le nom du file à éxecuter. Placé ainsi avant la boucle while nous évitons de le rédéclarer à chaque itération de boucle
+    bool is_here = false;       // Booléen permettant d'éxecuter la boucle while ci-dessous : prend true si le file est vérifié
+    // ---------------------
 
     do{
-        std::cout << "Entrez le nom du fichier .off a tester: " << std::endl;
-        std::cin >> name_fichier;
-        name_fichier+=".off";
+        std::cout << "Entrez le nom du file .off a tester: " << std::endl;
+        std::cin >> name_file;
+        name_file+=".off";   // Ajout de l'extension .off au nom du fichier entré précédement
 
-        // Ouverture du fichier en lecture
-        std::ifstream fichier(name_fichier.c_str(), std::ios::in);
-        if(fichier) // Test pour savoir si le fichier est bien présent
+        // Ouverture du fichier en lecture ----------------------
+        std::ifstream file(name_file.c_str(), std::ios::in);
+
+        if(file) // Test pour savoir si le fichier est bien présent dans le répertoire donné
         {
-            is_here = true; //< Si le fichier est vérifié alors la valeur et vraie, ainsi on peut sortir de la boucle do -> while
+            is_here = true;                 // Si le file est vérifié alors la valeur et vraie et nous sortons de la boucle
+            file.seekg(4, file.beg);        // On se place au quatrième octet dans le file (en partant du début), ici après le "OFF"
 
-            // On se place au quatrième octet dans le fichier (en partant du début), ici après le "OFF"
-            fichier.seekg(4, fichier.beg);
+            unsigned int point_count = 0;   // Création d'un entier positif représentant le nombre de points présent dans le fichier
+            unsigned int face_count = 0;    // Création d'un autre entier positif, celui-ci représentant le nombre de faces
 
-            unsigned int point_count = 0;   //< Création d'un entier positif représentant le nombre de point présent dans le fichier
-            unsigned int face_count = 0;    //< Création d'un autre entier positif, celui représentant le nombre de face
+            file >> point_count >> face_count;      // Lecture du fichier, les deux premiers entiers positifs sont insérés dans les variables précédemments définies
+            Mesh mesh(point_count, face_count);     // Création d'une instance de Mesh en insérant dans le constructeur le nombre de points et faces obtenus
 
-            // Lecture du fichier, les deux premiers entiers positifs sont insérés dans les variables précédemments définies
-            fichier >> point_count >> face_count;
+            tab_point = new Point[mesh.getNumberof_p()];    // Allocation dynamique du tableau de Point ayant pour taile le nombre de coordonnées
+            tab_face = new Face[mesh.getNumberof_f()];      // Allocation dynamique du tableau de Face prennant comme taille le nombre de faces
 
-            // Création d'une instance de Mesh en insérant dans le constructeur le nombre de point et face obtenu
-            Mesh mesh(point_count, face_count, 0);
+            file.seekg(3, file.cur);                        // On se place à la ligne, derrière le '0'
 
-            tab_point = new Point[mesh.getNumberof_p()];    //< Allocation dynamique du tableau de Point prennant comme taille le nombre de point
-            tab_face = new Face[mesh.getNumberof_f()];  //< Allocation dynamique du tableau de Face prennant comme taille le nombre de face
-
-            // On vient se placer à la ligne évitant le '0' (en partant de la dernière position du curseur)
-            fichier.seekg(3, fichier.cur);
-
-            // Lecture des coordonnées de chaque sommet
-            long double p_value;
+            // ----- Lecture des coordonnées de chaque sommet ------------
+            double p_value;     // Variable temporaire servant à la lecture des doubles
+            /*
+                Boucle for qui permet de lire la totalité des réels (coordonnées des sommets) composants le fichier .off
+                Appel des différents mutateurs de la classe Point à chaque itération de boucle
+                pour insérer une valeur dans les trois coordonnées du sommet 'i'
+            */
             for(unsigned int i=0; i<mesh.getNumberof_p(); ++i){
-                fichier >> p_value;
+                file >> p_value;
                 tab_point[i].setP_one(p_value);
 
-                fichier >> p_value;
+                file >> p_value;
                 tab_point[i].setP_two(p_value);
 
-                fichier >> p_value;
+                file >> p_value;
                 tab_point[i].setP_three(p_value);
             }
 
-            // Lecture des emplacements des coordonnées de chaque sommet pour chaque face
-            unsigned int s_value;
+            // ----- Lecture des emplacements des coordonnées de chaque sommet pour chaque face
+            unsigned int s_value;   // Variable temporaire pour la lecture des entier positifs
+            /*
+                Boucle for qui lit la totalité des entiers positifs (emplacement - ligne) composants le fichier .off
+                Appel des différents mutateurs de classe Face à chaque itération de boucle
+                pour insérer le numéro de ligne auquel se trouve les coordonnées du sommet 'i'
+            */
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                fichier >> s_value; //< Lecture du '3' nous indiquant qu'il y a bien trois valeur (inutile de le traiter car nous ne travaillons qu'avec des faces triangulaires)
-                fichier >> s_value;
+                file >> s_value;    /*  Lecture du '3' nous indiquant qu'il y a bien trois sommets
+                                        (inutile de le traiter car nous ne travaillons qu'avec des faces triangulaires) */
+                file >> s_value;
                 tab_face[i].setS_one(s_value);
 
-                fichier >> s_value;
+                file >> s_value;
                 tab_face[i].setS_two(s_value);
 
-                fichier >> s_value;
+                file >> s_value;
                 tab_face[i].setS_three(s_value);
             }
 
-            // Fermeture du fichier ouvert en lecture
-            fichier.close();
+            file.close(); // Fermeture du fichier
+            // ---------------------------------- FIN DE LECTURE ---------------------------------------
+
+            // -------------------------------------- CALCUL -------------------------------------------
+
+            /*
+                EXPLICATION CALCUL :
+
+                Nous connaissons le calcul de longueur d'un côté suivant les coordonnées respectives de ses deux sommmets (extrémités).
+                Nous connaissons aussi le calcul d'Héron suivant la longueur des trois côtés d'un triangle qui nous permet de calculer l'aire de celui-ci.
+
+                Ainsi, nous effectuons d'abord une boucle for permettant de calculer pour chaque face, les trois segments qui la compose.
+                Soit un triangle ABC, il nous faut calculer la longueur AB, puis BC et enfin CA.
+
+                La méthode calc_length de la classe Point prend en paramètre la ligne où se trouvent les coordonnées x, y et z d'un premier sommet et celle d'un deuxième sommmet.
+                En résumé nous avons calc_length( ligne où allez pour trouver xA, yA, zA, ligne où allez pour trouver xB, yB, zB).
+                Nous obtenons donc la longueur de ses trois côtés; avec cela il nous est maintenant possible de calculer la surface du triangle.
+
+                La méthode calc_area de la classe Face effectue la méthode d'Héron et nous retroune l'aire du triangle 'i'.
+                Nous l'ajoutons alors à l'aire totale.
+            */
 
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
-                tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() )); //< Calcul de la longueur AB
-                tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );  //< Calcul de la longueur BC
-                tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) ); //< Calcul de la longueur CA
+                tab_face[i].setSeg_one( tab_point->calc_length( tab_face[i].getS_one(), tab_face[i].getS_two() ));          // Calcul de la longueur AB
+                tab_face[i].setSeg_two( tab_point->calc_length( tab_face[i].getS_two(), tab_face[i].getS_three() ) );       // Calcul de la longueur BC
+                tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) );     // Calcul de la longueur CA
 
-                // Calcul de l'aire totale de l'objet 3D Maillé : il s'agit ici d'ajouter l'aire de chaque face à l'aire totale
-                mesh.setFull(mesh.getFull() + tab_face[i].calc_area(tab_face[i].getSeg_one(), tab_face[i].getSeg_two(), tab_face[i].getSeg_three()) );
+                mesh.setFull( mesh.getFull() + tab_face[i].calc_area() ); // Calcul de l'aire totale : addition de l'aire de la face à l'aire totale
             }
+            // ----------------------------------- FIN CALCUL ------------------------------------------
 
-            std::cout << "\nNombre de points : " << mesh.getNumberof_p() << std::endl;
-            std::cout << "Nombre de faces : " << mesh.getNumberof_f() << std::endl;
-            std::cout << "Aire totale de la forme : " << mesh.getFull() << std::endl;
-
+            std::cout << "\nNombre de sommets : "       << mesh.getNumberof_p() << std::endl;
+            std::cout << "Nombre de faces : "           << mesh.getNumberof_f() << std::endl;
+            std::cout << "Aire totale de la forme : "   << mesh.getFull();
         }
-        else
-            std::cerr << "@@--> Impossible d'ouvrir le fichier <--@@ : " << name_fichier << " !" << std::endl;
-
+        else std::cerr << "\nImpossible d'ouvrir le fichier : " << name_file << " !" << std::endl;
     }while(!is_here);
 
     // Suppression des tableaux de Faces et de Points

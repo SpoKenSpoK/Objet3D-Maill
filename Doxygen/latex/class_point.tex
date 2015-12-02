@@ -8,9 +8,11 @@
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point} ()
+\hypertarget{class_point_ad92f2337b839a94ce97dcdb439b4325a}{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point} ()}\label{class_point_ad92f2337b839a94ce97dcdb439b4325a}
+
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
-\hyperlink{class_point_a395fa04b4ec126b66fc053f829a30cc1}{$\sim$\-Point} ()
+\hypertarget{class_point_a395fa04b4ec126b66fc053f829a30cc1}{\hyperlink{class_point_a395fa04b4ec126b66fc053f829a30cc1}{$\sim$\-Point} ()}\label{class_point_a395fa04b4ec126b66fc053f829a30cc1}
+
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 double \hyperlink{class_point_a211f8dee098122a2f1c326ba42652ee2}{get\-P\-\_\-one} () const 
 \begin{DoxyCompactList}\small\item\em Accesseur du point 1. \end{DoxyCompactList}\item 
@@ -38,45 +40,8 @@ double \hyperlink{class_point_af7cb3c4c0c0f52218ac9ce180df003da}{point\-\_\-thre
 
 
 \subsection{Description détaillée}
-La classe \hyperlink{class_point}{Point} représente les points ou sommets(composés de coordonnées) des triangles \hyperlink{class_face}{Face} composant l'objet \hyperlink{class_mesh}{Mesh}. Chaque sommet du triangle a donc trois points dans l'espace(coordonnées). \par
+La classe \hyperlink{class_point}{Point} représente les points ou sommets(composés de 3 coordonnées) des triangles \hyperlink{class_face}{Face} composant l'objet \hyperlink{class_mesh}{Mesh}. Chaque sommet du triangle a donc trois points dans l'espace (coordonnées). \par
 Il s'agit donc ici de récupérer les coordonnées se trouvant dans le fichier .O\-F\-F . Ces coordonnées sont alors placées respectueusement dans les attributs point\-\_\-one, point\-\_\-two, point\-\_\-three de type {\bfseries double} \par
-
-
-Définition à la ligne 9 du fichier point.\-hpp.
-
-
-
-\subsection{Documentation des constructeurs et destructeur}
-\hypertarget{class_point_ad92f2337b839a94ce97dcdb439b4325a}{\index{Point@{Point}!Point@{Point}}
-\index{Point@{Point}!Point@{Point}}
-\subsubsection[{Point}]{\setlength{\rightskip}{0pt plus 5cm}Point\-::\-Point (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_point_ad92f2337b839a94ce97dcdb439b4325a}
-
-
-Constructeur. 
-
-
-
-Définition à la ligne 6 du fichier point.\-cpp.
-
-\hypertarget{class_point_a395fa04b4ec126b66fc053f829a30cc1}{\index{Point@{Point}!$\sim$\-Point@{$\sim$\-Point}}
-\index{$\sim$\-Point@{$\sim$\-Point}!Point@{Point}}
-\subsubsection[{$\sim$\-Point}]{\setlength{\rightskip}{0pt plus 5cm}Point\-::$\sim$\-Point (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_point_a395fa04b4ec126b66fc053f829a30cc1}
-
-
-Destructeur. 
-
-
-
-Définition à la ligne 7 du fichier point.\-cpp.
-
 
 
 \subsection{Documentation des fonctions membres}
@@ -93,7 +58,7 @@ Définition à la ligne 7 du fichier point.\-cpp.
 Calcul de la longueur d'un côté 
 
 Soit la formule suivant \-: $\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}$ \par
-
+Il s'agit ici de calculer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx finir 
 \begin{DoxyParams}{Paramètres}
 {\em p1} & un entier positif \\
 \hline
@@ -103,10 +68,6 @@ Soit la formule suivant \-: $\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}$ \par
 \begin{DoxyReturn}{Renvoie}
 la longueur d'un segement entre deux points donnés en paramètres, calculé via leurs coordonnées qui sont des réels doubles. Nous retournons donc un double 
 \end{DoxyReturn}
-
-
-Définition à la ligne 20 du fichier point.\-cpp.
-
 \hypertarget{class_point_a211f8dee098122a2f1c326ba42652ee2}{\index{Point@{Point}!get\-P\-\_\-one@{get\-P\-\_\-one}}
 \index{get\-P\-\_\-one@{get\-P\-\_\-one}!Point@{Point}}
 \subsubsection[{get\-P\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::get\-P\-\_\-one (
@@ -121,10 +82,6 @@ Accesseur du point 1.
 Retourne la coordonnée du premier point \begin{DoxyReturn}{Renvoie}
 point\-\_\-one un réel double 
 \end{DoxyReturn}
-
-
-Définition à la ligne 10 du fichier point.\-cpp.
-
 \hypertarget{class_point_adf0f89d9beca24315b45d96786896a56}{\index{Point@{Point}!get\-P\-\_\-three@{get\-P\-\_\-three}}
 \index{get\-P\-\_\-three@{get\-P\-\_\-three}!Point@{Point}}
 \subsubsection[{get\-P\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::get\-P\-\_\-three (
@@ -139,10 +96,6 @@ Accesseur du point 3.
 Retourne la coordonnée du troisième point \begin{DoxyReturn}{Renvoie}
 point\-\_\-three un réel double 
 \end{DoxyReturn}
-
-
-Définition à la ligne 12 du fichier point.\-cpp.
-
 \hypertarget{class_point_afd9ee8dca2913903fd6a1a95d743afaa}{\index{Point@{Point}!get\-P\-\_\-two@{get\-P\-\_\-two}}
 \index{get\-P\-\_\-two@{get\-P\-\_\-two}!Point@{Point}}
 \subsubsection[{get\-P\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::get\-P\-\_\-two (
@@ -157,10 +110,6 @@ Accesseur du point 2.
 Retourne la coordonnée du deuxième point \begin{DoxyReturn}{Renvoie}
 point\-\_\-two un réel double 
 \end{DoxyReturn}
-
-
-Définition à la ligne 11 du fichier point.\-cpp.
-
 \hypertarget{class_point_ac79f8c3f0fb8b9dea4f5b8a8e0315779}{\index{Point@{Point}!set\-P\-\_\-one@{set\-P\-\_\-one}}
 \index{set\-P\-\_\-one@{set\-P\-\_\-one}!Point@{Point}}
 \subsubsection[{set\-P\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-::set\-P\-\_\-one (
@@ -177,10 +126,6 @@ Modifie la coordonnée du premier point
 {\em o} & un réel double constant passé par référence \\
 \hline
 \end{DoxyParams}
-
-
-Définition à la ligne 14 du fichier point.\-cpp.
-
 \hypertarget{class_point_a097d97049b319bb131b51f990a52aa94}{\index{Point@{Point}!set\-P\-\_\-three@{set\-P\-\_\-three}}
 \index{set\-P\-\_\-three@{set\-P\-\_\-three}!Point@{Point}}
 \subsubsection[{set\-P\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-::set\-P\-\_\-three (
@@ -197,10 +142,6 @@ Modifie la coordonnée du troisième point
 {\em th} & un réel double constant passé par référence \\
 \hline
 \end{DoxyParams}
-
-
-Définition à la ligne 16 du fichier point.\-cpp.
-
 \hypertarget{class_point_a3b70e89e253f5339392990ae29313ae8}{\index{Point@{Point}!set\-P\-\_\-two@{set\-P\-\_\-two}}
 \index{set\-P\-\_\-two@{set\-P\-\_\-two}!Point@{Point}}
 \subsubsection[{set\-P\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-::set\-P\-\_\-two (
@@ -219,35 +160,19 @@ Modifie la coordonnée du deuxième point
 \end{DoxyParams}
 
 
-Définition à la ligne 15 du fichier point.\-cpp.
-
-
-
 \subsection{Documentation des données membres}
 \hypertarget{class_point_a030522c3949dc71bc4c1f39eb1b0c77e}{\index{Point@{Point}!point\-\_\-one@{point\-\_\-one}}
 \index{point\-\_\-one@{point\-\_\-one}!Point@{Point}}
 \subsubsection[{point\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-one\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_a030522c3949dc71bc4c1f39eb1b0c77e}
-Coordonnées du premier point dans l'espace(x) 
-
-Définition à la ligne 11 du fichier point.\-hpp.
-
-\hypertarget{class_point_af7cb3c4c0c0f52218ac9ce180df003da}{\index{Point@{Point}!point\-\_\-three@{point\-\_\-three}}
+Coordonnées $ x$ du sommet \hypertarget{class_point_af7cb3c4c0c0f52218ac9ce180df003da}{\index{Point@{Point}!point\-\_\-three@{point\-\_\-three}}
 \index{point\-\_\-three@{point\-\_\-three}!Point@{Point}}
 \subsubsection[{point\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-three\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_af7cb3c4c0c0f52218ac9ce180df003da}
-Coordonnées du troisième point dans l'espace(z) 
-
-Définition à la ligne 13 du fichier point.\-hpp.
-
-\hypertarget{class_point_a7eece7f7413a741137cf32bb763f3987}{\index{Point@{Point}!point\-\_\-two@{point\-\_\-two}}
+Coordonnées $ z$ du sommet \hypertarget{class_point_a7eece7f7413a741137cf32bb763f3987}{\index{Point@{Point}!point\-\_\-two@{point\-\_\-two}}
 \index{point\-\_\-two@{point\-\_\-two}!Point@{Point}}
 \subsubsection[{point\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}double Point\-::point\-\_\-two\hspace{0.3cm}{\ttfamily [private]}}}\label{class_point_a7eece7f7413a741137cf32bb763f3987}
-Coordonnées du deuxième point dans l'espace(y) 
-
-Définition à la ligne 12 du fichier point.\-hpp.
-
-
+Coordonnées $ y$ du sommet 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
 \item 
-/home/spoken/\-Documents/\-System/\-Objet3\-D/\hyperlink{point_8hpp}{point.\-hpp}\item 
-/home/spoken/\-Documents/\-System/\-Objet3\-D/\hyperlink{point_8cpp}{point.\-cpp}\end{DoxyCompactItemize}
+/home/spoken/\-Documents/spacestation/\-Systeme\-\_\-\-Objet3\-D/\-Sequentiel/point.\-hpp\item 
+/home/spoken/\-Documents/spacestation/\-Systeme\-\_\-\-Objet3\-D/\-Sequentiel/point.\-cpp\end{DoxyCompactItemize}

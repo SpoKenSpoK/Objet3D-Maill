@@ -1,16 +1,16 @@
 #ifndef POINT_HPP
 #define POINT_HPP
-/** La classe Point représente les points ou sommets(composés de coordonnées) des triangles Face composant l'objet Mesh.
-    Chaque sommet du triangle a donc trois points dans l'espace(coordonnées). \n
+/** La classe Point représente les points ou sommets(composés de 3 coordonnées) des triangles Face composant l'objet Mesh.
+    Chaque sommet du triangle a donc trois points dans l'espace (coordonnées). \n
     Il s'agit donc ici de récupérer les coordonnées se trouvant dans le fichier .OFF .
     Ces coordonnées sont alors placées respectueusement dans les attributs point_one, point_two, point_three de type \b double \n
     */
 
 class Point{
     private:
-        double point_one;   /**< Coordonnées du premier point dans l'espace(x)*/
-        double point_two;   /**< Coordonnées du deuxième point dans l'espace(y)*/
-        double point_three; /**< Coordonnées du troisième point dans l'espace(z)*/
+        double point_one;   /**< Coordonnées \f$ x\f$ du sommet */
+        double point_two;   /**< Coordonnées \f$ y\f$ du sommet */
+        double point_three; /**< Coordonnées \f$ z\f$ du sommet */
 
     public:
     /// Constructeur
@@ -44,6 +44,7 @@ class Point{
 
     /// Calcul de la longueur d'un côté
     /** Soit la formule suivant : \f$\sqrt{(x2-x1)^2+(y2-y1)^2+(z2-z1)^2}\f$ \n
+        Il s'agit ici de calculer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx finir
         \param p1 un entier positif
         \param p2 un entier positif
         \return la longueur d'un segement entre deux points donnés en paramètres, calculé via leurs coordonnées qui sont des réels doubles. Nous retournons donc un double */

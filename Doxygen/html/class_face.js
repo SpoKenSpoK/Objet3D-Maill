@@ -2,7 +2,7 @@ var class_face =
 [
     [ "Face", "class_face.html#afdb634bc2d5287ba0d62e46b57e9dc2e", null ],
     [ "~Face", "class_face.html#a182c8c9ba652d46b01fdf6816cd65590", null ],
-    [ "calc_area", "class_face.html#a0d460b44871e8f720de067063734aede", null ],
+    [ "calc_area", "class_face.html#a837adad0761996482010bfc7f5c1403a", null ],
     [ "getArea", "class_face.html#a58beb8ce1b9f8154379db998a02ffa3d", null ],
     [ "getPerimeter", "class_face.html#acd3e36c17c14b6617d92b0b9ecb2b6fc", null ],
     [ "getS_one", "class_face.html#ac6ce8497a59d3de67cd861a1d3aeb1ee", null ],

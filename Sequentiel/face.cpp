@@ -33,10 +33,11 @@ void Face::setPerimeter(const double& _perimeter) { perimeter = _perimeter; }
 void Face::setArea(const double& _area) { area = _area; }
 
 //Utilisation de la formule d'Héron :
-double Face::calc_area(double AB, double BC, double CA){
-    this->setPerimeter(( AB + BC + CA )/2); //< Division du périmètre par 2 comme convenu dans la formule
-    this->setArea( sqrt(this->getPerimeter()*(this->getPerimeter()-AB)*(this->getPerimeter()-BC)*(this->getPerimeter()-CA)) ); //< On effectue ensuite le calcul sous la racine carré
-    return this->getArea(); //< On retourne ici l'aire respective du triangle
+double Face::calc_area(){
+    this->setPerimeter( ( this->getSeg_one() + this->getSeg_two() + this->getSeg_three() )/2 ); // p = 1/2 (a+b+c)
+    this->setArea(  sqrt( this->getPerimeter()  * ( this->getPerimeter() - this->getSeg_one() ) // Aire = sqrt( p * (p-a)*(p-b)*(p-c) )
+                                                * ( this->getPerimeter() - this->getSeg_two() )
+                                                * ( this->getPerimeter() - this->getSeg_three() ) ));
+
+    return this->getArea();
 }
-
-

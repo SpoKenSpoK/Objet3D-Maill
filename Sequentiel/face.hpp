@@ -1,26 +1,27 @@
 #ifndef FACE_HPP
 #define FACE_HPP
 
-/** La classe Face vient ici représenter les faces qui compose un objet 3D.
-    Celle-ci peut-être décomposée en trois sommets, ainsi que trois segments (il s'agit ici de faces triangulaires).
-    Par suite de calcul(via les coordonnées de chaques sommets dans l'espace - x, y, z - soit 3*3 = 9 coordonnées pour chaque face)
-    on obtient la longueur des segments composant la face et donc son périmètre.
-    Nous pouvons alors effectuer le calcul d' \b Héron pour trouver l'aire d'une face triangulaire.
+/** La classe Face sert à représenter les faces (traingulaires) qui composent un objet 3D.
+    Une surface triangulaire à donc 3 sommets, ainsi que trois côtés (segments). \n
+    C'est donc par simple déduction (car travaillant dans l'espace) que chaque face a 9 coordonnées.
+    En effet un sommet a 3 coordonnées \f$ x\f$ \f$ y\f$ \f$ z\f$ : soit \f$ {3² = 9}\f$ \n
+     d' \b Héron pour trouver l'aire d'une face triangulaire.
     \n \n
     Choix des types pour les attributs : \n
-    Chaque sommet indique une ligne de lecture pour les coordonnées d'un sommet. Il y a donc 3 coordonnées x, y et z ici de type \b double.
-    Nous préférons partir sur un type \b unsigned \b int pour la valeur des attributs sommets. */
+    Un sommet obtient une valeur entière lors de la lecture de fichier, nous préférons donc un type \b unsigned \b int pour la valeur des attributs sommets. \n
+    Quant aux segments et tout ce qui résulte d'un calcul utilisant les coordonnées réeles nous préférons le type \b double.
+    */
 
 class Face{
     private:
-        unsigned int summit_one;   /**< Place (ligne du fichier .OFF) où se situe les coordonnées du premier sommet de la Face */
-        unsigned int summit_two;   /**< Place (ligne du fichier .OFF) où se situe les coordonnées du second sommet de la Face */
-        unsigned int summit_three; /**< Place (ligne du fichier .OFF) où se situe les coordonnées du troisième sommet de la Face */
-        double segment_one; /**< Longueur du segment entre le premier et le second sommets de la Face */
-        double segment_two; /**< Longueur du segment entre le second et le troisième sommets de la Face */
-        double segment_three;   /**< Longueur du segment entre le troisième et le premier sommets de la Face */
-        double perimeter;   /**< Périmètre de la Face */
-        double area;    /**< Aire de la Face */
+        unsigned int summit_one;    /**< Place (ligne du fichier .OFF) où se situe les coordonnées du premier sommet de la Face */
+        unsigned int summit_two;    /**< Place (ligne du fichier .OFF) où se situe les coordonnées du second sommet de la Face */
+        unsigned int summit_three;  /**< Place (ligne du fichier .OFF) où se situe les coordonnées du troisième sommet de la Face */
+        double segment_one;         /**< Longueur du segment entre le premier et le second sommets de la Face */
+        double segment_two;         /**< Longueur du segment entre le second et le troisième sommets de la Face */
+        double segment_three;       /**< Longueur du segment entre le troisième et le premier sommets de la Face */
+        double perimeter;           /**< Périmètre de la Face */
+        double area;                /**< Aire de la Face */
 
     public:
     /// Constructeur
@@ -98,13 +99,10 @@ class Face{
           que les longueurs des trois côtés du triangle : \n
 
           Soit trois côtés : \f$ a\f$ , \f$ b\f$ et \f$ c\f$ \n
-          On a donc :  \f$\sqrt{(p-a)+(p-b)+(p-c)}\f$ Avec \f$ p\f$ = \f$ 1/2 *(a+b+c)\f$
+          On a donc :  \f$\sqrt{p(p-a)(p-b)(p-c)}\f$ Avec \f$ p\f$ = \f$ 1/2 *(a+b+c)\f$
 
-        \param a un réel double
-        \param b un réel double
-        \param c un réel double
         \return un réel double valant l'aire de la Face */
-        double calc_area(double a, double b, double c);
+        double calc_area();
 };
 
 #endif // FACE_HPP

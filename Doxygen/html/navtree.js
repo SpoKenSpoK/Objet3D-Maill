@@ -1,7 +1,6 @@
 var NAVTREE =
 [
-  [ "Calcul de l'aire d'un objet 3D Maillé", "index.html", [
-    [ "Objet3D-Maill-", "md__home_spoken__documents__system__objet3_d__r_e_a_d_m_e.html", null ],
+  [ "M3101 - Système avancé - Projet : Calcul de surface d'un objet 3D maillé", "index.html", [
     [ "Classes", null, [
       [ "Liste des classes", "annotated.html", "annotated" ],
       [ "Index des classes", "classes.html", null ],
@@ -12,11 +11,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Fichiers", null, [
-      [ "Liste des fichiers", "files.html", "files" ],
-      [ "Membres de fichier", "globals.html", [
-        [ "Tout", "globals.html", null ],
-        [ "Fonctions", "globals_func.html", null ]
-      ] ]
+      [ "Liste des fichiers", "files.html", "files" ]
     ] ]
   ] ]
 ];

@@ -17,6 +17,3 @@ double Mesh::getFull() const { return FULL_AREA; }
 void Mesh::setNumberof_p(const unsigned int& point) { numberof_point = point; }
 void Mesh::setNumberof_f(const unsigned int& face) { numberof_face = face; }
 void Mesh::setFull(const double& area) { FULL_AREA = area; }
-
-
-

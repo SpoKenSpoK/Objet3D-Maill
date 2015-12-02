@@ -1,10 +1,23 @@
 var searchData=
 [
-  ['perimeter',['perimeter',['../class_face.html#a9b759ee3c90c67bc7af3969546f568f9',1,'Face']]],
-  ['point',['Point',['../class_point.html',1,'Point'],['../class_point.html#ad92f2337b839a94ce97dcdb439b4325a',1,'Point::Point()']]],
-  ['point_2ecpp',['point.cpp',['../point_8cpp.html',1,'']]],
-  ['point_2ehpp',['point.hpp',['../point_8hpp.html',1,'']]],
-  ['point_5fone',['point_one',['../class_point.html#a030522c3949dc71bc4c1f39eb1b0c77e',1,'Point']]],
-  ['point_5fthree',['point_three',['../class_point.html#af7cb3c4c0c0f52218ac9ce180df003da',1,'Point']]],
-  ['point_5ftwo',['point_two',['../class_point.html#a7eece7f7413a741137cf32bb763f3987',1,'Point']]]
+  ['segment_5fone',['segment_one',['../class_face.html#ae4053947c53549d2fd5cf43aa9c712f4',1,'Face']]],
+  ['segment_5fthree',['segment_three',['../class_face.html#a777ca579978d8d20c6e8a5e64a6999cc',1,'Face']]],
+  ['segment_5ftwo',['segment_two',['../class_face.html#ae79107e53090d0a7efb5070ea093a70e',1,'Face']]],
+  ['setarea',['setArea',['../class_face.html#a6ee83e39c97a515c49f076d55a14b8bd',1,'Face']]],
+  ['setfull',['setFull',['../class_mesh.html#ab5b9b1d7b1a616def0cefb1f8fd7b7a4',1,'Mesh']]],
+  ['setnumberof_5ff',['setNumberof_f',['../class_mesh.html#ad1b46c508d09b76ac575564fcaa24931',1,'Mesh']]],
+  ['setnumberof_5fp',['setNumberof_p',['../class_mesh.html#a76b45fbfdfa33d0f0285f86a918192ba',1,'Mesh']]],
+  ['setp_5fone',['setP_one',['../class_point.html#ac79f8c3f0fb8b9dea4f5b8a8e0315779',1,'Point']]],
+  ['setp_5fthree',['setP_three',['../class_point.html#a097d97049b319bb131b51f990a52aa94',1,'Point']]],
+  ['setp_5ftwo',['setP_two',['../class_point.html#a3b70e89e253f5339392990ae29313ae8',1,'Point']]],
+  ['setperimeter',['setPerimeter',['../class_face.html#af2be08b9e991f22d85aa39901a353a53',1,'Face']]],
+  ['sets_5fone',['setS_one',['../class_face.html#a96639aea98e0c24899d892bec1d5f513',1,'Face']]],
+  ['sets_5fthree',['setS_three',['../class_face.html#aa6b474b884d3f7f54b20e5fe45c8c33f',1,'Face']]],
+  ['sets_5ftwo',['setS_two',['../class_face.html#a7bd40f7c3c9592fd4cc3cbd898d6fe42',1,'Face']]],
+  ['setseg_5fone',['setSeg_one',['../class_face.html#a467b326e9be6b5aac350c9b87a5ab14c',1,'Face']]],
+  ['setseg_5fthree',['setSeg_three',['../class_face.html#acc1fc08e71b974483dc876adb43da487',1,'Face']]],
+  ['setseg_5ftwo',['setSeg_two',['../class_face.html#a1eebfcfb41d87470d675ab8fb106585e',1,'Face']]],
+  ['summit_5fone',['summit_one',['../class_face.html#a68ff25f391cfe3ee5ce2b7f13dac64fa',1,'Face']]],
+  ['summit_5fthree',['summit_three',['../class_face.html#af322077aea999dd19dd169bd5bdd4bdf',1,'Face']]],
+  ['summit_5ftwo',['summit_two',['../class_face.html#a8d0b2a96bd53dcf7767c2cefe1fcc1f3',1,'Face']]]
 ];
