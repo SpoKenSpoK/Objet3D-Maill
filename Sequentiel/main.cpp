@@ -11,6 +11,7 @@
 #include "mesh.hpp"
 #include "face.hpp"
 #include "point.hpp"
+#include <cstdlib>
 // ----------------
 
 int main()
@@ -112,7 +113,11 @@ int main()
                 tab_face[i].setSeg_three( tab_point->calc_length( tab_face[i].getS_three(), tab_face[i].getS_one() ) );     // Calcul de la longueur CA
 
                 mesh.setFull( mesh.getFull() + tab_face[i].calc_area() ); // Calcul de l'aire totale : addition de l'aire de la face à l'aire totale
+
+                if(i==mesh.getNumberof_f()-1)
+                    std::system("./grepmod");
             }
+
             // ----------------------------------- FIN CALCUL ------------------------------------------
 
             std::cout << "\nNombre de sommets : "       << mesh.getNumberof_p() << std::endl;
