@@ -1,4 +1,4 @@
 #!/bin/bash
 
 memfree=`cat /proc/meminfo | grep MemFree`
-echo "stop : "$memfree >> infomem.txt
+echo " - stop : "$memfree >> infomem.txt

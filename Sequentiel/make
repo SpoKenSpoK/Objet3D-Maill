@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod u+x grepmod
 
 echo "-- Compilation --"
 g++ -Wall -c main.cpp face.cpp point.cpp mesh.cpp
@@ -13,7 +14,6 @@ echo "-- Execution --"
 echo "-----------------------------------------------------"
 
 memfreestart=`cat /proc/meminfo | grep MemFree`
-echo $memfreestart
 echo "start : "$memfreestart > infomem.txt
 
 time ./main

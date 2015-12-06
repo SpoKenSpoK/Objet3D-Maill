@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <pthread.h>
+#include <cstdlib>
 #include "../Sequentiel/mesh.hpp"
 #include "../Sequentiel/face.hpp"
 #include "../Sequentiel/point.hpp"
@@ -112,8 +113,12 @@ int main()
 
             for(unsigned int i=0; i<THREAD_COUNT; ++i){ pthread_join(threads_array[i],NULL); }  // Boucle for permettant la jointure de tous les threads
 
-            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i)                                  // Calcul de l'aire ici non threadé pour éviter tout conflit de variable partagée
+            for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){                                 // Calcul de l'aire ici non threadé pour éviter tout conflit de variable partagée
                 mesh.setFull(mesh.getFull()+tab_face[i].calc_area());
+                if(i==mesh.getNumberof_f()-1)
+                    system("../Sequentiel/./grepmod");
+
+            }
 
             delete [] threads_array;    // Suppression du tableau de threads
             delete [] thread_params;    // Suppression du tableau de paramètres du thread

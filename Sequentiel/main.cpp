@@ -8,10 +8,10 @@
 // Include --------
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 #include "mesh.hpp"
 #include "face.hpp"
 #include "point.hpp"
-#include <cstdlib>
 // ----------------
 
 int main()

@@ -12,7 +12,11 @@ echo "-- Execution --"
 
 echo "-----------------------------------------------------"
 
+memfreestart=`cat /proc/meminfo | grep MemFree`
+echo "start : "$memfreestart > infomem.txt
+
 time ./main
+echo `cat infomem.txt`
 
 else
 	echo "-- Error: Failed compilation --"
