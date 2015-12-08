@@ -43,7 +43,7 @@ void* calcul(void* args)
 
 int main()
 {
-    const unsigned short THREAD_COUNT = 4;
+    const unsigned short THREAD_COUNT = 8;
 
     Face* tab_face;
     Point* tab_point;
@@ -96,9 +96,6 @@ int main()
 
             fichier.close();
 
-            /*if(face_count%THREAD_COUNT > 0){
-
-            }*/
             int segments = (face_count - (face_count%THREAD_COUNT))/THREAD_COUNT;   // Représente la taille des segments dans lesquels vont boucler chacun de nos threads.
             pthread_t* threads_array = new pthread_t[THREAD_COUNT];                 // Création d'un tableau dynamique de pointeur
             ThreadParams* thread_params = new ThreadParams[THREAD_COUNT];           // Création d'un tableau dynamique sur la structure précédemment définie
@@ -115,9 +112,9 @@ int main()
 
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){                                 // Calcul de l'aire ici non threadé pour éviter tout conflit de variable partagée
                 mesh.setFull(mesh.getFull()+tab_face[i].calc_area());
+
                 if(i==mesh.getNumberof_f()-1)
                     system("../Sequentiel/./grepmod");
-
             }
 
             delete [] threads_array;    // Suppression du tableau de threads

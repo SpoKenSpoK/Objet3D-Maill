@@ -1,2 +1,0 @@
-start : MemFree: 4097364 kB
- - stop : MemFree: 1162516 kB

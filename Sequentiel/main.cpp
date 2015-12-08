@@ -33,7 +33,7 @@ int main()
 
         if(file) // Test pour savoir si le fichier est bien présent dans le répertoire donné
         {
-            is_here = true;                 // Si le file est vérifié alors la valeur et vraie et nous sortons de la boucle
+            is_here = true;                 // Si le fichier est vérifié alors la valeur et vraie et nous pouvons sortir de la boucle
             file.seekg(4, file.beg);        // On se place au quatrième octet dans le file (en partant du début), ici après le "OFF"
 
             unsigned int point_count = 0;   // Création d'un entier positif représentant le nombre de points présent dans le fichier
@@ -114,7 +114,7 @@ int main()
 
                 mesh.setFull( mesh.getFull() + tab_face[i].calc_area() ); // Calcul de l'aire totale : addition de l'aire de la face à l'aire totale
 
-                if(i==mesh.getNumberof_f()-1)
+                if(i==mesh.getNumberof_f()-1)   // Appel le script grepmod et nous permet de connaître la RAM libre juste à la fin des calculs.
                     std::system("./grepmod");
             }
 

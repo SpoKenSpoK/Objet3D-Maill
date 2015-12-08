@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod u+x grepmod
 
 echo "-- Compilation --"
 g++ -Wall -c main.cpp ../Sequentiel/face.cpp ../Sequentiel/point.cpp ../Sequentiel/mesh.cpp -fopenmp
@@ -12,8 +13,12 @@ echo "-- Execution --"
 
 echo "-----------------------------------------------------"
 
+memfreestart=`cat /proc/meminfo | grep MemFree`
+echo "start : "$memfreestart > infomem.txt
+
 time ./main
 
+echo `cat infomem.txt`
 else
 	echo "-- Error: Failed compilation --"
 	rm *.o

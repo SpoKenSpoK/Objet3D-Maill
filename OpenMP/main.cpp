@@ -9,6 +9,7 @@
 #include "../Sequentiel/face.hpp"
 #include "../Sequentiel/point.hpp"
 #include <omp.h>
+#include <cstdlib>
 
 #define NUM_THREADS 8
 // Défini le nombre de threads à utiliser dans les balises parallèles
@@ -37,7 +38,6 @@ int main()
             file >> point_count >> face_count;
             Mesh mesh(point_count, face_count);
             tab_point = new Point[mesh.getNumberof_p()];
-
             tab_face = new Face[mesh.getNumberof_f()];
             file.seekg(3, file.cur);
 
@@ -79,6 +79,9 @@ int main()
 
             for(unsigned int i=0; i<mesh.getNumberof_f(); ++i){
                 mesh.setFull(mesh.getFull()+tab_face[i].calc_area());
+
+                if(i==mesh.getNumberof_f()-1)
+                    std::system("../Sequentiel/./grepmod");
             }
 
             std::cout << "\nNombre de sommets : "       << mesh.getNumberof_p() << std::endl;
